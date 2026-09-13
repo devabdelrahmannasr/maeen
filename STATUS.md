@@ -19,7 +19,7 @@ Verified on 2026-09-13.
 - The implemented visual system is recorded in canonical `DESIGN.md` tokens and `.impeccable/design.json`.
 - `WORK-013` was rebaselined for AI-assisted delivery: the owner's 7 hours/week are reserved for decisions, review, testing, and acceptance, while estimates remain relative size/risk indicators.
 - `SPEC-010` defines the reviewed implementation boundary, route contract, file map, tests, and browser verification plan for `WORK-018`.
-- `WORK-018` is implemented locally: a typed ten-route hash catalog, versioned safe-route storage, deterministic startup recovery, shared single-landmark shell, and thin route outlet now coordinate Onboarding and Library without adding a dependency or enabling unfinished screens.
+- `WORK-018` is Done in Notion with DoD complete and all acceptance criteria checked. A typed ten-route hash catalog, versioned safe-route storage, deterministic startup recovery, shared single-landmark shell, and thin route outlet coordinate Onboarding and Library without adding a dependency or enabling unfinished screens.
 
 ## In progress
 
@@ -37,7 +37,7 @@ Native Figma variables, component sets, and Code Connect remain pending due to t
 
 ## Exact next action
 
-Add the local commit and recorded verification evidence to Notion `WORK-018`, check its acceptance criteria, and move it through review to `Done`. This external record update remains pending confirmation for the representational Notion edit.
+Refresh the Notion delivery queue and promote exactly one dependency-cleared P0 item into active work, preserving the WIP limit of one item in `In Progress`.
 
 ## Verification log
 
@@ -60,6 +60,7 @@ Add the local commit and recorded verification evidence to Notion `WORK-018`, ch
 - 2026-09-13: `git diff --check`; passed with only Git's existing LF-to-CRLF working-copy notices.
 - 2026-09-13: packaged `dist` verification passed in Google Chrome for Testing 153.0.8010.12 and Microsoft Edge 152.0.4191.66. Both loaded the service worker and registered `sidepanel.html`; first-use onboarding, `#/library` plus `navigation.lastSafeRoute.v1` persistence, browser close/reopen recovery, disabled/contextual hash recovery, refresh, structural RTL, one `main`, and a visible 3px focus outline passed with zero console errors.
 - 2026-09-13: Library presentation was visually reviewed in both packaged browsers at 320, 420, and 600 px. The registered Side Panel document was exercised directly because the automation surface does not open browser side-panel chrome through the toolbar action.
+- 2026-09-13: updated Notion `WORK-018` with commit `76226fd`, checked all three acceptance criteria, recorded the automated and Chrome/Edge evidence, set `DoD Complete`, and moved the item to `Done`; a confirming live fetch verified the final properties and content.
 
 ## Codex app handoff
 
