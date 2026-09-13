@@ -1,7 +1,7 @@
 # WORK-019 — Settings Store and Themes Implementation Plan
 
-Status: Ready for implementation  
-Scope: planning only; no runtime code is changed by this document  
+Status: Ready for implementation
+Scope: planning only; no runtime code is changed by this document
 Target: one focused implementation session, no later than 2026-09-14
 
 ## Sources
