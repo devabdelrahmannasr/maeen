@@ -11,17 +11,16 @@ Verified on 2026-09-13.
 - Local Figma SVG sources and ten-screen HTML prototype were copied into this repository.
 - Project handoff documents and development-ready directory structure were created.
 - Local Git repository initialized on `main` after verification.
-- `RES-004` comparison completed locally and DEC-009 selected Preact + TypeScript + Vite with Vitest.
+- `RES-004` concluded with Strong evidence and DEC-009 selected Preact + TypeScript + Vite with Vitest.
 - Manifest V3 Side Panel scaffold created with local-only runtime assets and Cairo Variable font.
 - Onboarding and Library screens implemented in structural Arabic RTL with local onboarding persistence.
 - Responsive browser captures reviewed at 320, 420, and 600 px.
-- The unpacked extension service worker loaded from `dist/` in Playwright Chromium and Microsoft Edge 152.
+- The production `dist/` extension loaded and completed the onboarding persistence flow in Chrome for Testing 152.0.7977.82 and Microsoft Edge 152.0.4191.66.
 - The implemented visual system is recorded in canonical `DESIGN.md` tokens and `.impeccable/design.json`.
 
 ## In progress
 
 - `REL-001 Design Freeze`.
-- `RES-004` remains Running in Notion until a manual Chrome 152 unpacked-extension load is recorded.
 
 ## Not started
 
@@ -35,7 +34,7 @@ Native Figma variables, component sets, and Code Connect remain pending due to t
 
 ## Exact next action
 
-Load `dist/` manually in Chrome 152 through `chrome://extensions` with Developer Mode, confirm the Side Panel opens and onboarding persists, and add the result to Notion `RES-004`. Then implement New Book Setup → Goal Selection with validation and domain tests.
+Implement New Book Setup → Goal Selection as the next vertical slice, with validated form state and framework-independent domain types.
 
 ## Verification log
 
@@ -48,7 +47,8 @@ Load `dist/` manually in Chrome 152 through `chrome://extensions` with Developer
 - 2026-09-13: browser preview console errors 0; onboarding and library visually reviewed at 320/420/600 px.
 - 2026-09-13: Impeccable detector returned zero findings for the changed UI targets.
 - 2026-09-13: independent Impeccable review resolved RTL numerals, 44px targets, narrow-width labeling, and persistence states; final disposition `ship`.
-- 2026-09-13: Manifest V3 service worker loaded in Playwright Chromium and Edge 152; branded Chrome 152 automated side-load unavailable, manual evidence pending.
+- 2026-09-13: packaged Manifest V3 extension loaded in Chrome for Testing 152.0.7977.82 and Edge 152.0.4191.66; service worker, structural RTL, Side Panel path, onboarding transition, Chrome Storage persistence, and reload recovery passed in both browsers.
+- 2026-09-13: browser-action triggering through ChromeDriver returned DevTools `Method not allowed`; the registered Side Panel document was exercised directly after verifying `chrome.sidePanel.getOptions()` returned an enabled `sidepanel.html` path.
 
 ## Codex app handoff
 

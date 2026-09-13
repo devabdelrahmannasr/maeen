@@ -4,7 +4,7 @@ Last verified: 2026-09-13, Africa/Cairo.
 
 ## Current position
 
-The approved product specification, delivery workspace, flow maps, and visual UI package exist. Application implementation has started. `RES-004` selected Preact + TypeScript + Vite with Vitest, and the first Manifest V3 Side Panel slice implements onboarding and the local-library reference state.
+The approved product specification, delivery workspace, flow maps, and visual UI package exist. Application implementation has started. `RES-004` concluded with Strong evidence and selected Preact + TypeScript + Vite with Vitest. The first Manifest V3 Side Panel slice implements onboarding and the local-library reference state.
 
 ## Completed assets
 
@@ -45,10 +45,10 @@ The Figma visual package passed the recorded visual and SVG checks. Native Figma
 
 - Current release: `REL-001 Design Freeze` — In Progress.
 - Following releases: Internal Alpha v0.1, Private Beta v0.2, Public Launch v1.0.
-- `RES-004` now has Weak technical evidence; the other five planned research studies remain at `None`.
-- `RES-004` is Running with Weak evidence in Notion. Production build, responsive preview, Chromium, and Edge 152 loading are verified. Chrome 152 automated side-loading is blocked by the browser's removal of the command-line mechanism; manually load `dist/` in Chrome Developer Mode before concluding the spike.
+- `RES-004` is Concluded with Strong technical evidence in Notion; the other five planned research studies remain at `None`.
+- The production package completed the same browser verification matrix in Chrome for Testing 152.0.7977.82 and Edge 152.0.4191.66: service worker, RTL, registered Side Panel path, onboarding-to-library transition, Chrome Storage persistence, and reload recovery all passed. Branded Chrome's legacy command-line side-loading is unavailable, so use Chrome for Testing for repeatable automated extension checks.
 - The first UI slice passed the Impeccable detector with no findings and an independent finish review with final disposition `ship`; storage failure and pending-save states are implemented and visually evidenced.
-- Next implementation action after that evidence: build the New Book Setup and Goal Selection vertical slice with validated form state and framework-independent domain types.
+- Next implementation action: build the New Book Setup and Goal Selection vertical slice with validated form state and framework-independent domain types.
 - Next recorded weekly review: 2026-09-20. Treat this as historical if working after that date; refresh Notion before relying on it.
 
 ## Handoff protocol
