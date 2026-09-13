@@ -45,8 +45,9 @@ The Figma visual package passed the recorded visual and SVG checks. Native Figma
 
 - Current release: `REL-001 Design Freeze` — In Progress.
 - Following releases: Internal Alpha v0.1, Private Beta v0.2, Public Launch v1.0.
-- Owner capacity is 7 hours per week across seven days, with no fixed deadline and a preference for the fastest quality-preserving MVP path. Planning assumes one 7-hour estimate day per week and no contingency.
-- Aggressive target dates are REL-001 2026-10-18, REL-002 2027-06-13, REL-003 2028-02-27, and REL-004 2028-04-23. Missing a capacity week shifts the plan by roughly one week.
+- Public Launch has a hard maximum target of 2026-10-13. The owner's 7 hours per week across seven days are reserved for decisions, review, testing, and acceptance; AI-assisted execution is not converted into one human calendar week per `Estimate Day`.
+- `Estimate Days` remain relative size and risk indicators. The compressed no-buffer targets are REL-001 2026-09-17, REL-002 2026-09-27, REL-003 2026-10-06, and REL-004 2026-10-13.
+- The controllable launch commitment is a public open-source release, installable package, and complete release documentation by 2026-10-13. Chrome Web Store and Microsoft Edge Add-ons availability depends on external review, so submission must happen before the final launch gate.
 - `RES-004` is Concluded with Strong technical evidence in Notion; the other five planned research studies remain at `None`.
 - The production package completed the same browser verification matrix in Chrome for Testing 152.0.7977.82 and Edge 152.0.4191.66: service worker, RTL, registered Side Panel path, onboarding-to-library transition, Chrome Storage persistence, and reload recovery all passed. Branded Chrome's legacy command-line side-loading is unavailable, so use Chrome for Testing for repeatable automated extension checks.
 - The first UI slice passed the Impeccable detector with no findings and an independent finish review with final disposition `ship`; storage failure and pending-save states are implemented and visually evidenced.
