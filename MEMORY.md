@@ -23,6 +23,7 @@ The Figma visual package passed the recorded visual and SVG checks. Native Figma
 
 - Name: **مرافق القراءة — Reading Companion**. Repository/project name: **Reading Helper Open Source**.
 - Promise: **قل لي لماذا تقرأ، وسأرتب لك كيف تقرأ.**
+- Arabic is the user's interface language, not a restriction on book content. The target user may read, study, or learn from a book/PDF in any language; the product remains content-language neutral and does not inspect the document.
 - Core loop: Preview → Question → Read → Recall → Explain → Review → Apply.
 - One primary goal plus at most two secondary goals creates a versioned Protocol Snapshot.
 - Browser side panel; no custom reader and no PDF-content access.
@@ -40,6 +41,7 @@ The Figma visual package passed the recorded visual and SVG checks. Native Figma
 6. Deterministic, versioned rules engine.
 7. Protocol Snapshot per reading plan.
 8. Unified Work Items database.
+9. Arabic-interface users may read books or PDFs in any language; content language is not a product constraint.
 
 ## Current delivery state
 
@@ -51,7 +53,7 @@ The Figma visual package passed the recorded visual and SVG checks. Native Figma
 - `RES-004` is Concluded with Strong technical evidence in Notion; the other five planned research studies remain at `None`.
 - The production package completed the same browser verification matrix in Chrome for Testing 152.0.7977.82 and Edge 152.0.4191.66: service worker, RTL, registered Side Panel path, onboarding-to-library transition, Chrome Storage persistence, and reload recovery all passed. Branded Chrome's legacy command-line side-loading is unavailable, so use Chrome for Testing for repeatable automated extension checks.
 - The first UI slice passed the Impeccable detector with no findings and an independent finish review with final disposition `ship`; storage failure and pending-save states are implemented and visually evidenced.
-- `WORK-013` is Done. `WORK-014` is the single Ready item: interview five Arabic readers and record keep / revise / remove evidence. New Book Setup and Goal Selection follows the Design Freeze validation work.
+- `WORK-013` is Done. `WORK-014` is the single Ready item: interview five Arabic-interface users who read books in any language, deliberately include content-language variety, and record keep / revise / remove evidence. New Book Setup and Goal Selection follows the Design Freeze validation work.
 - Next recorded weekly review: 2026-09-20. Treat this as historical if working after that date; refresh Notion before relying on it.
 
 ## Handoff protocol

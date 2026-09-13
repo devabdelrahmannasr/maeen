@@ -30,6 +30,7 @@ Record any resolved conflict in `DECISIONS.md` and update the affected document.
 ## Product boundaries
 
 - Arabic-first, structurally RTL, accessible browser-extension UI.
+- Arabic describes the user's interface language, not the book: the reader may study or read a book/PDF in any language, and the product remains content-language neutral.
 - Chrome and Edge Manifest V3 MVP using a side panel beside the browser's existing PDF viewer.
 - The extension does not read, upload, parse, annotate, or replace PDF content.
 - Core behavior is local-first and must not require a network connection.

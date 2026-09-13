@@ -35,7 +35,7 @@ Native Figma variables, component sets, and Code Connect remain pending due to t
 
 ## Exact next action
 
-Start `WORK-014`: identify five Arabic readers, schedule the interviews, and capture evidence for keep / revise / remove decisions. It is the single `Ready` item.
+Start `WORK-014`: identify five Arabic-interface users who read or study books/PDFs in any language, include content-language variety, schedule the interviews, and capture evidence for keep / revise / remove decisions. It is the single `Ready` item.
 
 ## Verification log
 
@@ -51,6 +51,7 @@ Start `WORK-014`: identify five Arabic readers, schedule the interviews, and cap
 - 2026-09-13: packaged Manifest V3 extension loaded in Chrome for Testing 152.0.7977.82 and Edge 152.0.4191.66; service worker, structural RTL, Side Panel path, onboarding transition, Chrome Storage persistence, and reload recovery passed in both browsers.
 - 2026-09-13: browser-action triggering through ChromeDriver returned DevTools `Method not allowed`; the registered Side Panel document was exercised directly after verifying `chrome.sidePanel.getOptions()` returned an enabled `sidepanel.html` path.
 - 2026-09-13: Notion release targets were compressed to a one-month, no-buffer plan: REL-001 2026-09-17, REL-002 2026-09-27, REL-003 2026-10-06, and REL-004 2026-10-13. Public source/package launch is controlled by the project; Chrome and Edge store availability remains dependent on external review.
+- 2026-09-13: clarified the product boundary in Notion and local sources: Arabic applies to the user interface, while books/PDFs may be in any language. `DEC-010`, `WORK-014`, and `RES-001` record the correction.
 
 ## Codex app handoff
 

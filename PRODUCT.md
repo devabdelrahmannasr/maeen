@@ -4,7 +4,7 @@
 
 ## Summary
 
-**مرافق القراءة — Reading Companion** is an Arabic-first, open-source, local-first browser extension that turns a reader's goal into a guided reading protocol and exposes one useful next action at a time beside an existing PDF viewer.
+**مرافق القراءة — Reading Companion** is an Arabic-interface, open-source, local-first browser extension that turns a reader's goal into a guided reading protocol and exposes one useful next action at a time beside an existing PDF viewer. Arabic belongs to the user experience; the book or PDF may be written in any language.
 
 Product promise: **قل لي لماذا تقرأ، وسأرتب لك كيف تقرأ.**
 
@@ -12,7 +12,7 @@ Success is not page count alone. The product helps the reader remember, explain,
 
 ## Primary users
 
-Arabic readers of educational, technical, and non-fiction PDFs, including students, software engineers, self-directed learners, deadline-driven readers, and people rebuilding their ability to focus.
+Arabic-interface users reading, studying, or learning from educational, technical, and non-fiction books or PDFs in any language, including students, software engineers, self-directed learners, deadline-driven readers, and people rebuilding their ability to focus.
 
 ## Product model
 
@@ -57,7 +57,7 @@ Arabic readers of educational, technical, and non-fiction PDFs, including studen
 
 ## Non-goals for MVP
 
-No backend, login, accounts, cloud sync, analytics, monetization, AI/RAG, PDF content reading, custom PDF.js reader, PDF annotation, Firefox, mobile application, or Acrobat integration.
+No backend, login, accounts, cloud sync, analytics, monetization, AI/RAG, PDF content reading, content-language detection or translation, custom PDF.js reader, PDF annotation, Firefox, mobile application, or Acrobat integration.
 
 ## Experience principles
 
@@ -70,7 +70,7 @@ No backend, login, accounts, cloud sync, analytics, monetization, AI/RAG, PDF co
 
 ## Positioning
 
-Goal-first guidance for Arabic PDF readers: the user states why they are reading, and a transparent local rules engine turns that purpose into one focused session. The product is neither a PDF reader nor an AI assistant.
+Goal-first guidance through an Arabic interface for people reading books or PDFs in any language: the user states why they are reading, and a transparent local rules engine turns that purpose into one focused session. The product is neither a PDF reader nor an AI assistant.
 
 ## Operating context
 
