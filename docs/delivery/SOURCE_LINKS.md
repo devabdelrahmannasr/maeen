@@ -3,9 +3,8 @@
 - [Product HQ](https://app.notion.com/p/3d9805b7d82b817fa572eaf4657b5cae?pvs=204)
 - [Approved Product & System Design Spec](https://app.notion.com/p/3d9805b7d82b8118918af8f6b19ce1a2)
 - [Workspace & Delivery Implementation Plan](https://app.notion.com/p/3d9805b7d82b817eb738e5a2582e290d)
-- [First Ready Action](https://app.notion.com/p/3d9805b7d82b8108aefcc21c73d9aaf8)
+- [First Ready Action — WORK-018](https://app.notion.com/p/3d9805b7d82b813c8fa5dc6ce14e90cf)
 - [Miro Master Board](https://miro.com/app/board/uXjVHnuKCW4=/)
 - [Figma — مرافق القراءة Arabic RTL Product UI](https://www.figma.com/design/AwmNEUtZBnWzs5jjNgu0VW)
 
 Notion is authoritative for product text, accepted decisions, work status, and releases. Figma is authoritative for visual UI. Miro is the flow and system-map reference. Refresh live sources before making status-sensitive claims.
-

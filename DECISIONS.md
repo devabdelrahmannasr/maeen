@@ -12,6 +12,7 @@
 | DEC-008 | Delivery work uses one unified Work Items database. | Accepted |
 | DEC-009 | Use Preact + TypeScript + Vite for the Manifest V3 Side Panel, with Vitest and browser-level checks. | Accepted |
 | DEC-010 | Arabic is the interface language; users may read books/PDFs in any language, and the product is content-language neutral. | Accepted |
+| DEC-011 | Defer user interviews and usability studies; continue building under explicitly unvalidated assumptions. | Accepted |
 
 ## Open decisions
 
@@ -25,5 +26,9 @@ Preact keeps component and state ergonomics for the ten-screen workflow while re
 ## DEC-010 context and consequences
 
 The target is an Arabic-interface user who reads, studies, or learns from a book in any language. Arabic is structural in the UI and product copy; it is not a restriction on the book or PDF. The extension remains content-language neutral because it does not read or analyze document content. Research recruitment must include language variety when practical and must never require Arabic-language books.
+
+## DEC-011 context and consequences
+
+The owner chose to defer `WORK-014`, `WORK-015`, and `WORK-016` and continue implementation without recruiting users. These items remain incomplete, their research evidence remains `None`, and no product assumption may be described as user-validated. The build sequence resumes at `WORK-018`; the deferred research can be reopened when an MVP is available or when a decision cannot be resolved without external evidence.
 
 Add a dated entry with context, options, decision, consequences, and links whenever an open decision is resolved.

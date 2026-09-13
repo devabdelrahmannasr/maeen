@@ -27,7 +27,7 @@ Verified on 2026-09-13.
 
 - Remaining eight MVP screens and their domain behavior.
 - IndexedDB, rules/protocol, session/timer, backup/import/export, and complete automated coverage.
-- Five user-research studies; their evidence strength remains `None`.
+- Five user-research studies; `WORK-014` through `WORK-016` are explicitly deferred and their evidence remains absent.
 
 ## Known limitation
 
@@ -35,7 +35,7 @@ Native Figma variables, component sets, and Code Connect remain pending due to t
 
 ## Exact next action
 
-Start `WORK-014`: identify five Arabic-interface users who read or study books/PDFs in any language, include content-language variety, schedule the interviews, and capture evidence for keep / revise / remove decisions. It is the single `Ready` item.
+Start `WORK-018`: build the Side Panel shell and routing, restore the last safe route, and keep business logic outside the shell. It is the single `Ready` item.
 
 ## Verification log
 
@@ -52,6 +52,7 @@ Start `WORK-014`: identify five Arabic-interface users who read or study books/P
 - 2026-09-13: browser-action triggering through ChromeDriver returned DevTools `Method not allowed`; the registered Side Panel document was exercised directly after verifying `chrome.sidePanel.getOptions()` returned an enabled `sidepanel.html` path.
 - 2026-09-13: Notion release targets were compressed to a one-month, no-buffer plan: REL-001 2026-09-17, REL-002 2026-09-27, REL-003 2026-10-06, and REL-004 2026-10-13. Public source/package launch is controlled by the project; Chrome and Edge store availability remains dependent on external review.
 - 2026-09-13: clarified the product boundary in Notion and local sources: Arabic applies to the user interface, while books/PDFs may be in any language. `DEC-010`, `WORK-014`, and `RES-001` record the correction.
+- 2026-09-13: `DEC-011` deferred `WORK-014`, `WORK-015`, and `WORK-016` without evidence. They remain incomplete in Inbox; `WORK-018` became the single Ready implementation item.
 
 ## Codex app handoff
 
