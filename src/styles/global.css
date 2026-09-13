@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light;
   font-family: 'Cairo Variable', 'Cairo', sans-serif;
   color: #18212b;
   background: #f6f0e5;
@@ -19,6 +20,39 @@
   --surface: #fffdf8;
   --canvas: #f6f0e5;
   --rule: #d8cebd;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  color: #f7f2e9;
+  background: #121920;
+  --ink: #f7f2e9;
+  --muted: #b6bdc4;
+  --action: #8ea6ec;
+  --action-hover: #a9b9ee;
+  --action-pressed: #c1cdf2;
+  --action-soft: #263451;
+  --success: #8fd0b7;
+  --success-soft: #18382f;
+  --warning: #f0bd82;
+  --warning-soft: #402d1e;
+  --danger: #f0a0a6;
+  --danger-soft: #432327;
+  --surface: #18212b;
+  --canvas: #121920;
+  --rule: #3b4651;
+}
+
+:root[data-theme='dark'] .privacy-note p {
+  color: #c2d8d0;
+}
+
+:root[data-theme='dark'] .recovery-banner span {
+  color: #d6c1a8;
+}
+
+:root[data-theme='dark'] .progress-track {
+  background: #3b4651;
 }
 
 * {
@@ -561,7 +595,8 @@ strong::selection {
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
     color: #f7f2e9;
     background: #121920;
     --ink: #f7f2e9;
@@ -581,15 +616,15 @@ strong::selection {
     --rule: #3b4651;
   }
 
-  .privacy-note p {
+  :root:not([data-theme='light']) .privacy-note p {
     color: #c2d8d0;
   }
 
-  .recovery-banner span {
+  :root:not([data-theme='light']) .recovery-banner span {
     color: #d6c1a8;
   }
 
-  .progress-track {
+  :root:not([data-theme='light']) .progress-track {
     background: #3b4651;
   }
 }

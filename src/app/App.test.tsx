@@ -2,6 +2,8 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/preact';
 import { describe, expect, it, vi } from 'vitest';
 import { App } from './App';
 import { LAST_SAFE_ROUTE_KEY } from '../settings/navigationSettings';
+import { DEFAULT_USER_SETTINGS } from '../settings/userSettings';
+import { USER_SETTINGS_KEY } from '../settings/userSettingsStorage';
 
 describe('App', () => {
   it('starts with the privacy-first onboarding experience', async () => {
@@ -31,6 +33,45 @@ describe('App', () => {
     render(<App />);
 
     expect(await screen.findByRole('heading', { name: 'مكتبتي' })).toBeInTheDocument();
+  });
+
+  it.each(['light', 'dark'] as const)('restores the explicit %s theme before showing the active route', async (theme) => {
+    window.localStorage.setItem('onboardingComplete', 'true');
+    window.localStorage.setItem(USER_SETTINGS_KEY, JSON.stringify({ ...DEFAULT_USER_SETTINGS, theme }));
+
+    render(<App />);
+
+    expect(await screen.findByRole('heading', { name: 'مكتبتي' })).toBeInTheDocument();
+    expect(document.documentElement.dataset.theme).toBe(theme);
+  });
+
+  it('uses the system default for corrupt settings without a blank or crash', async () => {
+    document.documentElement.dataset.theme = 'dark';
+    window.localStorage.setItem(USER_SETTINGS_KEY, '{corrupt');
+
+    render(<App />);
+
+    expect(await screen.findByRole('heading', { name: 'اقرأ بهدف واضح' })).toBeInTheDocument();
+    expect(document.documentElement).not.toHaveAttribute('data-theme');
+  });
+
+  it('keeps the active route usable and announces a settings read failure', async () => {
+    const originalGetItem = Storage.prototype.getItem;
+    vi.spyOn(Storage.prototype, 'getItem').mockImplementation(function (this: Storage, key) {
+      if (key === USER_SETTINGS_KEY) {
+        throw new Error('Settings unavailable');
+      }
+
+      return originalGetItem.call(this, key);
+    });
+
+    render(<App />);
+
+    expect(await screen.findByRole('heading', { name: 'اقرأ بهدف واضح' })).toBeInTheDocument();
+    expect(await screen.findByRole('status')).toHaveTextContent(
+      'تعذر استعادة تفضيلاتك. استخدمنا الإعدادات الآمنة ويمكنك متابعة القراءة.',
+    );
+    expect(document.documentElement).not.toHaveAttribute('data-theme');
   });
 
   it('recovers from a corrupt saved route without a blank or crash', async () => {

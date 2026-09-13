@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import { isEnabledRoute, isSafelyRestorableRoute, serializeRoute, type AppRoute } from '../navigation/routes';
 import { resolveInitialRoute, type RouteRecoveryReason } from '../navigation/resolveInitialRoute';
+import { applyTheme } from '../settings/applyTheme';
 import { getLastSafeRoute, setLastSafeRoute } from '../settings/navigationSettings';
 import { getOnboardingComplete, setOnboardingComplete } from '../settings/onboardingSettings';
+import { DEFAULT_USER_SETTINGS } from '../settings/userSettings';
+import { getUserSettings } from '../settings/userSettingsStorage';
 import { AppRouter } from './AppRouter';
 import { AppShell } from './AppShell';
 
@@ -13,6 +16,7 @@ const recoveryMessages: Record<RouteRecoveryReason, string> = {
 
 const restorationReadFailureMessage = 'تعذر استعادة آخر شاشة محفوظة. فتحنا المكتبة بأمان.';
 const restorationWriteFailureMessage = 'تم فتح الشاشة، لكن تعذر حفظها للاستعادة لاحقًا.';
+const settingsReadFailureMessage = 'تعذر استعادة تفضيلاتك. استخدمنا الإعدادات الآمنة ويمكنك متابعة القراءة.';
 
 export function App() {
   const [route, setRoute] = useState<AppRoute | null>(null);
@@ -49,11 +53,19 @@ export function App() {
 
     async function startApplication() {
       let onboardingComplete = false;
+      let userSettings = { ...DEFAULT_USER_SETTINGS };
+      let settingsReadFailed = false;
 
       try {
         onboardingComplete = await getOnboardingComplete();
       } catch {
         onboardingComplete = false;
+      }
+
+      try {
+        userSettings = await getUserSettings();
+      } catch {
+        settingsReadFailed = true;
       }
 
       onboardingCompleteRef.current = onboardingComplete;
@@ -72,6 +84,8 @@ export function App() {
         return;
       }
 
+      applyTheme(userSettings.theme);
+
       const resolution = resolveInitialRoute({
         onboardingComplete,
         currentHash: window.location.hash,
@@ -81,7 +95,9 @@ export function App() {
       setRoute(resolution.route);
       synchronizeHash(resolution.route);
       setRouteStatusMessage(
-        storageReadFailed
+        settingsReadFailed
+          ? settingsReadFailureMessage
+          : storageReadFailed
           ? restorationReadFailureMessage
           : resolution.recoveryReason
             ? recoveryMessages[resolution.recoveryReason]
