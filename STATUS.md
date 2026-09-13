@@ -18,6 +18,7 @@ Verified on 2026-09-13.
 - The production `dist/` extension loaded and completed the onboarding persistence flow in Chrome for Testing 152.0.7977.82 and Microsoft Edge 152.0.4191.66.
 - The implemented visual system is recorded in canonical `DESIGN.md` tokens and `.impeccable/design.json`.
 - `WORK-013` was rebaselined for AI-assisted delivery: the owner's 7 hours/week are reserved for decisions, review, testing, and acceptance, while estimates remain relative size/risk indicators.
+- `SPEC-010` defines the reviewed implementation boundary, route contract, file map, tests, and browser verification plan for `WORK-018`.
 
 ## In progress
 
@@ -35,7 +36,7 @@ Native Figma variables, component sets, and Code Connect remain pending due to t
 
 ## Exact next action
 
-Start `WORK-018`: build the Side Panel shell and routing, restore the last safe route, and keep business logic outside the shell. It is the single `Ready` item.
+Review `SPEC-010`, then move `WORK-018` to `In Progress` and implement the typed route contract first. `WORK-018` remains the single `Ready` item; no runtime code has changed yet.
 
 ## Verification log
 
@@ -53,6 +54,7 @@ Start `WORK-018`: build the Side Panel shell and routing, restore the last safe 
 - 2026-09-13: Notion release targets were compressed to a one-month, no-buffer plan: REL-001 2026-09-17, REL-002 2026-09-27, REL-003 2026-10-06, and REL-004 2026-10-13. Public source/package launch is controlled by the project; Chrome and Edge store availability remains dependent on external review.
 - 2026-09-13: clarified the product boundary in Notion and local sources: Arabic applies to the user interface, while books/PDFs may be in any language. `DEC-010`, `WORK-014`, and `RES-001` record the correction.
 - 2026-09-13: `DEC-011` deferred `WORK-014`, `WORK-015`, and `WORK-016` without evidence. They remain incomplete in Inbox; `WORK-018` became the single Ready implementation item.
+- 2026-09-13: created and linked `SPEC-010`, the implementation plan for `WORK-018`. It is In Review and explicitly keeps routing, persistence, shell structure, domain scope, tests, and Chrome/Edge verification separate.
 
 ## Codex app handoff
 

@@ -8,7 +8,7 @@ The approved product specification, delivery workspace, flow maps, and visual UI
 
 ## Completed assets
 
-- Notion Product HQ: 6 databases, 4 releases, 9 specs, 60 work items, 11 accepted decisions, 8 risks, and 6 research studies.
+- Notion Product HQ: 6 databases, 4 releases, 10 specs, 60 work items, 11 accepted decisions, 8 risks, and 6 research studies.
 - Miro: product flows, goal-to-protocol map, session state, system/data maps, wireframes, and clickable prototype intent.
 - Figma: five organized pages covering start/handoff, foundations/components, ten MVP screens, states/dark/responsive examples, and prototype map.
 - Local visual sources are preserved under `design/figma/`.
@@ -55,6 +55,7 @@ The Figma visual package passed the recorded visual and SVG checks. Native Figma
 - The production package completed the same browser verification matrix in Chrome for Testing 152.0.7977.82 and Edge 152.0.4191.66: service worker, RTL, registered Side Panel path, onboarding-to-library transition, Chrome Storage persistence, and reload recovery all passed. Branded Chrome's legacy command-line side-loading is unavailable, so use Chrome for Testing for repeatable automated extension checks.
 - The first UI slice passed the Impeccable detector with no findings and an independent finish review with final disposition `ship`; storage failure and pending-save states are implemented and visually evidenced.
 - `WORK-014`, `WORK-015`, and `WORK-016` are deferred in Inbox under `DEC-011`; no user interviews or usability evidence exist. `WORK-018` is the single Ready item: build the Side Panel shell and routing, including safe-route restoration and keeping business logic outside the shell.
+- `SPEC-010` is the In Review implementation plan for `WORK-018`. It selects a small typed hash router without a new dependency, makes Library the only restorable post-onboarding route until other screens and domain validators exist, and requires unit/UI plus packaged Chrome/Edge recovery checks.
 - Next recorded weekly review: 2026-09-20. Treat this as historical if working after that date; refresh Notion before relying on it.
 
 ## Handoff protocol

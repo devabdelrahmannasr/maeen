@@ -4,6 +4,7 @@
 - [Approved Product & System Design Spec](https://app.notion.com/p/3d9805b7d82b8118918af8f6b19ce1a2)
 - [Workspace & Delivery Implementation Plan](https://app.notion.com/p/3d9805b7d82b817eb738e5a2582e290d)
 - [First Ready Action — WORK-018](https://app.notion.com/p/3d9805b7d82b813c8fa5dc6ce14e90cf)
+- [WORK-018 Implementation Plan — SPEC-010](https://app.notion.com/p/3da805b7d82b812587f8cf7eabfec239)
 - [Miro Master Board](https://miro.com/app/board/uXjVHnuKCW4=/)
 - [Figma — مرافق القراءة Arabic RTL Product UI](https://www.figma.com/design/AwmNEUtZBnWzs5jjNgu0VW)
 
