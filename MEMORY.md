@@ -4,7 +4,7 @@ Last verified: 2026-09-13, Africa/Cairo.
 
 ## Current position
 
-The approved product specification, delivery workspace, flow maps, and the complete visual UI package exist. This repository was assembled as the durable development and handoff workspace. Application implementation has not started, and the UI framework/tooling decision is intentionally still open under research spike `RES-004`.
+The approved product specification, delivery workspace, flow maps, and visual UI package exist. Application implementation has started. `RES-004` selected Preact + TypeScript + Vite with Vitest, and the first Manifest V3 Side Panel slice implements onboarding and the local-library reference state.
 
 ## Completed assets
 
@@ -13,6 +13,7 @@ The approved product specification, delivery workspace, flow maps, and the compl
 - Figma: five organized pages covering start/handoff, foundations/components, ten MVP screens, states/dark/responsive examples, and prototype map.
 - Local visual sources are preserved under `design/figma/`.
 - A navigable ten-screen HTML reference is preserved under `design/miro-prototype/`.
+- The extension scaffold, bundled Cairo font, Chrome Storage onboarding adapter, onboarding screen, library screen, and tests exist under `src/` and `public/`.
 
 ## Important limitation
 
@@ -44,11 +45,12 @@ The Figma visual package passed the recorded visual and SVG checks. Native Figma
 
 - Current release: `REL-001 Design Freeze` — In Progress.
 - Following releases: Internal Alpha v0.1, Private Beta v0.2, Public Launch v1.0.
-- Research evidence strength is currently `None`; the six studies are planned, not completed.
-- Next development action: finish `RES-004` (UI framework/tooling technical spike), record the decision, then scaffold the Manifest V3 extension shell.
+- `RES-004` now has Weak technical evidence; the other five planned research studies remain at `None`.
+- `RES-004` is Running with Weak evidence in Notion. Production build, responsive preview, Chromium, and Edge 152 loading are verified. Chrome 152 automated side-loading is blocked by the browser's removal of the command-line mechanism; manually load `dist/` in Chrome Developer Mode before concluding the spike.
+- The first UI slice passed the Impeccable detector with no findings and an independent finish review with final disposition `ship`; storage failure and pending-save states are implemented and visually evidenced.
+- Next implementation action after that evidence: build the New Book Setup and Goal Selection vertical slice with validated form state and framework-independent domain types.
 - Next recorded weekly review: 2026-09-20. Treat this as historical if working after that date; refresh Notion before relying on it.
 
 ## Handoff protocol
 
-At the beginning of a task, read `AGENTS.md`, `PRODUCT.md`, and `STATUS.md`, then refresh the authoritative Notion record if the task depends on live status. At the end, record changed facts, commands/tests run, unresolved risks, and the exact next action in `STATUS.md`; keep this file concise and durable.
-
+At the beginning of a task, read `AGENTS.md`, `PRODUCT.md`, `DESIGN.md`, and `STATUS.md`, then refresh the authoritative Notion record if the task depends on live status. At the end, record changed facts, commands/tests run, unresolved risks, and the exact next action in `STATUS.md`; keep this file concise and durable.

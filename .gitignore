@@ -25,3 +25,10 @@ Thumbs.db
 *.crx
 *.zip
 
+# Impeccable local review artifacts
+.impeccable/review/
+.impeccable/reference/
+
+# Browser inspection artifacts
+output/
+.playwright-cli/

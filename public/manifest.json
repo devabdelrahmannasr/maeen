@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "مرافق القراءة",
+  "short_name": "مرافق القراءة",
+  "description": "جلسات قراءة عربية موجهة تعمل محليًا بجانب قارئ PDF.",
+  "version": "0.1.0",
+  "minimum_chrome_version": "114",
+  "permissions": ["sidePanel", "storage"],
+  "action": {
+    "default_title": "افتح مرافق القراءة"
+  },
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  }
+}

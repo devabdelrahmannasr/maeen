@@ -1,5 +1,7 @@
 # Product — مرافق القراءة
 
+<!-- impeccable:product-schema 1 -->
+
 ## Summary
 
 **مرافق القراءة — Reading Companion** is an Arabic-first, open-source, local-first browser extension that turns a reader's goal into a guided reading protocol and exposes one useful next action at a time beside an existing PDF viewer.
@@ -47,6 +49,7 @@ Arabic readers of educational, technical, and non-fiction PDFs, including studen
 
 - Chrome and Edge Manifest V3 extension.
 - Side Panel beside the browser's existing PDF viewer.
+- Preact + TypeScript + Vite implementation stack; Vitest for automated tests.
 - IndexedDB for domain records and Chrome Storage Local for small preferences.
 - JSON and Markdown export.
 - Import pipeline: validate → migrate → preview → backup → commit.
@@ -65,3 +68,25 @@ No backend, login, accounts, cloud sync, analytics, monetization, AI/RAG, PDF co
 - Use structural RTL, keyboard support, visible focus, WCAG AA contrast, reduced motion, and non-color cues.
 - Never imply research validation that has not occurred.
 
+## Positioning
+
+Goal-first guidance for Arabic PDF readers: the user states why they are reading, and a transparent local rules engine turns that purpose into one focused session. The product is neither a PDF reader nor an AI assistant.
+
+## Operating context
+
+The interface runs in a narrow browser Side Panel while the PDF remains in the browser's existing viewer. It must remain useful at 320, 420, and 600 px widths and recover safely after the browser suspends extension pages.
+
+## Evidence on hand
+
+- Approved Product & System Design Spec v1.0 in Notion.
+- Figma visual package covering the ten MVP screens, component states, dark mode, and responsive references.
+- Miro product flows, system maps, data model, wireframes, and prototype intent.
+- Planned research currently has no user-validation evidence and must not be presented as validated.
+
+## Product principles
+
+1. Start from the reading purpose, not a technique menu.
+2. Present one clear next action.
+3. Preserve the reader's notes and session state locally.
+4. Explain deterministic protocol decisions in plain Arabic.
+5. Treat RTL, accessibility, recovery, and ownership as product behavior.

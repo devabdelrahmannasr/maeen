@@ -8,9 +8,10 @@ Before changing anything, read these files in order:
 
 1. `MEMORY.md`
 2. `PRODUCT.md`
-3. `STATUS.md`
-4. `docs/delivery/SOURCE_LINKS.md`
-5. The document relevant to the task under `docs/`
+3. `DESIGN.md`
+4. `STATUS.md`
+5. `docs/delivery/SOURCE_LINKS.md`
+6. The document relevant to the task under `docs/`
 
 Inspect the current branch and dirty worktree before edits. Preserve unrelated work. Do not switch branches, rewrite history, delete files, publish, or create a remote without explicit approval.
 
@@ -63,4 +64,3 @@ Record any resolved conflict in `DECISIONS.md` and update the affected document.
 `Inbox → Ready → In Progress → In Review → Blocked / Done → Released`
 
 Use priorities P0–P3. Keep implementation tasks around one to two days. Do not mark work `Done` until acceptance criteria and verification evidence are recorded.
-

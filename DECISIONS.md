@@ -10,12 +10,15 @@
 | DEC-006 | The goal-to-protocol rules engine is deterministic and versioned. | Accepted |
 | DEC-007 | Each reading plan keeps an immutable Protocol Snapshot. | Accepted |
 | DEC-008 | Delivery work uses one unified Work Items database. | Accepted |
+| DEC-009 | Use Preact + TypeScript + Vite for the Manifest V3 Side Panel, with Vitest and browser-level checks. | Accepted |
 
 ## Open decisions
 
-- `RES-004`: UI framework and tooling.
 - Open-source license selection.
-- Exact package manager, build pipeline, and test runner, which follow from the tooling decision.
+- Browser-level end-to-end runner choice after the extension prototype is exercised in both Chrome and Edge.
+
+## DEC-009 context and consequences
+
+Preact keeps component and state ergonomics for the ten-screen workflow while remaining materially smaller than a full React runtime. TypeScript protects state-machine and persistence contracts. Vite provides a direct production build and copies the static Manifest V3 files without a framework-specific extension abstraction. Vitest shares the transform pipeline. Domain logic must remain framework-independent, browser APIs stay behind adapters, and all runtime code is bundled locally to satisfy Manifest V3 CSP and offline requirements.
 
 Add a dated entry with context, options, decision, consequences, and links whenever an open decision is resolved.
-

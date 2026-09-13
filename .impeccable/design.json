@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-13T12:55:00+03:00",
+  "title": "Design System: Reading Helper Open Source",
+  "extensions": {
+    "colorMeta": {
+      "scholarly-indigo": {
+        "role": "primary",
+        "displayName": "Scholarly Indigo",
+        "canonical": "#3154A5",
+        "tonalRamp": ["#101A35", "#182854", "#24417F", "#3154A5", "#607BC6", "#8EA3DD", "#C4D0EF", "#EEF1FA"]
+      },
+      "warm-paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#FFFDF8",
+        "tonalRamp": ["#27231D", "#423B31", "#685E4E", "#918571", "#BDB29F", "#DDD4C4", "#F6F0E5", "#FFFDF8"]
+      },
+      "reading-ink": {
+        "role": "neutral",
+        "displayName": "Reading Ink",
+        "canonical": "#18212B",
+        "tonalRamp": ["#0C1116", "#18212B", "#303D49", "#52616E", "#778691", "#A6B0B8", "#D6DBDF", "#F4F6F7"]
+      },
+      "preserved-green": {
+        "role": "secondary",
+        "displayName": "Preserved Green",
+        "canonical": "#1F7257",
+        "tonalRamp": ["#0C271E", "#123C2E", "#19543F", "#1F7257", "#4F947D", "#80B6A3", "#B6D9CC", "#E4F2EC"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Reading Thesis", "purpose": "The onboarding promise only." },
+      "title": { "displayName": "Task Title", "purpose": "Page and section identity." },
+      "body": { "displayName": "Guided Reading", "purpose": "Instructions and explanatory Arabic." },
+      "label": { "displayName": "Quiet Metadata", "purpose": "Progress, counts, and supporting state." }
+    },
+    "shadows": [
+      { "name": "book-object", "value": "-4px 7px 14px rgba(24, 33, 43, 0.14)", "purpose": "The physical book cover only." }
+    ],
+    "motion": [
+      { "name": "state-ease", "value": "180ms ease-out", "purpose": "Button state changes; reduced to near-zero under reduced-motion preferences." }
+    ],
+    "breakpoints": [
+      { "name": "narrow", "value": "359px" },
+      { "name": "wide-panel", "value": "520px" },
+      { "name": "maximum-reference", "value": "600px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one filled next action in the current focus context.",
+      "html": "<button class=\"ds-primary-button\" type=\"button\">ابدأ محليًا</button>",
+      "css": ".ds-primary-button{width:100%;min-height:48px;padding:11px 18px;border:0;border-radius:10px;color:#fff;background:#3154A5;font:750 14px/1.6 'Cairo',sans-serif;cursor:pointer;transition:background-color 180ms ease-out,transform 180ms ease-out}.ds-primary-button:hover{background:#24458D}.ds-primary-button:active{background:#1B3776;transform:translateY(1px)}.ds-primary-button:focus-visible{outline:3px solid #3154A5;outline-offset:3px}"
+    },
+    {
+      "name": "Local Status Chip",
+      "kind": "chip",
+      "description": "A compact assurance that core data stays on the device.",
+      "html": "<span class=\"ds-local-chip\"><svg aria-hidden=\"true\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\"><circle cx=\"6\" cy=\"6\" r=\"4\" fill=\"#1F7257\"/><circle cx=\"6\" cy=\"6\" r=\"1.5\" fill=\"#FFFDF8\"/></svg>محلي</span>",
+      "css": ".ds-local-chip{min-height:32px;padding:5px 10px;display:inline-flex;align-items:center;gap:7px;border-radius:999px;color:#1F7257;background:#E4F2EC;font:700 12px/1.65 'Cairo',sans-serif}"
+    },
+    {
+      "name": "Book Row",
+      "kind": "card",
+      "refersTo": "book-card",
+      "description": "A readable local book summary with one elevated cover and one next action.",
+      "html": "<article class=\"ds-book-row\" dir=\"rtl\"><span class=\"ds-book-cover\">1</span><div><strong>Clean Architecture</strong><p>فهم عميق · ص <bdi dir=\"ltr\">84–102</bdi></p><button>ابدأ جلسة</button></div></article>",
+      "css": ".ds-book-row{padding:16px;display:flex;gap:14px;border:1px solid #D8CEBD;border-radius:14px;color:#18212B;background:#FFFDF8;font-family:'Cairo',sans-serif}.ds-book-row p{color:#66707A}.ds-book-cover{width:58px;min-height:78px;display:grid;place-items:end center;padding-bottom:10px;border-radius:5px 9px 9px 5px;color:#FFFDF8;background:#3154A5;box-shadow:-4px 7px 14px rgba(24,33,43,.14)}.ds-book-row button{min-height:44px;border:0;color:#3154A5;background:transparent;font:700 12px 'Cairo',sans-serif}.ds-book-row button:hover{text-decoration:underline;text-underline-offset:4px}.ds-book-row button:focus-visible{outline:3px solid #3154A5;outline-offset:3px}"
+    },
+    {
+      "name": "Recovery Callout",
+      "kind": "custom",
+      "description": "Names the saved state and exposes the safe continuation action.",
+      "html": "<aside class=\"ds-recovery\" dir=\"rtl\"><div><strong>جلسة متوقفة بأمان</strong><span>Clean Architecture · القراءة المركّزة</span></div><button>استكمل</button></aside>",
+      "css": ".ds-recovery{min-height:70px;padding:13px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-radius:12px;color:#9B5A1D;background:#FFF0D8;font-family:'Cairo',sans-serif}.ds-recovery strong,.ds-recovery span{display:block}.ds-recovery span{color:#6D5B49;font-size:11px}.ds-recovery button{min-height:44px;border:0;color:#3154A5;background:transparent;font-weight:700}.ds-recovery button:focus-visible{outline:3px solid #3154A5;outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Arabic Reading Desk",
+    "overview": "The interface translates a quiet reading desk into a narrow Side Panel: warm paper, ink-like hierarchy, and scholarly indigo used only for deliberate action. It is an operating surface beside a PDF, so calm scanability and one visible next step take priority over dashboard density or decorative chrome.",
+    "keyCharacteristics": ["Warm paper and precise ink", "Restrained scholarly indigo", "Local Cairo typography", "Structural Arabic RTL", "Side Panel first responsiveness"],
+    "rules": [
+      { "name": "The One Action Voice Rule", "body": "Scholarly Indigo identifies interaction and progress.", "section": "colors" },
+      { "name": "The Clear Numerals Rule", "body": "Page ranges, time, and percentages remain LTR-isolated inside RTL copy.", "section": "typography" },
+      { "name": "The Side Panel First Rule", "body": "Wider space increases breathing room, not dashboard density.", "section": "layout" },
+      { "name": "The One Lifted Object Rule", "body": "Elevation belongs to the book as subject, not every container.", "section": "elevation" }
+    ],
+    "dos": ["Do keep one filled primary action.", "Do label synthetic examples at every width.", "Do show what was preserved when an operation fails."],
+    "donts": ["Don't mirror an LTR layout cosmetically.", "Don't shrink interactive targets below 44px.", "Don't combine borders and shadows on ordinary containers."]
+  }
+}
