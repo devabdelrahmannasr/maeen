@@ -8,7 +8,7 @@ The approved product specification, delivery workspace, flow maps, and visual UI
 
 ## Completed assets
 
-- Notion Product HQ: 6 databases, 4 releases, 10 specs, 60 work items, 11 accepted decisions, 8 risks, and 6 research studies.
+- Notion Product HQ: 6 databases, 4 releases, 11 specs, 60 work items, 11 accepted decisions, 8 risks, and 6 research studies.
 - Miro: product flows, goal-to-protocol map, session state, system/data maps, wireframes, and clickable prototype intent.
 - Figma: five organized pages covering start/handoff, foundations/components, ten MVP screens, states/dark/responsive examples, and prototype map.
 - Local visual sources are preserved under `design/figma/`.
@@ -56,6 +56,7 @@ The Figma visual package passed the recorded visual and SVG checks. Native Figma
 - The first UI slice passed the Impeccable detector with no findings and an independent finish review with final disposition `ship`; storage failure and pending-save states are implemented and visually evidenced.
 - `WORK-014`, `WORK-015`, and `WORK-016` are deferred in Inbox under `DEC-011`; no user interviews or usability evidence exist. `WORK-018` is Done in Notion with DoD complete, all three acceptance criteria checked, commit `76226fd`, and the automated and packaged-browser evidence recorded.
 - `SPEC-010` is the implementation plan for `WORK-018`. Its ten-route typed hash contract adds no dependency, Library remains the only restorable post-onboarding route, 38 automated tests pass, and packaged recovery checks pass in Google Chrome for Testing 153.0.8010.12 and Edge 152.0.4191.66.
+- `WORK-019` is the single Ready item with DoR complete. `SPEC-011` is its In Review implementation plan for a versioned `userSettings.v1` store, Arabic-only compatibility field, system/light/dark theme plumbing, a safe 30-minute default, corrupt-input normalization, and Chrome/Edge restart verification. No runtime code has changed for WORK-019 yet.
 - Next recorded weekly review: 2026-09-20. Treat this as historical if working after that date; refresh Notion before relying on it.
 
 ## Handoff protocol
