@@ -85,6 +85,10 @@ strong::selection {
   gap: 12px;
 }
 
+.screen-root {
+  min-height: calc(100vh - 24px);
+}
+
 .app-bar {
   min-height: 68px;
   margin-inline: -24px;
@@ -282,6 +286,17 @@ strong::selection {
   border-radius: 10px;
   color: var(--danger);
   background: var(--danger-soft);
+  font-size: 12px;
+  line-height: 1.8;
+  font-weight: 650;
+}
+
+.navigation-status {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: var(--warning);
+  background: var(--warning-soft);
   font-size: 12px;
   line-height: 1.8;
   font-weight: 650;

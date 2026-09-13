@@ -4,6 +4,7 @@ import { afterEach, beforeEach, vi } from 'vitest';
 
 beforeEach(() => {
   window.localStorage.clear();
+  window.history.replaceState(null, '', '/');
 });
 
 afterEach(() => {

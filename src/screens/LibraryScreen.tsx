@@ -33,7 +33,7 @@ const demoBooks: DemoBook[] = [
 
 export function LibraryScreen() {
   return (
-    <main class="app-shell library-screen">
+    <div class="screen-root library-screen">
       <header class="app-bar app-bar--roomy">
         <div>
           <h1 class="page-title">مكتبتي</h1>
@@ -104,6 +104,6 @@ export function LibraryScreen() {
         <BookPlus size={20} aria-hidden="true" />
         أضف كتابًا
       </button>
-    </main>
+    </div>
   );
 }

@@ -4,7 +4,7 @@ Last verified: 2026-09-13, Africa/Cairo.
 
 ## Current position
 
-The approved product specification, delivery workspace, flow maps, and visual UI package exist. Application implementation has started. `RES-004` concluded with Strong evidence and selected Preact + TypeScript + Vite with Vitest. The first Manifest V3 Side Panel slice implements onboarding and the local-library reference state.
+The approved product specification, delivery workspace, flow maps, and visual UI package exist. Application implementation has started. `RES-004` concluded with Strong evidence and selected Preact + TypeScript + Vite with Vitest. The Manifest V3 Side Panel now implements onboarding, the local-library reference state, and the typed WORK-018 navigation boundary with safe Library restoration.
 
 ## Completed assets
 
@@ -13,7 +13,7 @@ The approved product specification, delivery workspace, flow maps, and visual UI
 - Figma: five organized pages covering start/handoff, foundations/components, ten MVP screens, states/dark/responsive examples, and prototype map.
 - Local visual sources are preserved under `design/figma/`.
 - A navigable ten-screen HTML reference is preserved under `design/miro-prototype/`.
-- The extension scaffold, bundled Cairo font, Chrome Storage onboarding adapter, onboarding screen, library screen, and tests exist under `src/` and `public/`.
+- The extension scaffold, bundled Cairo font, Chrome Storage settings adapters, onboarding screen, library screen, typed route catalog, safe startup resolver, shared shell, and tests exist under `src/` and `public/`.
 
 ## Important limitation
 
@@ -54,8 +54,8 @@ The Figma visual package passed the recorded visual and SVG checks. Native Figma
 - `RES-004` is Concluded with Strong technical evidence in Notion; the other five planned research studies remain at `None`.
 - The production package completed the same browser verification matrix in Chrome for Testing 152.0.7977.82 and Edge 152.0.4191.66: service worker, RTL, registered Side Panel path, onboarding-to-library transition, Chrome Storage persistence, and reload recovery all passed. Branded Chrome's legacy command-line side-loading is unavailable, so use Chrome for Testing for repeatable automated extension checks.
 - The first UI slice passed the Impeccable detector with no findings and an independent finish review with final disposition `ship`; storage failure and pending-save states are implemented and visually evidenced.
-- `WORK-014`, `WORK-015`, and `WORK-016` are deferred in Inbox under `DEC-011`; no user interviews or usability evidence exist. `WORK-018` is the single Ready item: build the Side Panel shell and routing, including safe-route restoration and keeping business logic outside the shell.
-- `SPEC-010` is the In Review implementation plan for `WORK-018`. It selects a small typed hash router without a new dependency, makes Library the only restorable post-onboarding route until other screens and domain validators exist, and requires unit/UI plus packaged Chrome/Edge recovery checks.
+- `WORK-014`, `WORK-015`, and `WORK-016` are deferred in Inbox under `DEC-011`; no user interviews or usability evidence exist. `WORK-018` is locally implemented and verified; its Notion work record still needs the commit and verification evidence before its workflow status is changed.
+- `SPEC-010` is the implementation plan for `WORK-018`. Its ten-route typed hash contract adds no dependency, Library remains the only restorable post-onboarding route, 38 automated tests pass, and packaged recovery checks pass in Google Chrome for Testing 153.0.8010.12 and Edge 152.0.4191.66.
 - Next recorded weekly review: 2026-09-20. Treat this as historical if working after that date; refresh Notion before relying on it.
 
 ## Handoff protocol

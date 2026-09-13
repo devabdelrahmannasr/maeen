@@ -19,6 +19,7 @@ Verified on 2026-09-13.
 - The implemented visual system is recorded in canonical `DESIGN.md` tokens and `.impeccable/design.json`.
 - `WORK-013` was rebaselined for AI-assisted delivery: the owner's 7 hours/week are reserved for decisions, review, testing, and acceptance, while estimates remain relative size/risk indicators.
 - `SPEC-010` defines the reviewed implementation boundary, route contract, file map, tests, and browser verification plan for `WORK-018`.
+- `WORK-018` is implemented locally: a typed ten-route hash catalog, versioned safe-route storage, deterministic startup recovery, shared single-landmark shell, and thin route outlet now coordinate Onboarding and Library without adding a dependency or enabling unfinished screens.
 
 ## In progress
 
@@ -36,7 +37,7 @@ Native Figma variables, component sets, and Code Connect remain pending due to t
 
 ## Exact next action
 
-Review `SPEC-010`, then move `WORK-018` to `In Progress` and implement the typed route contract first. `WORK-018` remains the single `Ready` item; no runtime code has changed yet.
+Add the local commit and recorded verification evidence to Notion `WORK-018`, check its acceptance criteria, and move it through review to `Done`. This external record update remains pending confirmation for the representational Notion edit.
 
 ## Verification log
 
@@ -55,6 +56,10 @@ Review `SPEC-010`, then move `WORK-018` to `In Progress` and implement the typed
 - 2026-09-13: clarified the product boundary in Notion and local sources: Arabic applies to the user interface, while books/PDFs may be in any language. `DEC-010`, `WORK-014`, and `RES-001` record the correction.
 - 2026-09-13: `DEC-011` deferred `WORK-014`, `WORK-015`, and `WORK-016` without evidence. They remain incomplete in Inbox; `WORK-018` became the single Ready implementation item.
 - 2026-09-13: created and linked `SPEC-010`, the implementation plan for `WORK-018`. It is In Review and explicitly keeps routing, persistence, shell structure, domain scope, tests, and Chrome/Edge verification separate.
+- 2026-09-13: `npm run check`; 4 Vitest files and 38 tests passed, TypeScript passed, and the Vite production build passed. Production JS is 27.28KB raw / 10.48KB gzip; no routing dependency or extension permission was added.
+- 2026-09-13: `git diff --check`; passed with only Git's existing LF-to-CRLF working-copy notices.
+- 2026-09-13: packaged `dist` verification passed in Google Chrome for Testing 153.0.8010.12 and Microsoft Edge 152.0.4191.66. Both loaded the service worker and registered `sidepanel.html`; first-use onboarding, `#/library` plus `navigation.lastSafeRoute.v1` persistence, browser close/reopen recovery, disabled/contextual hash recovery, refresh, structural RTL, one `main`, and a visible 3px focus outline passed with zero console errors.
+- 2026-09-13: Library presentation was visually reviewed in both packaged browsers at 320, 420, and 600 px. The registered Side Panel document was exercised directly because the automation surface does not open browser side-panel chrome through the toolbar action.
 
 ## Codex app handoff
 

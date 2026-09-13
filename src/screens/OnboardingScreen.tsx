@@ -22,7 +22,7 @@ export function OnboardingScreen({ onStart }: OnboardingScreenProps) {
   }
 
   return (
-    <main class="app-shell onboarding-screen">
+    <div class="screen-root onboarding-screen">
       <header class="app-bar">
         <div>
           <p class="brand-name">مرافق القراءة</p>
@@ -66,6 +66,6 @@ export function OnboardingScreen({ onStart }: OnboardingScreenProps) {
         {isSaving ? 'جارٍ تجهيز مساحتك…' : 'ابدأ محليًا'}
       </button>
       <p class="compatibility-note">متوافق مع Chrome وEdge</p>
-    </main>
+    </div>
   );
 }
