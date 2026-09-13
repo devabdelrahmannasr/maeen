@@ -17,6 +17,7 @@ Verified on 2026-09-13.
 - Responsive browser captures reviewed at 320, 420, and 600 px.
 - The production `dist/` extension loaded and completed the onboarding persistence flow in Chrome for Testing 152.0.7977.82 and Microsoft Edge 152.0.4191.66.
 - The implemented visual system is recorded in canonical `DESIGN.md` tokens and `.impeccable/design.json`.
+- `WORK-013` recorded the owner's 7-hour weekly capacity and set target dates for all four releases.
 
 ## In progress
 
@@ -34,7 +35,7 @@ Native Figma variables, component sets, and Code Connect remain pending due to t
 
 ## Exact next action
 
-Implement New Book Setup → Goal Selection as the next vertical slice, with validated form state and framework-independent domain types.
+Start `WORK-014`: identify five Arabic readers, schedule the interviews, and capture evidence for keep / revise / remove decisions. It is the single `Ready` item.
 
 ## Verification log
 
@@ -49,6 +50,7 @@ Implement New Book Setup → Goal Selection as the next vertical slice, with val
 - 2026-09-13: independent Impeccable review resolved RTL numerals, 44px targets, narrow-width labeling, and persistence states; final disposition `ship`.
 - 2026-09-13: packaged Manifest V3 extension loaded in Chrome for Testing 152.0.7977.82 and Edge 152.0.4191.66; service worker, structural RTL, Side Panel path, onboarding transition, Chrome Storage persistence, and reload recovery passed in both browsers.
 - 2026-09-13: browser-action triggering through ChromeDriver returned DevTools `Method not allowed`; the registered Side Panel document was exercised directly after verifying `chrome.sidePanel.getOptions()` returned an enabled `sidepanel.html` path.
+- 2026-09-13: `WORK-013` completed with a 7-hour/week baseline. Aggressive no-buffer targets: REL-001 2026-10-18, REL-002 2027-06-13, REL-003 2028-02-27, and REL-004 2028-04-23.
 
 ## Codex app handoff
 

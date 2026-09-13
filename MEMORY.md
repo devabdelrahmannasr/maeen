@@ -45,10 +45,12 @@ The Figma visual package passed the recorded visual and SVG checks. Native Figma
 
 - Current release: `REL-001 Design Freeze` — In Progress.
 - Following releases: Internal Alpha v0.1, Private Beta v0.2, Public Launch v1.0.
+- Owner capacity is 7 hours per week across seven days, with no fixed deadline and a preference for the fastest quality-preserving MVP path. Planning assumes one 7-hour estimate day per week and no contingency.
+- Aggressive target dates are REL-001 2026-10-18, REL-002 2027-06-13, REL-003 2028-02-27, and REL-004 2028-04-23. Missing a capacity week shifts the plan by roughly one week.
 - `RES-004` is Concluded with Strong technical evidence in Notion; the other five planned research studies remain at `None`.
 - The production package completed the same browser verification matrix in Chrome for Testing 152.0.7977.82 and Edge 152.0.4191.66: service worker, RTL, registered Side Panel path, onboarding-to-library transition, Chrome Storage persistence, and reload recovery all passed. Branded Chrome's legacy command-line side-loading is unavailable, so use Chrome for Testing for repeatable automated extension checks.
 - The first UI slice passed the Impeccable detector with no findings and an independent finish review with final disposition `ship`; storage failure and pending-save states are implemented and visually evidenced.
-- Next implementation action: build the New Book Setup and Goal Selection vertical slice with validated form state and framework-independent domain types.
+- `WORK-013` is Done. `WORK-014` is the single Ready item: interview five Arabic readers and record keep / revise / remove evidence. New Book Setup and Goal Selection follows the Design Freeze validation work.
 - Next recorded weekly review: 2026-09-20. Treat this as historical if working after that date; refresh Notion before relying on it.
 
 ## Handoff protocol
