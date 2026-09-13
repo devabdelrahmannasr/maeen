@@ -21,6 +21,7 @@ Verified on 2026-09-13.
 - `SPEC-010` defines the reviewed implementation boundary, route contract, file map, tests, and browser verification plan for `WORK-018`.
 - `WORK-018` is Done in Notion with DoD complete and all acceptance criteria checked. A typed ten-route hash catalog, versioned safe-route storage, deterministic startup recovery, shared single-landmark shell, and thin route outlet coordinate Onboarding and Library without adding a dependency or enabling unfinished screens.
 - `SPEC-011` defines the implementation boundary, versioned settings contract, safe defaults, theme application, file map, tests, and browser verification plan for `WORK-019`.
+- `WORK-019` implemented the versioned `userSettings.v1` contract, Chrome Storage Local adapter, field-level corrupt-input recovery, system/light/dark theme application, and safe startup restoration without enabling the Settings screen or changing domain state.
 
 ## In progress
 
@@ -38,7 +39,7 @@ Native Figma variables, component sets, and Code Connect remain pending due to t
 
 ## Exact next action
 
-Review `SPEC-011`, then move `WORK-019` to `In Progress` and implement the pure settings contract and normalization tests first. `WORK-019` is the single Ready item; no WORK-019 runtime code has changed yet.
+Refresh the live Work Items queue and select the next dependency-cleared P0 item after WORK-019. Create or confirm its implementation plan and DoR before moving it to `In Progress`.
 
 ## Verification log
 
@@ -63,6 +64,8 @@ Review `SPEC-011`, then move `WORK-019` to `In Progress` and implement the pure 
 - 2026-09-13: Library presentation was visually reviewed in both packaged browsers at 320, 420, and 600 px. The registered Side Panel document was exercised directly because the automation surface does not open browser side-panel chrome through the toolbar action.
 - 2026-09-13: updated Notion `WORK-018` with commit `76226fd`, checked all three acceptance criteria, recorded the automated and Chrome/Edge evidence, set `DoD Complete`, and moved the item to `Done`; a confirming live fetch verified the final properties and content.
 - 2026-09-13: refreshed the live Work Items queue after WORK-018; no item was Ready or In Progress. Selected dependency-cleared P0 `WORK-019`, created and linked `SPEC-011`, expanded its acceptance criteria into testable settings/restart/corruption behavior, completed DoR, and moved only WORK-019 from Inbox to Ready. Confirming live fetches verified both records.
+- 2026-09-13: implemented WORK-019 in commit `0ff9135`. `npm run check` passed 7 Vitest files and 64 tests, TypeScript, and the Vite production build; production JS is 28.60 kB raw / 10.90 kB gzip. `git diff --check` passed with only existing LF-to-CRLF notices.
+- 2026-09-13: packaged WORK-019 verification passed in Google Chrome for Testing 153.0.8010.12 and Microsoft Edge 152.0.4191.66. Both restored `system`, `light`, and `dark` after persistent-profile browser close/reopen; corrupt settings recovered without blank/crash; RTL, one `main`, 320/420/600 px no-overflow layouts, 3px focus outline and offset, and zero console errors or warnings passed. The registered Side Panel document was exercised directly because automation cannot open browser side-panel chrome through the toolbar action.
 
 ## Codex app handoff
 

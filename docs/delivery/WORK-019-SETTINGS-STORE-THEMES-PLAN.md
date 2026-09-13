@@ -1,6 +1,6 @@
 # WORK-019 — Settings Store and Themes Implementation Plan
 
-Status: Ready for implementation
+Status: Completed on 2026-09-13
 Scope: planning only; no runtime code is changed by this document
 Target: one focused implementation session, no later than 2026-09-14
 
@@ -240,3 +240,13 @@ Record exact browser versions, commands, test counts, console errors, and automa
 4. App startup integration and UI tests.
 5. Production build and Chrome/Edge verification.
 6. Notion evidence plus `STATUS.md` and `MEMORY.md` update.
+
+## Completion evidence
+
+- Runtime implementation commit: `0ff9135`.
+- `npm run check`: 7 Vitest files and 64 tests passed; TypeScript and Vite production build passed.
+- Production JS: 28.60 kB raw / 10.90 kB gzip.
+- `git diff --check`: passed with only existing LF-to-CRLF working-copy notices.
+- Google Chrome for Testing 153.0.8010.12 and Microsoft Edge 152.0.4191.66 restored `system`, `light`, and `dark` after persistent-profile browser close/reopen.
+- Both browsers recovered corrupt settings without a blank state, preserved structural RTL and one `main`, had no horizontal overflow at 320/420/600 px, exposed a 3px focus outline and offset, and reported zero console errors or warnings.
+- The Settings & Data route remains disabled; no network request, permission, runtime dependency, non-Arabic UI, or domain-state mutation was introduced.
