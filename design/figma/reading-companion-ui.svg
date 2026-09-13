@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2460" height="1700" viewBox="0 0 2460 1700">
+  <defs>
+    <style>
+      .canvas{fill:#e9e2d5}.panel{fill:#fffdf8;stroke:#d8cebd;stroke-width:1}.bar{fill:#f6f0e5}.ink{fill:#18212b}.muted{fill:#66707a}.accent{fill:#3154a5}.accentSoft{fill:#e8edfa}.success{fill:#1f7257}.successSoft{fill:#e4f2ec}.warn{fill:#9b5a1d}.warnSoft{fill:#fff0d8}.danger{fill:#ad3b42}.dangerSoft{fill:#fae9ea}.rule{stroke:#d8cebd;stroke-width:1}.focus{fill:none;stroke:#3154a5;stroke-width:3}.card{fill:#fffdf8;stroke:#d8cebd;stroke-width:1}.dark{fill:#18212b}.white{fill:#fffdf8}.t{font-family:'Cairo',sans-serif;direction:rtl;unicode-bidi:plaintext}.h1{font-size:25px;font-weight:700}.h2{font-size:19px;font-weight:700}.body{font-size:14px;font-weight:500}.small{font-size:12px;font-weight:500}.tiny{font-size:10px;font-weight:600;letter-spacing:.3px}.num{font-family:'Cairo',sans-serif;font-variant-numeric:tabular-nums}.button{fill:#3154a5}.buttonText{fill:#fffdf8;font-family:'Cairo',sans-serif;font-size:14px;font-weight:700;direction:rtl}.outline{fill:#fffdf8;stroke:#3154a5;stroke-width:1.5}.field{fill:#fffdf8;stroke:#bdb3a3;stroke-width:1.2}.screenLabel{font-family:'Cairo',sans-serif;font-size:15px;font-weight:700;fill:#39424c;direction:rtl}.chip{fill:#eef1f4}.dot{fill:#3154a5}.coverA{fill:#3154a5}.coverB{fill:#b56924}.coverC{fill:#4b7a69}
+    </style>
+  </defs>
+  <rect class="canvas" width="2460" height="1700"/>
+  <text x="2370" y="44" text-anchor="end" class="t h1 ink">مرافق القراءة — UI v1</text>
+  <text x="2370" y="70" text-anchor="end" class="t body muted">نظام محلي عربي RTL • Side Panel • مصدره الـSpec والـworkflows في Notion</text>
+
+  <!-- 01 Onboarding -->
+  <g transform="translate(40 110)">
+    <text x="420" y="-18" text-anchor="end" class="screenLabel">01 — البداية والخصوصية</text>
+    <rect class="panel" width="420" height="730" rx="16"/>
+    <rect class="bar" width="420" height="66" rx="16"/><rect class="bar" y="48" width="420" height="18"/>
+    <text x="388" y="41" text-anchor="end" class="t h2 ink">مرافق القراءة</text><circle cx="31" cy="32" r="5" class="success"/>
+    <g transform="translate(30 102)">
+      <rect width="360" height="180" rx="14" class="dark"/>
+      <path d="M54 44h108v92H54zM198 44h108v92H198" fill="none" stroke="#f6f0e5" stroke-width="2"/>
+      <path d="M180 40v102" stroke="#7e91c8" stroke-width="2"/>
+      <circle cx="180" cy="92" r="20" fill="#3154a5"/>
+      <path d="M171 92l7 7 13-16" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <text x="390" y="330" text-anchor="end" class="t h1 ink">اقرأ بهدف واضح</text>
+    <text x="390" y="361" text-anchor="end" class="t body muted">اختر لماذا تقرأ، وسنرتّب لك جلسة واحدة</text>
+    <text x="390" y="383" text-anchor="end" class="t body muted">تساعدك على الفهم والاسترجاع والتطبيق.</text>
+    <g transform="translate(30 414)">
+      <rect width="360" height="94" rx="12" class="successSoft"/>
+      <circle cx="330" cy="28" r="12" class="success"/><path d="M324 28l4 4 8-10" fill="none" stroke="#fff" stroke-width="2"/>
+      <text x="305" y="32" text-anchor="end" class="t body success">بياناتك تبقى على جهازك</text>
+      <text x="330" y="59" text-anchor="end" class="t small muted">لا حساب، لا سحابة، ولا قراءة لمحتوى PDF.</text>
+      <text x="330" y="79" text-anchor="end" class="t small muted">يمكنك تصدير كل بياناتك متى شئت.</text>
+    </g>
+    <rect x="30" y="642" width="360" height="48" rx="10" class="button"/><text x="210" y="672" text-anchor="middle" class="buttonText">ابدأ محليًا</text>
+    <text x="210" y="715" text-anchor="middle" class="t tiny muted">متوافق مع Chrome وEdge</text>
+  </g>
+
+  <!-- 02 Library -->
+  <g transform="translate(530 110)">
+    <text x="420" y="-18" text-anchor="end" class="screenLabel">02 — مكتبة الكتب</text>
+    <rect class="panel" width="420" height="730" rx="16"/>
+    <rect class="bar" width="420" height="78" rx="16"/><rect class="bar" y="58" width="420" height="20"/>
+    <text x="390" y="36" text-anchor="end" class="t h2 ink">مكتبتي</text><text x="390" y="60" text-anchor="end" class="t small muted">3 كتب • جلسة واحدة تحتاج استكمالًا</text>
+    <rect x="30" y="98" width="360" height="56" rx="10" class="warnSoft"/>
+    <text x="368" y="122" text-anchor="end" class="t body warn">جلسة متوقفة بأمان</text><text x="368" y="143" text-anchor="end" class="t small muted">Clean Architecture • خطوة القراءة المركزة</text>
+    <text x="30" y="134" class="t small accent">استكمل</text>
+    <text x="390" y="192" text-anchor="end" class="t h2 ink">تابع القراءة</text>
+    <g transform="translate(30 214)">
+      <rect width="360" height="142" rx="14" class="card"/><rect x="272" y="18" width="68" height="90" rx="6" class="coverA"/>
+      <text x="255" y="40" text-anchor="end" class="t body ink">Clean Architecture</text><text x="255" y="63" text-anchor="end" class="t small muted">فهم عميق • ص 84–102</text>
+      <rect x="30" y="91" width="220" height="5" rx="2.5" fill="#e2ded6"/><rect x="153" y="91" width="97" height="5" rx="2.5" class="accent"/>
+      <text x="250" y="121" text-anchor="end" class="t small muted">التقدم 44%</text><text x="30" y="121" class="t small accent">ابدأ جلسة</text>
+    </g>
+    <g transform="translate(30 374)">
+      <rect width="360" height="112" rx="14" class="card"/><rect x="288" y="16" width="52" height="72" rx="5" class="coverB"/>
+      <text x="272" y="37" text-anchor="end" class="t body ink">التفكير النقدي</text><text x="272" y="61" text-anchor="end" class="t small muted">قراءة نقدية • 3 جلسات</text><text x="30" y="82" class="t small accent">عرض التقدم</text>
+    </g>
+    <g transform="translate(30 504)">
+      <rect width="360" height="112" rx="14" class="card"/><rect x="288" y="16" width="52" height="72" rx="5" class="coverC"/>
+      <text x="272" y="37" text-anchor="end" class="t body ink">التعلم الفعّال</text><text x="272" y="61" text-anchor="end" class="t small muted">تعلم مهارة • جلسة واحدة</text><text x="30" y="82" class="t small accent">عرض التقدم</text>
+    </g>
+    <rect x="30" y="650" width="360" height="48" rx="10" class="button"/><text x="210" y="680" text-anchor="middle" class="buttonText">أضف كتابًا</text>
+  </g>
+
+  <!-- 03 New Book -->
+  <g transform="translate(1020 110)">
+    <text x="420" y="-18" text-anchor="end" class="screenLabel">03 — إضافة كتاب</text>
+    <rect class="panel" width="420" height="730" rx="16"/>
+    <rect class="bar" width="420" height="66" rx="16"/><rect class="bar" y="48" width="420" height="18"/>
+    <text x="390" y="41" text-anchor="end" class="t h2 ink">كتاب جديد</text><text x="30" y="41" class="t body accent">إلغاء</text>
+    <text x="390" y="106" text-anchor="end" class="t body ink">عنوان الكتاب</text><rect x="30" y="120" width="360" height="48" rx="9" class="field"/><text x="370" y="150" text-anchor="end" class="t body ink">Designing Data-Intensive Applications</text>
+    <text x="390" y="204" text-anchor="end" class="t body ink">المؤلف <tspan class="muted">(اختياري)</tspan></text><rect x="30" y="218" width="360" height="48" rx="9" class="field"/><text x="370" y="248" text-anchor="end" class="t body muted">Martin Kleppmann</text>
+    <text x="390" y="302" text-anchor="end" class="t body ink">عدد الصفحات</text><rect x="210" y="316" width="180" height="48" rx="9" class="field"/><text x="370" y="346" text-anchor="end" class="t body ink num">616</text>
+    <text x="190" y="302" text-anchor="end" class="t body ink">صفحتك الحالية</text><rect x="30" y="316" width="160" height="48" rx="9" class="field"/><text x="170" y="346" text-anchor="end" class="t body ink num">1</text>
+    <rect x="30" y="399" width="360" height="84" rx="12" class="accentSoft"/><text x="370" y="425" text-anchor="end" class="t body accent">اكتشفنا PDF مفتوحًا</text><text x="370" y="450" text-anchor="end" class="t small muted">العنوان والرابط فقط؛ لن نقرأ محتوى الملف.</text><text x="370" y="470" text-anchor="end" class="t small muted">يمكنك تعديل البيانات قبل الحفظ.</text>
+    <rect x="30" y="642" width="360" height="48" rx="10" class="button"/><text x="210" y="672" text-anchor="middle" class="buttonText">احفظ واختر هدفك</text>
+  </g>
+
+  <!-- 04 Goal -->
+  <g transform="translate(1510 110)">
+    <text x="420" y="-18" text-anchor="end" class="screenLabel">04 — اختيار الهدف</text>
+    <rect class="panel" width="420" height="730" rx="16"/>
+    <rect class="bar" width="420" height="76" rx="16"/><rect class="bar" y="56" width="420" height="20"/>
+    <text x="390" y="34" text-anchor="end" class="t h2 ink">لماذا تقرأ هذا الكتاب؟</text><text x="390" y="58" text-anchor="end" class="t small muted">اختر هدفًا رئيسيًا واحدًا</text>
+    <g transform="translate(30 98)">
+      <rect width="360" height="64" rx="11" class="accentSoft"/><rect x="0" y="0" width="360" height="64" rx="11" class="focus"/><circle cx="329" cy="32" r="10" class="accent"/><circle cx="329" cy="32" r="4" class="white"/><text x="305" y="28" text-anchor="end" class="t body ink">الفهم العميق</text><text x="305" y="48" text-anchor="end" class="t small muted">افهم البنية واشرحها بكلماتك</text>
+      <rect y="76" width="360" height="58" rx="11" class="card"/><circle cx="329" cy="105" r="10" fill="#fff" stroke="#a8a095"/><text x="305" y="110" text-anchor="end" class="t body ink">المذاكرة لامتحان</text>
+      <rect y="146" width="360" height="58" rx="11" class="card"/><circle cx="329" cy="175" r="10" fill="#fff" stroke="#a8a095"/><text x="305" y="180" text-anchor="end" class="t body ink">تعلم مهارة وتطبيقها</text>
+      <rect y="216" width="360" height="58" rx="11" class="card"/><circle cx="329" cy="245" r="10" fill="#fff" stroke="#a8a095"/><text x="305" y="250" text-anchor="end" class="t body ink">استخراج أهم الأفكار</text>
+      <rect y="286" width="360" height="58" rx="11" class="card"/><circle cx="329" cy="315" r="10" fill="#fff" stroke="#a8a095"/><text x="305" y="320" text-anchor="end" class="t body ink">تحسين التركيز</text>
+    </g>
+    <text x="390" y="480" text-anchor="end" class="t h2 ink">أهداف ثانوية <tspan class="muted">(حتى هدفين)</tspan></text>
+    <g transform="translate(30 500)"><rect width="158" height="36" rx="18" class="chip"/><text x="79" y="24" text-anchor="middle" class="t small ink">إنهاء قبل موعد</text><rect x="170" width="130" height="36" rx="18" class="accentSoft"/><text x="235" y="24" text-anchor="middle" class="t small accent">تحسين التركيز ✓</text></g>
+    <rect x="30" y="642" width="360" height="48" rx="10" class="button"/><text x="210" y="672" text-anchor="middle" class="buttonText">أنشئ بروتوكول القراءة</text>
+  </g>
+
+  <!-- 05 Protocol -->
+  <g transform="translate(2000 110)">
+    <text x="420" y="-18" text-anchor="end" class="screenLabel">05 — معاينة البروتوكول</text>
+    <rect class="panel" width="420" height="730" rx="16"/>
+    <rect class="bar" width="420" height="72" rx="16"/><rect class="bar" y="54" width="420" height="18"/>
+    <text x="390" y="34" text-anchor="end" class="t h2 ink">بروتوكولك المقترح</text><text x="390" y="57" text-anchor="end" class="t small muted">Deep Technical Reading • نسخة 1.0</text>
+    <g transform="translate(30 94)">
+      <rect width="360" height="98" rx="14" class="dark"/><text x="330" y="31" text-anchor="end" class="t small" fill="#b7c3e5">لأن هدفك هو الفهم العميق</text><text x="330" y="60" text-anchor="end" class="t h2 white">اقرأ 18 صفحة في 50 دقيقة</text><text x="330" y="82" text-anchor="end" class="t small" fill="#d6dce9">ثم استرجع واشرح وراجع</text>
+    </g>
+    <text x="390" y="230" text-anchor="end" class="t h2 ink">خطوات الجلسة</text>
+    <g transform="translate(48 250)">
+      <line x1="314" y1="15" x2="314" y2="296" stroke="#c9c1b4" stroke-width="2"/>
+      <circle cx="314" cy="18" r="13" class="accent"/><text x="314" y="23" text-anchor="middle" fill="#fff" class="t small">1</text><text x="287" y="17" text-anchor="end" class="t body ink">معاينة وبناء أسئلة</text><text x="287" y="38" text-anchor="end" class="t small muted">5 دقائق</text>
+      <circle cx="314" cy="82" r="13" class="accent"/><text x="314" y="87" text-anchor="middle" fill="#fff" class="t small">2</text><text x="287" y="81" text-anchor="end" class="t body ink">قراءة مركّزة</text><text x="287" y="102" text-anchor="end" class="t small muted">50 دقيقة • ص 84–102</text>
+      <circle cx="314" cy="146" r="13" class="accent"/><text x="314" y="151" text-anchor="middle" fill="#fff" class="t small">3</text><text x="287" y="145" text-anchor="end" class="t body ink">استرجاع من الذاكرة</text><text x="287" y="166" text-anchor="end" class="t small muted">7 دقائق</text>
+      <circle cx="314" cy="210" r="13" class="accent"/><text x="314" y="215" text-anchor="middle" fill="#fff" class="t small">4</text><text x="287" y="209" text-anchor="end" class="t body ink">اشرح الفكرة ببساطة</text><text x="287" y="230" text-anchor="end" class="t small muted">5 دقائق</text>
+      <circle cx="314" cy="274" r="13" class="accent"/><text x="314" y="279" text-anchor="middle" fill="#fff" class="t small">5</text><text x="287" y="273" text-anchor="end" class="t body ink">راجع وسجّل تطبيقًا</text><text x="287" y="294" text-anchor="end" class="t small muted">8 دقائق</text>
+    </g>
+    <rect x="30" y="642" width="360" height="48" rx="10" class="button"/><text x="210" y="672" text-anchor="middle" class="buttonText">ابدأ الجلسة</text>
+  </g>
+
+  <!-- 06 Focus -->
+  <g transform="translate(40 910)">
+    <text x="420" y="-18" text-anchor="end" class="screenLabel">06 — جلسة التركيز</text>
+    <rect class="panel" width="420" height="730" rx="16"/>
+    <rect class="bar" width="420" height="74" rx="16"/><rect class="bar" y="54" width="420" height="20"/>
+    <text x="390" y="32" text-anchor="end" class="t body ink">Clean Architecture</text><text x="390" y="56" text-anchor="end" class="t small muted">الخطوة 2 من 5 • قراءة مركزة</text><text x="30" y="43" class="t small accent">إيقاف مؤقت</text>
+    <text x="210" y="172" text-anchor="middle" class="num" font-family="Cairo" font-size="58" font-weight="700" fill="#18212b">42:18</text><text x="210" y="201" text-anchor="middle" class="t small muted">متبقٍ من 50 دقيقة</text>
+    <rect x="30" y="232" width="360" height="104" rx="14" class="accentSoft"/><text x="370" y="263" text-anchor="end" class="t body accent">الآن</text><text x="370" y="291" text-anchor="end" class="t h2 ink">اقرأ الصفحات 84–102</text><text x="370" y="316" text-anchor="end" class="t small muted">ابحث عن حدود المسؤولية بين الطبقات.</text>
+    <text x="390" y="382" text-anchor="end" class="t body ink">ملاحظة سريعة</text><rect x="30" y="396" width="360" height="112" rx="10" class="field"/><text x="370" y="426" text-anchor="end" class="t body muted">اكتب فكرة أو سؤالًا دون مغادرة الجلسة…</text>
+    <g transform="translate(30 536)"><rect width="172" height="44" rx="9" class="outline"/><text x="86" y="28" text-anchor="middle" class="t body accent">سجّل تشتتًا</text><rect x="188" width="172" height="44" rx="9" class="outline"/><text x="274" y="28" text-anchor="middle" class="t body accent">أضف سؤالًا</text></g>
+    <rect x="30" y="642" width="360" height="48" rx="10" class="button"/><text x="210" y="672" text-anchor="middle" class="buttonText">أنهي القراءة وانتقل للاسترجاع</text>
+  </g>
+
+  <!-- 07 Recall -->
+  <g transform="translate(530 910)">
+    <text x="420" y="-18" text-anchor="end" class="screenLabel">07 — الاسترجاع والشرح</text>
+    <rect class="panel" width="420" height="730" rx="16"/>
+    <rect class="bar" width="420" height="72" rx="16"/><rect class="bar" y="54" width="420" height="18"/>
+    <text x="390" y="34" text-anchor="end" class="t h2 ink">استرجع قبل أن تراجع</text><text x="390" y="57" text-anchor="end" class="t small muted">الخطوة 3 من 5 • بدون الرجوع للكتاب</text>
+    <text x="390" y="114" text-anchor="end" class="t body ink">ما أهم ثلاث أفكار تتذكرها؟</text><rect x="30" y="130" width="360" height="168" rx="10" class="field"/>
+    <text x="370" y="162" text-anchor="end" class="t body ink">1. حدود الطبقات تمنع تسرب التفاصيل.</text><text x="370" y="196" text-anchor="end" class="t body ink">2. الاعتماد يتجه نحو السياسات.</text><text x="370" y="230" text-anchor="end" class="t body muted">3. …</text>
+    <text x="390" y="342" text-anchor="end" class="t body ink">اشرح الفكرة كأنك تعلّمها لشخص آخر</text><rect x="30" y="358" width="360" height="136" rx="10" class="field"/><text x="370" y="390" text-anchor="end" class="t body muted">اكتب شرحًا بسيطًا، وحدد أين توقفت…</text>
+    <rect x="30" y="520" width="360" height="72" rx="11" class="warnSoft"/><text x="370" y="548" text-anchor="end" class="t body warn">وجدت فجوة في الفهم؟</text><text x="370" y="572" text-anchor="end" class="t small muted">سجّلها الآن وسنضعها في المراجعة.</text><text x="48" y="561" class="t small warn">سجّل فجوة</text>
+    <rect x="30" y="642" width="360" height="48" rx="10" class="button"/><text x="210" y="672" text-anchor="middle" class="buttonText">احفظ وانتقل للمراجعة</text>
+  </g>
+
+  <!-- 08 Summary -->
+  <g transform="translate(1020 910)">
+    <text x="420" y="-18" text-anchor="end" class="screenLabel">08 — ملخص الجلسة</text>
+    <rect class="panel" width="420" height="730" rx="16"/>
+    <rect class="bar" width="420" height="76" rx="16"/><rect class="bar" y="56" width="420" height="20"/>
+    <text x="390" y="34" text-anchor="end" class="t h2 ink">أحسنت — اكتملت الجلسة</text><text x="390" y="58" text-anchor="end" class="t small muted">تم الحفظ محليًا • اليوم 10:42 ص</text>
+    <g transform="translate(30 100)"><rect width="360" height="104" rx="14" class="successSoft"/><circle cx="326" cy="50" r="22" class="success"/><path d="M315 50l8 8 16-20" fill="none" stroke="#fff" stroke-width="4"/><text x="286" y="42" text-anchor="end" class="t h2 ink">18 صفحة • 61 دقيقة</text><text x="286" y="69" text-anchor="end" class="t small muted">اكتملت خطوات الاسترجاع والشرح</text></g>
+    <text x="390" y="244" text-anchor="end" class="t h2 ink">حصيلة التعلم</text>
+    <g transform="translate(30 264)"><rect width="110" height="88" rx="12" class="card"/><text x="55" y="35" text-anchor="middle" class="num" font-size="24" font-weight="700" fill="#3154a5">2</text><text x="55" y="61" text-anchor="middle" class="t small muted">تطبيقات</text><rect x="125" width="110" height="88" rx="12" class="card"/><text x="180" y="35" text-anchor="middle" class="num" font-size="24" font-weight="700" fill="#9b5a1d">1</text><text x="180" y="61" text-anchor="middle" class="t small muted">فجوة</text><rect x="250" width="110" height="88" rx="12" class="card"/><text x="305" y="35" text-anchor="middle" class="num" font-size="24" font-weight="700" fill="#1f7257">4</text><text x="305" y="61" text-anchor="middle" class="t small muted">أفكار</text></g>
+    <text x="390" y="397" text-anchor="end" class="t h2 ink">ما التالي؟</text><rect x="30" y="418" width="360" height="108" rx="14" class="accentSoft"/><text x="370" y="450" text-anchor="end" class="t body accent">الجلسة القادمة</text><text x="370" y="478" text-anchor="end" class="t body ink">راجع الفجوة ثم اقرأ ص 103–120</text><text x="370" y="503" text-anchor="end" class="t small muted">مقترحة غدًا • 60 دقيقة</text>
+    <rect x="30" y="642" width="360" height="48" rx="10" class="button"/><text x="210" y="672" text-anchor="middle" class="buttonText">عرض تقدم الكتاب</text>
+  </g>
+
+  <!-- 09 Progress -->
+  <g transform="translate(1510 910)">
+    <text x="420" y="-18" text-anchor="end" class="screenLabel">09 — تقدم الكتاب</text>
+    <rect class="panel" width="420" height="730" rx="16"/>
+    <rect class="bar" width="420" height="84" rx="16"/><rect class="bar" y="64" width="420" height="20"/>
+    <text x="390" y="32" text-anchor="end" class="t h2 ink">Clean Architecture</text><text x="390" y="56" text-anchor="end" class="t small muted">فهم عميق • Deep Technical Reading</text><text x="30" y="43" class="t small accent">تعديل الخطة</text>
+    <g transform="translate(30 108)"><text x="360" y="22" text-anchor="end" class="t body ink">التقدم</text><text x="0" y="22" class="num" font-size="14" fill="#3154a5">44%</text><rect y="36" width="360" height="8" rx="4" fill="#e2ded6"/><rect x="202" y="36" width="158" height="8" rx="4" class="accent"/><text x="360" y="70" text-anchor="end" class="t small muted">102 من 230 صفحة</text><text x="0" y="70" class="t small muted">7 جلسات</text></g>
+    <text x="390" y="230" text-anchor="end" class="t h2 ink">مؤشرات التعلم المحلية</text>
+    <g transform="translate(30 250)"><rect width="172" height="86" rx="12" class="card"/><text x="148" y="31" text-anchor="end" class="num" font-size="22" font-weight="700" fill="#18212b">86%</text><text x="148" y="59" text-anchor="end" class="t small muted">إكمال الجلسات</text><rect x="188" width="172" height="86" rx="12" class="card"/><text x="336" y="31" text-anchor="end" class="num" font-size="22" font-weight="700" fill="#18212b">6/7</text><text x="336" y="59" text-anchor="end" class="t small muted">استرجاع مكتمل</text></g>
+    <text x="390" y="380" text-anchor="end" class="t h2 ink">فجوات تحتاج مراجعة</text>
+    <g transform="translate(30 400)"><rect width="360" height="68" rx="11" class="warnSoft"/><text x="338" y="27" text-anchor="end" class="t body warn">حدود الـUse Cases</text><text x="338" y="49" text-anchor="end" class="t small muted">من جلسة 12 سبتمبر • ص 96</text><text x="22" y="39" class="t small warn">راجع</text><rect y="80" width="360" height="68" rx="11" class="card"/><text x="338" y="107" text-anchor="end" class="t body ink">تدفق الاعتماد</text><text x="338" y="129" text-anchor="end" class="t small muted">حُلّت بعد مراجعتين</text><text x="22" y="119" class="t small success">محلولة</text></g>
+    <rect x="30" y="642" width="360" height="48" rx="10" class="button"/><text x="210" y="672" text-anchor="middle" class="buttonText">ابدأ الجلسة التالية</text>
+  </g>
+
+  <!-- 10 Settings -->
+  <g transform="translate(2000 910)">
+    <text x="420" y="-18" text-anchor="end" class="screenLabel">10 — الإعدادات والبيانات</text>
+    <rect class="panel" width="420" height="730" rx="16"/>
+    <rect class="bar" width="420" height="66" rx="16"/><rect class="bar" y="48" width="420" height="18"/><text x="390" y="41" text-anchor="end" class="t h2 ink">الإعدادات والبيانات</text>
+    <text x="390" y="108" text-anchor="end" class="t h2 ink">المظهر</text>
+    <g transform="translate(30 126)"><rect width="360" height="62" rx="11" class="card"/><text x="330" y="37" text-anchor="end" class="t body ink">السمة</text><rect x="28" y="14" width="118" height="34" rx="17" class="accentSoft"/><text x="87" y="36" text-anchor="middle" class="t small accent">حسب النظام</text></g>
+    <text x="390" y="232" text-anchor="end" class="t h2 ink">التركيز</text>
+    <g transform="translate(30 250)"><rect width="360" height="62" rx="11" class="card"/><text x="330" y="27" text-anchor="end" class="t body ink">تقليل الحركة</text><text x="330" y="48" text-anchor="end" class="t small muted">احترم إعداد النظام</text><rect x="32" y="18" width="46" height="28" rx="14" class="accent"/><circle cx="63" cy="32" r="10" class="white"/></g>
+    <text x="390" y="356" text-anchor="end" class="t h2 ink">ملكية البيانات</text>
+    <g transform="translate(30 376)"><rect width="360" height="72" rx="11" class="card"/><text x="330" y="29" text-anchor="end" class="t body ink">تصدير نسخة كاملة</text><text x="330" y="51" text-anchor="end" class="t small muted">JSON أو Markdown</text><text x="28" y="41" class="t small accent">تصدير</text><rect y="84" width="360" height="72" rx="11" class="card"/><text x="330" y="113" text-anchor="end" class="t body ink">استيراد نسخة</text><text x="330" y="135" text-anchor="end" class="t small muted">سنفحصها ونعرض ملخصًا قبل الاستبدال</text><text x="28" y="125" class="t small accent">اختيار ملف</text></g>
+    <rect x="30" y="558" width="360" height="64" rx="11" class="dangerSoft"/><text x="370" y="584" text-anchor="end" class="t body danger">تعذر استيراد الملف</text><text x="370" y="607" text-anchor="end" class="t small muted">لم تتغير بياناتك الحالية. جرّب نسخة صالحة.</text>
+    <text x="210" y="684" text-anchor="middle" class="t tiny muted">كل البيانات محفوظة على هذا الجهاز</text>
+  </g>
+</svg>

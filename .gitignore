@@ -1,0 +1,27 @@
+# Dependencies and builds
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# Browser extension packages
+*.crx
+*.zip
+

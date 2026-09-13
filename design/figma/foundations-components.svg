@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2460" height="1700" viewBox="0 0 2460 1700">
+<defs><style>
+.bg{fill:#eee8dc}.sheet{fill:#fffdf8}.ink{fill:#18212b}.muted{fill:#66707a}.blue{fill:#3154a5}.blue2{fill:#e8edfa}.green{fill:#1f7257}.green2{fill:#e4f2ec}.amber{fill:#9b5a1d}.amber2{fill:#fff0d8}.red{fill:#ad3b42}.red2{fill:#fae9ea}.line{stroke:#d8cebd;stroke-width:1}.card{fill:#fffdf8;stroke:#d8cebd;stroke-width:1}.field{fill:#fffdf8;stroke:#aaa194;stroke-width:1.3}.t{font-family:'Cairo',sans-serif;direction:rtl;unicode-bidi:plaintext}.h1{font-size:38px;font-weight:800}.h2{font-size:24px;font-weight:700}.h3{font-size:17px;font-weight:700}.body{font-size:14px;font-weight:500}.small{font-size:12px;font-weight:500}.tiny{font-size:10px;font-weight:600}.label{font-family:'Cairo',sans-serif;font-size:12px;font-weight:700;fill:#66707a}.btn{fill:#3154a5}.btnText{font-family:'Cairo',sans-serif;font-size:14px;font-weight:700;fill:#fff;direction:rtl}.focus{fill:none;stroke:#3154a5;stroke-width:3}.disabled{opacity:.38}.dark{fill:#18212b}.white{fill:#fffdf8}
+</style></defs>
+<rect class="bg" width="2460" height="1700"/><rect x="32" y="32" width="2396" height="1636" rx="22" class="sheet"/>
+<text x="2370" y="96" text-anchor="end" class="t h1 ink">نظام واجهة مرافق القراءة</text><text x="2370" y="132" text-anchor="end" class="t body muted">Foundations + Components • v1.0 • Arabic RTL Side Panel</text>
+<line x1="90" y1="170" x2="2370" y2="170" class="line"/>
+
+<!-- Foundations left -->
+<g transform="translate(90 220)">
+<text x="1040" y="0" text-anchor="end" class="t h2 ink">الأساسات</text>
+<text x="1040" y="58" text-anchor="end" class="t h3 ink">الألوان الدلالية</text>
+<g transform="translate(0 82)">
+<rect x="840" width="200" height="110" rx="12" fill="#18212b"/><text x="1020" y="80" text-anchor="end" class="t small white">Ink / #18212B</text>
+<rect x="624" width="200" height="110" rx="12" fill="#3154a5"/><text x="804" y="80" text-anchor="end" class="t small white">Action / #3154A5</text>
+<rect x="408" width="200" height="110" rx="12" fill="#1f7257"/><text x="588" y="80" text-anchor="end" class="t small white">Success / #1F7257</text>
+<rect x="192" width="200" height="110" rx="12" fill="#9b5a1d"/><text x="372" y="80" text-anchor="end" class="t small white">Warning / #9B5A1D</text>
+<rect width="176" height="110" rx="12" fill="#ad3b42"/><text x="156" y="80" text-anchor="end" class="t small white">Danger / #AD3B42</text>
+</g>
+<g transform="translate(0 210)">
+<rect x="840" width="200" height="74" rx="10" fill="#fffdf8" stroke="#d8cebd"/><text x="1020" y="47" text-anchor="end" class="t small ink">Surface / #FFFDF8</text>
+<rect x="624" width="200" height="74" rx="10" fill="#f6f0e5"/><text x="804" y="47" text-anchor="end" class="t small ink">Canvas / #F6F0E5</text>
+<rect x="408" width="200" height="74" rx="10" fill="#e8edfa"/><text x="588" y="47" text-anchor="end" class="t small blue">Action soft</text>
+<rect x="192" width="200" height="74" rx="10" fill="#e4f2ec"/><text x="372" y="47" text-anchor="end" class="t small green">Success soft</text>
+<rect width="176" height="74" rx="10" fill="#fae9ea"/><text x="156" y="47" text-anchor="end" class="t small red">Danger soft</text>
+</g>
+
+<text x="1040" y="356" text-anchor="end" class="t h3 ink">الخط — Cairo</text>
+<text x="1040" y="412" text-anchor="end" class="t" font-size="38" font-weight="800" fill="#18212b">جلسة قراءة مركّزة</text><text x="1040" y="449" text-anchor="end" class="label">Display 38 / ExtraBold / 48</text>
+<text x="1040" y="502" text-anchor="end" class="t h2 ink">افهم ثم استرجع واشرح</text><text x="1040" y="530" text-anchor="end" class="label">Heading 24 / Bold / 34</text>
+<text x="1040" y="576" text-anchor="end" class="t body ink">النص الأساسي قصير ومباشر، ويعرض الفعل التالي بوضوح.</text><text x="1040" y="603" text-anchor="end" class="label">Body 14 / Medium / 22</text>
+<text x="1040" y="646" text-anchor="end" class="t small muted">التفاصيل الثانوية لا تزاحم مهمة القارئ الحالية.</text><text x="1040" y="670" text-anchor="end" class="label">Small 12 / Medium / 20</text>
+
+<text x="1040" y="735" text-anchor="end" class="t h3 ink">المسافات والحواف</text>
+<g transform="translate(0 760)"><rect x="1000" width="40" height="24" class="blue"/><text x="986" y="18" text-anchor="end" class="label">4</text><rect x="920" y="40" width="80" height="24" class="blue"/><text x="906" y="58" text-anchor="end" class="label">8</text><rect x="840" y="80" width="120" height="24" class="blue"/><text x="826" y="98" text-anchor="end" class="label">12</text><rect x="720" y="120" width="160" height="24" class="blue"/><text x="706" y="138" text-anchor="end" class="label">16</text><rect x="520" y="160" width="240" height="24" class="blue"/><text x="506" y="178" text-anchor="end" class="label">24</text><rect x="240" y="200" width="320" height="24" class="blue"/><text x="226" y="218" text-anchor="end" class="label">32</text></g>
+<g transform="translate(0 1020)"><rect x="840" width="200" height="92" rx="8" class="card"/><text x="940" y="55" text-anchor="middle" class="label">Radius 8 • fields</text><rect x="620" width="200" height="92" rx="12" class="card"/><text x="720" y="55" text-anchor="middle" class="label">Radius 12 • controls</text><rect x="400" width="200" height="92" rx="16" class="card"/><text x="500" y="55" text-anchor="middle" class="label">Radius 16 • panels</text><rect x="180" width="200" height="92" rx="46" class="card"/><text x="280" y="55" text-anchor="middle" class="label">Full • chips only</text></g>
+
+<text x="1040" y="1170" text-anchor="end" class="t h3 ink">قواعد RTL والوصول</text>
+<g transform="translate(0 1194)"><rect width="1040" height="178" rx="14" fill="#f6f0e5"/>
+<text x="1010" y="38" text-anchor="end" class="t body ink">• المحاذاة الأساسية إلى اليمين، والأرقام الزمنية tabular.</text><text x="1010" y="72" text-anchor="end" class="t body ink">• هدف النقر الأدنى 44px، والتركيز حلقة 3px لا تعتمد على اللون وحده.</text><text x="1010" y="106" text-anchor="end" class="t body ink">• فعل رئيسي واحد في Focus Session؛ الحالات تشرح ما حُفظ وما التالي.</text><text x="1010" y="140" text-anchor="end" class="t body ink">• الحركة 150–250ms للحالة فقط، مع Reduced Motion.</text></g>
+</g>
+
+<line x1="1190" y1="220" x2="1190" y2="1580" class="line"/>
+
+<!-- Components right -->
+<g transform="translate(1280 220)">
+<text x="1090" y="0" text-anchor="end" class="t h2 ink">المكوّنات وحالاتها</text>
+<text x="1090" y="58" text-anchor="end" class="t h3 ink">Button</text>
+<g transform="translate(0 82)"><rect x="830" width="260" height="48" rx="10" class="btn"/><text x="960" y="30" text-anchor="middle" class="btnText">ابدأ الجلسة</text><rect x="550" width="260" height="48" rx="10" fill="#24458d"/><text x="680" y="30" text-anchor="middle" class="btnText">Hover</text><rect x="270" width="260" height="48" rx="10" fill="#1b3776"/><text x="400" y="30" text-anchor="middle" class="btnText">Pressed</text><g class="disabled"><rect width="250" height="48" rx="10" class="btn"/><text x="125" y="30" text-anchor="middle" class="btnText">Disabled</text></g></g>
+<g transform="translate(0 148)"><rect x="830" width="260" height="48" rx="10" fill="#fff" stroke="#3154a5" stroke-width="1.5"/><text x="960" y="30" text-anchor="middle" class="t body blue">فعل ثانوي</text><rect x="550" width="260" height="48" rx="10" fill="#e8edfa"/><text x="680" y="30" text-anchor="middle" class="t body blue">Hover</text><rect x="270" width="260" height="48" rx="10" fill="#fff" stroke="#3154a5" stroke-width="3"/><text x="400" y="30" text-anchor="middle" class="t body blue">Focus</text><rect width="250" height="48" rx="10" fill="#fae9ea"/><text x="125" y="30" text-anchor="middle" class="t body red">إلغاء الجلسة</text></g>
+
+<text x="1090" y="250" text-anchor="end" class="t h3 ink">Input + validation</text>
+<g transform="translate(0 272)"><text x="1090" y="0" text-anchor="end" class="t small ink">عنوان الكتاب</text><rect x="730" y="14" width="360" height="48" rx="9" class="field"/><text x="1070" y="44" text-anchor="end" class="t body ink">Clean Architecture</text><text x="710" y="0" text-anchor="end" class="t small red">عدد الصفحات</text><rect x="350" y="14" width="340" height="48" rx="9" fill="#fff" stroke="#ad3b42" stroke-width="1.5"/><text x="670" y="44" text-anchor="end" class="t body red">0</text><text x="690" y="83" text-anchor="end" class="t small red">أدخل عددًا أكبر من صفحتك الحالية.</text><text x="330" y="0" text-anchor="end" class="t small muted">ملاحظة</text><rect y="14" width="310" height="86" rx="9" class="field"/><text x="290" y="44" text-anchor="end" class="t body muted">اكتب فكرة قصيرة…</text></g>
+
+<text x="1090" y="414" text-anchor="end" class="t h3 ink">Choice + Toggle + Chip</text>
+<g transform="translate(0 436)"><rect x="700" width="390" height="66" rx="11" class="blue2"/><rect x="700" width="390" height="66" rx="11" class="focus"/><circle cx="1058" cy="33" r="10" class="blue"/><circle cx="1058" cy="33" r="4" class="white"/><text x="1034" y="38" text-anchor="end" class="t body ink">الفهم العميق</text><rect x="500" y="10" width="168" height="44" rx="22" class="blue2"/><text x="584" y="37" text-anchor="middle" class="t small blue">تحسين التركيز ✓</text><rect x="390" y="19" width="54" height="30" rx="15" class="blue"/><circle cx="427" cy="34" r="11" class="white"/><text x="368" y="39" text-anchor="end" class="t body ink">تقليل الحركة</text></g>
+
+<text x="1090" y="558" text-anchor="end" class="t h3 ink">Status banners</text>
+<g transform="translate(0 580)"><rect x="560" width="530" height="70" rx="12" class="green2"/><text x="1065" y="29" text-anchor="end" class="t body green">تم الحفظ محليًا</text><text x="1065" y="51" text-anchor="end" class="t small muted">يمكنك إغلاق اللوحة واستكمال الجلسة لاحقًا.</text><rect y="0" width="530" height="70" rx="12" class="amber2"/><text x="505" y="29" text-anchor="end" class="t body amber">جلسة متوقفة بأمان</text><text x="505" y="51" text-anchor="end" class="t small muted">سنعود إلى آخر خطوة محفوظة.</text><rect x="560" y="84" width="530" height="70" rx="12" class="red2"/><text x="1065" y="113" text-anchor="end" class="t body red">تعذر استيراد الملف</text><text x="1065" y="135" text-anchor="end" class="t small muted">لم تتغير بياناتك الحالية. اختر نسخة صالحة.</text><rect y="84" width="530" height="70" rx="12" class="blue2"/><text x="505" y="113" text-anchor="end" class="t body blue">لماذا هذا البروتوكول؟</text><text x="505" y="135" text-anchor="end" class="t small muted">اختير لأن هدفك الرئيسي هو الفهم العميق.</text></g>
+
+<text x="1090" y="786" text-anchor="end" class="t h3 ink">Book row + Session step</text>
+<g transform="translate(0 808)"><rect x="560" width="530" height="124" rx="14" class="card"/><rect x="1006" y="16" width="62" height="82" rx="5" class="blue"/><text x="986" y="34" text-anchor="end" class="t body ink">Clean Architecture</text><text x="986" y="59" text-anchor="end" class="t small muted">فهم عميق • ص 84–102</text><rect x="686" y="83" width="290" height="5" rx="3" fill="#e2ded6"/><rect x="850" y="83" width="126" height="5" rx="3" class="blue"/><text x="590" y="89" class="t small blue">ابدأ جلسة</text><rect y="0" width="530" height="124" rx="14" class="card"/><circle cx="488" cy="34" r="14" class="blue"/><text x="488" y="39" text-anchor="middle" class="t small white">2</text><text x="454" y="32" text-anchor="end" class="t body ink">قراءة مركّزة</text><text x="454" y="55" text-anchor="end" class="t small muted">50 دقيقة • ص 84–102</text><rect x="24" y="78" width="482" height="6" rx="3" fill="#e2ded6"/><rect x="244" y="78" width="262" height="6" rx="3" class="blue"/><text x="506" y="108" text-anchor="end" class="t small muted">42:18 متبقية</text></g>
+
+<text x="1090" y="986" text-anchor="end" class="t h3 ink">Timer + Progress + Empty</text>
+<g transform="translate(0 1008)"><rect x="740" width="350" height="166" rx="14" class="dark"/><text x="1064" y="34" text-anchor="end" class="t small" fill="#b7c3e5">قراءة مركّزة</text><text x="915" y="100" text-anchor="middle" font-family="Cairo" font-size="50" font-weight="700" fill="#fff">42:18</text><rect x="754" y="132" width="322" height="6" rx="3" fill="#43505e"/><rect x="884" y="132" width="192" height="6" rx="3" fill="#7e91c8"/><rect x="370" width="340" height="166" rx="14" class="card"/><text x="680" y="34" text-anchor="end" class="t body ink">التقدم في الكتاب</text><text x="680" y="76" text-anchor="end" font-family="Cairo" font-size="32" font-weight="700" fill="#3154a5">44%</text><rect x="400" y="98" width="280" height="8" rx="4" fill="#e2ded6"/><rect x="557" y="98" width="123" height="8" rx="4" class="blue"/><text x="680" y="132" text-anchor="end" class="t small muted">102 من 230 صفحة</text><rect width="340" height="166" rx="14" fill="#f6f0e5"/><path d="M138 49h64v54h-64zM170 49v54" fill="none" stroke="#3154a5" stroke-width="2"/><text x="170" y="128" text-anchor="middle" class="t body ink">لا توجد كتب بعد</text><text x="170" y="151" text-anchor="middle" class="t small muted">أضف أول كتاب وحدد هدفك.</text></g>
+
+<text x="1090" y="1254" text-anchor="end" class="t h3 ink">App shell anatomy — 420px</text>
+<g transform="translate(0 1276)"><rect x="670" width="420" height="180" rx="14" class="card"/><rect x="670" width="420" height="52" rx="14" fill="#f6f0e5"/><rect x="670" y="40" width="420" height="12" fill="#f6f0e5"/><text x="1064" y="33" text-anchor="end" class="t small ink">App bar • 52–76</text><rect x="694" y="72" width="372" height="64" rx="10" class="blue2"/><text x="1046" y="110" text-anchor="end" class="t small blue">Content • 24px inline padding</text><rect x="694" y="148" width="372" height="20" rx="8" class="blue"/><text x="650" y="34" text-anchor="end" class="t body ink">اتجاه القراءة</text><path d="M620 58H390m0 0 16-10m-16 10 16 10" fill="none" stroke="#3154a5" stroke-width="3"/><text x="650" y="92" text-anchor="end" class="t small muted">RTL: العنوان، المحتوى، والفعل الأساسي يبدأ بصريًا من اليمين.</text><text x="650" y="126" text-anchor="end" class="t small muted">الأرقام والوقت تبقى سهلة المسح ولا تُعكس دلالتها.</text></g>
+</g>
+</svg>
