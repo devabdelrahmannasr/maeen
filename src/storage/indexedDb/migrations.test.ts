@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { migrateDataVersion, readOnlyAfterMigrationFailure } from './migrations';
+import { assertWritable, migrateDataVersion, readOnlyAfterMigrationFailure, resolveMigrationState } from './migrations';
 
 describe('data migrations', () => {
   it('accepts current and older versions idempotently', () => {
@@ -10,5 +10,11 @@ describe('data migrations', () => {
     const result = migrateDataVersion(99);
     expect(result.ok).toBe(false);
     expect(readOnlyAfterMigrationFailure(result)).toBe(true);
+  });
+  it('enforces the read-only gate after a failed migration', () => {
+    const state = resolveMigrationState(2);
+    expect(state).toMatchObject({ mode: 'read-only', version: null });
+    expect(() => assertWritable(state)).toThrow('read-only');
+    expect(() => assertWritable(resolveMigrationState(1))).not.toThrow();
   });
 });

@@ -38,6 +38,7 @@ export function resumeTimer(state: TimerState, now: string): TimerState {
 
 export function startBreak(state: TimerState, now: string, durationMinutes: number): TimerState {
   if (state.status !== 'running' && state.status !== 'paused') throw new Error('Break is unavailable.');
+  if (!Number.isFinite(durationMinutes) || durationMinutes <= 0) throw new Error('Break duration must be positive.');
   const end = new Date(now).getTime() + durationMinutes * 60_000;
   return { ...state, status: 'break', breakStartedAt: now, breakEndAt: new Date(end).toISOString() };
 }
