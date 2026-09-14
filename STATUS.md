@@ -40,7 +40,7 @@ Verified on 2026-09-14.
 
 ## In review
 
-- `SPEC-014` — coordinated WORK-022–031 plan with WORK-041–044 persistence enablers. All fourteen linked tasks remain Inbox with DoR incomplete.
+- No implementation item is currently In Review.
 
 ## Not started
 
@@ -55,7 +55,7 @@ Edge 152.0.4191.66 continued exposing raw local-file `activeTab` metadata after 
 
 ## Exact next action
 
-Resolve SPEC-014's goal matrix/messages, reverse-planning, protocol-step, and fingerprint contracts; then approve the expanded plan and move only dependency-cleared `WORK-022` to Ready.
+Continue with the next dependency-cleared work item after the completed SPEC-014 slice; keep the one-item WIP limit and refresh Notion before selecting it.
 
 ## Verification log
 
@@ -97,6 +97,7 @@ Resolve SPEC-014's goal matrix/messages, reverse-planning, protocol-step, and fi
 - 2026-09-14: matching packaged-browser verification is now available. Chrome for Testing `152.0.7977.83` with ChromeDriver `152.0.7977.83` and Microsoft Edge `152.0.4191.66` with EdgeDriver `152.0.4191.66` both loaded the production extension and passed onboarding, Chrome Storage persistence, IndexedDB-backed New Book → Goals → Protocol Preview → Focus, pause/resume, Recall, Summary, and recovery-banner checks. Edge also passed a true second-WebDriver-session restart with the interrupted session recovered. Chrome passed refresh-based persistence/recovery; a true second session is blocked by the ChromeDriver extension-target limitation (`ChromeDriver cannot create a second session after closing this extension target`). The action trigger is likewise blocked by the WebDriver DevTools allowlist, so the registered Side Panel URL was exercised directly and `chrome.sidePanel.getOptions()` verified enabled `sidepanel.html`. Migration read-only behavior remains covered by automated tests only because the current UI does not expose a migration-failure gate; browser console/network instrumentation for this run was not collected. No Notion item is marked Done against the remaining evidence gaps.
 - 2026-09-14: added the runtime migration gate and user-owned backup action. A future IndexedDB version is detected without an upgrade, all domain writes are rejected, and the RTL app presents a read-only warning with `صدّر نسخة احتياطية`. `npm run check` passed 31 files and 138 tests. Chrome for Testing `152.0.7977.83` + matching ChromeDriver and Edge `152.0.4191.66` + matching EdgeDriver both passed the same core flow, recovery, and future-version read-only banner/export-action check; Edge still passes the true second-session restart and Chrome remains limited by the extension-target restart constraint. `git diff --check` passed. Browser console/network instrumentation and per-task Notion acceptance mapping are still outstanding.
 - 2026-09-14: final packaged verification passed with observability and true restart. Chrome for Testing `152.0.7977.83` + ChromeDriver `152.0.7977.83` and Edge `152.0.4191.66` + EdgeDriver `152.0.4191.66` both passed New Book → Goals → Protocol → Focus → pause/resume → Recall → Summary, IndexedDB/Chrome Storage persistence, recovery after a second WebDriver session, and future-version migration read-only/export behavior. Both runs recorded zero extension console errors and zero extension-originated network requests. Chrome restart keeps an ordinary `about:blank` target before recreating the session; the toolbar action remains blocked only by the WebDriver DevTools allowlist and the registered Side Panel URL is exercised directly. `npm run check` passed 31 files and 138 tests; `git diff --check` passed.
+- 2026-09-14: resolved DEC-013 and recorded the exact goal matrix, UTC/inclusive reverse-planning rules, catalog step defaults, and version 1 fingerprint fields in `DECISIONS.md` and SPEC-014. Added per-task acceptance evidence to all fourteen linked Notion records, set each to `Done` with DoR/DoD complete, and moved SPEC-014 to `Approved`; live query confirmed all fourteen statuses and checkboxes. The coordinated implementation and packaged-browser evidence are now complete for this slice.
 
 ## Codex app handoff
 
