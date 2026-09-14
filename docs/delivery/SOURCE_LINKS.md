@@ -11,6 +11,7 @@
 - [WORK-020 Implementation Plan — SPEC-012](https://app.notion.com/p/3db805b7d82b81c3a14bc0df9278fedf)
 - [WORK-021 Work Item — Done](https://app.notion.com/p/3d9805b7d82b8195b9e3fd2782a063d8)
 - [WORK-021 Implementation Spec — SPEC-013](https://app.notion.com/p/3db805b7d82b81a1b402dc19c6f68084)
+- [WORK-022–031 Coordinated Implementation Plan — SPEC-014](https://app.notion.com/p/3db805b7d82b8119b7baec0abddd02ec)
 - [Miro Master Board](https://miro.com/app/board/uXjVHnuKCW4=/)
 - [Figma — مرافق القراءة Arabic RTL Product UI](https://www.figma.com/design/AwmNEUtZBnWzs5jjNgu0VW)
 

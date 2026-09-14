@@ -26,6 +26,7 @@ Verified on 2026-09-14.
 - `WORK-020` implements the pure active-document classifier, transient Chrome adapter, explicit action-to-Side-Panel invocation, exact minimum-permission manifest, and safe HTTPS/local-file/restricted/unavailable states without enabling a new route or creating domain records.
 - `SPEC-013` defines the exact versioned pure-data boundary for WORK-021: nine stable goal definitions, six protocol families and their ordered building blocks, independent version constants, contract tests, and explicit separation from later rules/snapshot work.
 - `WORK-021` implements goal catalog version 1 with nine exact Arabic-interface goals and protocol catalog version 1 with six exact protocol families, stable IDs, Arabic labels, English reference names, and ordered building-block IDs as pure readonly data.
+- `SPEC-014` is one coordinated implementation plan for `WORK-022` through `WORK-031`, covering rules/snapshots/time calculations, book and Reading Plan lifecycle, Library resume, the Session state machine, Preview/Questions, and the absolute-time Focus/Break timer.
 
 ## Ready
 
@@ -34,6 +35,10 @@ Verified on 2026-09-14.
 ## In progress
 
 - `REL-001 Design Freeze`.
+
+## In review
+
+- `SPEC-014` — coordinated WORK-022–031 implementation plan. All ten linked tasks remain Inbox with DoR incomplete.
 
 ## Not started
 
@@ -49,7 +54,7 @@ Edge 152.0.4191.66 continued exposing raw local-file `activeTab` metadata after 
 
 ## Exact next action
 
-Refresh the live Work Items queue and prepare the implementation spec for dependency-cleared P0 `WORK-022` without starting implementation until its DoR is complete.
+Resolve SPEC-014's four readiness clarifications and the WORK-041/043/044 persistence dependency mismatch; then approve the plan and move only dependency-cleared `WORK-022` to Ready.
 
 ## Verification log
 
@@ -84,6 +89,7 @@ Refresh the live Work Items queue and prepare the implementation spec for depend
 - 2026-09-14: refreshed the live queue after WORK-020 and selected dependency-free P0 WORK-021. Created and linked SPEC-013 plus `docs/delivery/WORK-021-GOAL-PROTOCOL-CATALOGS-PLAN.md`, reconciled the exact nine goals and six protocol families against the approved product spec, completed DoR, and moved only WORK-021 to Ready. No runtime code changed.
 - 2026-09-14: delegated WORK-021 implementation to OpenCode 1.18.23 using `opencode/muse-spark-1.3-contributor-free` with the `high` variant. It wrote the two pure catalog modules and two contract-test files test-first, then left them uncommitted for review. Independent verification repeated `npm run check`: 13 files and 99 tests passed, TypeScript and the Vite production build passed; `git diff --check` passed. No browser matrix was needed because the catalogs are not imported by UI and add no browser behavior, permissions, persistence, or network access.
 - 2026-09-14: final review found no blocking WORK-021 defect. Commit `3a0bd06` records the exact version 1 catalogs and 15 focused tests. The acceptance criteria are satisfied: all nine goals and six protocols match the approved order and labels, each catalog has an independent version, and production modules are pure readonly data with no functions or environment dependencies. WORK-021 is Done in Notion with DoD complete; SPEC-013 is Approved.
+- 2026-09-14: refreshed the live queue and created SPEC-014 as one coordinated implementation plan for P0 WORK-022 through WORK-031. The plan preserves the three task chains and WIP limit, maps contracts/files/tests for every task, links all ten Notion records, and keeps every item Inbox with DoR incomplete. It records unresolved decisions for the goal matrix/messages, reverse-planning semantics, executable protocol steps, metadata fingerprinting, and the backlog mismatch where WORK-025/028/030/031 need durable behavior owned later by WORK-041/043/044. No runtime code changed.
 
 ## Codex app handoff
 
