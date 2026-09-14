@@ -24,10 +24,11 @@ Verified on 2026-09-14.
 - `WORK-019` implemented the versioned `userSettings.v1` contract, Chrome Storage Local adapter, field-level corrupt-input recovery, system/light/dark theme application, and safe startup restoration without enabling the Settings screen or changing domain state.
 - `SPEC-012` defines the implementation boundary for `WORK-020`: active-tab title/URL only, `activeTab` as the sole new permission, explicit HTTPS/local-file/unavailable states, no PDF-content or network access, and automated plus packaged Chrome/Edge verification.
 - `WORK-020` implements the pure active-document classifier, transient Chrome adapter, explicit action-to-Side-Panel invocation, exact minimum-permission manifest, and safe HTTPS/local-file/restricted/unavailable states without enabling a new route or creating domain records.
+- `SPEC-013` defines the exact versioned pure-data boundary for WORK-021: nine stable goal definitions, six protocol families and their ordered building blocks, independent version constants, contract tests, and explicit separation from later rules/snapshot work.
 
 ## Ready
 
-- No implementation item is currently Ready.
+- `WORK-021` — define versioned Goal and Protocol catalogs. DoR is complete; SPEC-013 and the local implementation plan resolve the catalog entries, IDs, versions, files, tests, and exclusions.
 
 ## In progress
 
@@ -47,7 +48,7 @@ Edge 152.0.4191.66 continued exposing raw local-file `activeTab` metadata after 
 
 ## Exact next action
 
-Refresh the live Work Items queue and select the next dependency-cleared P0 item after WORK-020.
+Implement `WORK-021` from SPEC-013 using test-first catalog contract checks, without adding conflict resolution, selection, snapshots, persistence, or UI.
 
 ## Verification log
 
@@ -79,6 +80,7 @@ Refresh the live Work Items queue and select the next dependency-cleared P0 item
 - 2026-09-14: an initial packaged run verified loading, manifest, RTL, and zero console/network activity but could not invoke the action because the CDP command was attached to the wrong target and omitted the extension ID. Chromium's protocol definition resolved the harness issue; no product evidence relies on that incomplete run.
 - 2026-09-14: review found that automatic Side Panel action handling did not grant `activeTab`. Replaced it with an explicit `chrome.action.onClicked` handler that opens the Side Panel for the invoked tab, added a service-worker contract test, and recorded DEC-012.
 - 2026-09-14: implementation commit `997b1f8` completed WORK-020. The final packaged matrix passed in Chrome for Testing 153.0.8010.12 and Edge 152.0.4191.66 using isolated profiles and Chromium's guarded CDP action command. Both browsers withheld title/URL before invocation, returned exact `dummy.pdf` metadata from the W3C HTTPS fixture after invocation, revoked it after cross-origin navigation, passed local-file enabled and disabled permission states, safely handled restricted pages, opened the Side Panel, preserved RTL and one main landmark, and produced zero extension console errors and zero extension-originated HTTP(S) requests. Edge exposed raw local metadata while file access was disabled, but the adapter's authoritative permission check returned the required blocked state. Temporary local fixtures and profiles were removed. WORK-020 is Done in Notion with DoD complete and all three acceptance criteria checked; SPEC-012 is Approved.
+- 2026-09-14: refreshed the live queue after WORK-020 and selected dependency-free P0 WORK-021. Created and linked SPEC-013 plus `docs/delivery/WORK-021-GOAL-PROTOCOL-CATALOGS-PLAN.md`, reconciled the exact nine goals and six protocol families against the approved product spec, completed DoR, and moved only WORK-021 to Ready. No runtime code changed.
 
 ## Codex app handoff
 

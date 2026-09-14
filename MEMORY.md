@@ -4,11 +4,11 @@ Last verified: 2026-09-14, Africa/Cairo.
 
 ## Current position
 
-The approved product specification, delivery workspace, flow maps, and visual UI package exist. Application implementation has started. `RES-004` concluded with Strong evidence and selected Preact + TypeScript + Vite with Vitest. The Manifest V3 Side Panel now implements onboarding, the local-library reference state, the typed WORK-018 navigation boundary, the versioned WORK-019 settings/theme boundary, and the WORK-020 active-document context boundary. SPEC-012 defines the transient title/URL-only adapter and minimum-permission contract.
+The approved product specification, delivery workspace, flow maps, and visual UI package exist. Application implementation has started. `RES-004` concluded with Strong evidence and selected Preact + TypeScript + Vite with Vitest. The Manifest V3 Side Panel now implements onboarding, the local-library reference state, the typed WORK-018 navigation boundary, the versioned WORK-019 settings/theme boundary, and the WORK-020 active-document context boundary. SPEC-013 defines the next pure, versioned Goal and Protocol catalog boundary for WORK-021.
 
 ## Completed assets
 
-- Notion Product HQ: 6 databases, 4 releases, 12 specs, 60 work items, 12 accepted decisions, 8 risks, and 6 research studies.
+- Notion Product HQ: 6 databases, 4 releases, 13 specs, 60 work items, 12 accepted decisions, 8 risks, and 6 research studies.
 - Miro: product flows, goal-to-protocol map, session state, system/data maps, wireframes, and clickable prototype intent.
 - Figma: five organized pages covering start/handoff, foundations/components, ten MVP screens, states/dark/responsive examples, and prototype map.
 - Local visual sources are preserved under `design/figma/`.
@@ -58,6 +58,7 @@ The Figma visual package passed the recorded visual and SVG checks. Native Figma
 - `SPEC-010` is the implementation plan for `WORK-018`. Its ten-route typed hash contract adds no dependency, Library remains the only restorable post-onboarding route, 38 automated tests pass, and packaged recovery checks pass in Google Chrome for Testing 153.0.8010.12 and Edge 152.0.4191.66.
 - `WORK-019` is Done in Notion with DoD complete. Commit `0ff9135` adds a versioned `userSettings.v1` contract, field-level normalization, Chrome Storage Local persistence with preview/test fallback, system/light/dark theme application, safe startup recovery, and 42 new tests. The full suite is 64 tests across 7 files. Chrome for Testing 153.0.8010.12 and Edge 152.0.4191.66 passed all three theme restart checks, corrupt-input recovery, RTL/accessibility checks, and 320/420/600 px visual review with zero console messages.
 - `WORK-020` is Done in Notion with DoD complete and all acceptance criteria checked; SPEC-012 is Approved. Commit `997b1f8` implements a transient active-tab title/URL adapter using only `activeTab`; DEC-012 requires the explicit `chrome.action.onClicked` path because automatic Side Panel action handling did not grant metadata. The suite passes 84 tests across 11 files. Chrome for Testing 153.0.8010.12 and Edge 152.0.4191.66 pass the HTTPS, cross-origin permission-loss, local-file enabled/disabled, restricted-page, Side Panel, RTL, console, and network matrix. Edge may expose raw local metadata after file access is disabled, so the adapter treats `isAllowedFileSchemeAccess() === false` as authoritative and returns a blocked state. No PDF content, headers, URL responses, or persisted/transmitted metadata are accessed.
+- `WORK-021` is the single Ready item with DoR complete. SPEC-013 and the local plan define goal catalog version 1 with nine exact Arabic-interface goals and protocol catalog version 1 with six exact protocol families, Arabic labels, English source names, and ordered building-block IDs. Catalogs remain pure readonly domain data; WORK-022 owns conflicts/selection, WORK-023 owns immutable snapshots, and WORK-024 owns the full rules/time matrix.
 - Next recorded weekly review: 2026-09-20. Treat this as historical if working after that date; refresh Notion before relying on it.
 
 ## Handoff protocol
