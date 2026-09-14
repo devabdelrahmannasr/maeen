@@ -1,7 +1,7 @@
 # WORK-021 — Versioned Goal and Protocol Catalogs Implementation Plan
 
-Status: Ready on 2026-09-14
-Scope: planning only; no runtime code is changed by this document
+Status: Done on 2026-09-14
+Scope: implemented and verified
 Target: one focused implementation session, no later than 2026-09-16
 
 ## Sources
@@ -90,13 +90,13 @@ The building-block order mirrors the approved source. These identifiers describe
 - UI routes, screens, state, persistence, migrations, browser APIs, PDF context, analytics, or network access.
 - User-validation claims; deferred research remains incomplete.
 
-## Planned files
+## Implemented files
 
-- Add `src/domain/goals/goalCatalog.ts`.
-- Add `src/domain/goals/goalCatalog.test.ts`.
-- Add `src/domain/protocols/protocolCatalog.ts`.
-- Add `src/domain/protocols/protocolCatalog.test.ts`.
-- Update `STATUS.md`, `MEMORY.md`, and WORK-021 evidence after implementation.
+- `src/domain/goals/goalCatalog.ts`.
+- `src/domain/goals/goalCatalog.test.ts`.
+- `src/domain/protocols/protocolCatalog.ts`.
+- `src/domain/protocols/protocolCatalog.test.ts`.
+- `STATUS.md`, `MEMORY.md`, and WORK-021 delivery evidence.
 
 ## Tests and verification
 
@@ -110,6 +110,16 @@ The building-block order mirrors the approved source. These identifiers describe
 - Run `npm run check` and `git diff --check`.
 
 No packaged browser matrix is needed for the catalogs themselves because they are pure domain data and add no browser behavior, permission, persistence, or UI. The existing production build remains the integration boundary.
+
+## Completion evidence
+
+- Implementation commit: `3a0bd06`.
+- OpenCode 1.18.23 using `opencode/muse-spark-1.3-contributor-free` with the `high` variant created the four planned files test-first; the supervising review found no blocking defect.
+- The focused catalog suite passes 15 tests. The full suite passes 99 tests across 13 files.
+- TypeScript and the Vite production build pass. The production bundle remains 28.60 kB raw / 10.90 kB gzip because the catalogs are not imported by the UI yet.
+- `git diff --check` passes.
+- Static review confirms the production catalog modules contain only exported constants and types: no functions, browser/UI/storage/network/time dependencies, persistence, selection logic, snapshots, or side effects.
+- A packaged browser matrix was intentionally not run because this work changes pure domain data only and introduces no browser-visible behavior or permission.
 
 ## Acceptance-criteria mapping
 

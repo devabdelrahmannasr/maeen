@@ -9,7 +9,7 @@
 - [WORK-019 Implementation Plan — SPEC-011](https://app.notion.com/p/3da805b7d82b8141971afe8822260ff9)
 - [WORK-020 Work Item — Done](https://app.notion.com/p/3d9805b7d82b81cab371e7a9e81f0cc1)
 - [WORK-020 Implementation Plan — SPEC-012](https://app.notion.com/p/3db805b7d82b81c3a14bc0df9278fedf)
-- [Next Ready Action — WORK-021](https://app.notion.com/p/3d9805b7d82b8195b9e3fd2782a063d8)
+- [WORK-021 Work Item — Done](https://app.notion.com/p/3d9805b7d82b8195b9e3fd2782a063d8)
 - [WORK-021 Implementation Spec — SPEC-013](https://app.notion.com/p/3db805b7d82b81a1b402dc19c6f68084)
 - [Miro Master Board](https://miro.com/app/board/uXjVHnuKCW4=/)
 - [Figma — مرافق القراءة Arabic RTL Product UI](https://www.figma.com/design/AwmNEUtZBnWzs5jjNgu0VW)
