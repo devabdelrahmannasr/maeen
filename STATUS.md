@@ -1,6 +1,6 @@
 # Current Status
 
-Verified on 2026-09-13.
+Verified on 2026-09-14.
 
 ## Done
 
@@ -22,6 +22,12 @@ Verified on 2026-09-13.
 - `WORK-018` is Done in Notion with DoD complete and all acceptance criteria checked. A typed ten-route hash catalog, versioned safe-route storage, deterministic startup recovery, shared single-landmark shell, and thin route outlet coordinate Onboarding and Library without adding a dependency or enabling unfinished screens.
 - `SPEC-011` defines the implementation boundary, versioned settings contract, safe defaults, theme application, file map, tests, and browser verification plan for `WORK-019`.
 - `WORK-019` implemented the versioned `userSettings.v1` contract, Chrome Storage Local adapter, field-level corrupt-input recovery, system/light/dark theme application, and safe startup restoration without enabling the Settings screen or changing domain state.
+- `SPEC-012` defines the implementation boundary for `WORK-020`: active-tab title/URL only, `activeTab` as the sole new permission, explicit HTTPS/local-file/unavailable states, no PDF-content or network access, and automated plus packaged Chrome/Edge verification.
+- `WORK-020` implements the pure active-document classifier, transient Chrome adapter, explicit action-to-Side-Panel invocation, exact minimum-permission manifest, and safe HTTPS/local-file/restricted/unavailable states without enabling a new route or creating domain records.
+
+## Ready
+
+- No implementation item is currently Ready.
 
 ## In progress
 
@@ -37,9 +43,11 @@ Verified on 2026-09-13.
 
 Native Figma variables, component sets, and Code Connect remain pending due to the exhausted Figma Starter MCP quota. The visual design itself is preserved and reviewed.
 
+Edge 152.0.4191.66 continued exposing raw local-file `activeTab` metadata after its file-access setting was disabled. The adapter does not trust that metadata: `isAllowedFileSchemeAccess() === false` is authoritative and produces `metadata-unavailable:file-access-not-granted`.
+
 ## Exact next action
 
-Refresh the live Work Items queue and select the next dependency-cleared P0 item after WORK-019. Create or confirm its implementation plan and DoR before moving it to `In Progress`.
+Refresh the live Work Items queue and select the next dependency-cleared P0 item after WORK-020.
 
 ## Verification log
 
@@ -66,6 +74,11 @@ Refresh the live Work Items queue and select the next dependency-cleared P0 item
 - 2026-09-13: refreshed the live Work Items queue after WORK-018; no item was Ready or In Progress. Selected dependency-cleared P0 `WORK-019`, created and linked `SPEC-011`, expanded its acceptance criteria into testable settings/restart/corruption behavior, completed DoR, and moved only WORK-019 from Inbox to Ready. Confirming live fetches verified both records.
 - 2026-09-13: implemented WORK-019 in commit `0ff9135`. `npm run check` passed 7 Vitest files and 64 tests, TypeScript, and the Vite production build; production JS is 28.60 kB raw / 10.90 kB gzip. `git diff --check` passed with only existing LF-to-CRLF notices.
 - 2026-09-13: packaged WORK-019 verification passed in Google Chrome for Testing 153.0.8010.12 and Microsoft Edge 152.0.4191.66. Both restored `system`, `light`, and `dark` after persistent-profile browser close/reopen; corrupt settings recovered without blank/crash; RTL, one `main`, 320/420/600 px no-overflow layouts, 3px focus outline and offset, and zero console errors or warnings passed. The registered Side Panel document was exercised directly because automation cannot open browser side-panel chrome through the toolbar action.
+- 2026-09-14: refreshed the live queue and confirmed no Ready/In Progress/In Review work. Selected dependency-cleared P0 `WORK-020`, created and linked `SPEC-012`, and wrote `docs/delivery/WORK-020-ACTIVE-PDF-CONTEXT-PERMISSIONS-PLAN.md`. The plan restricts access to transient active-tab title/URL behind `activeTab`, documents local-file permission states and the URL/MIME limitation, prohibits broad host/content/network access, and maps automated plus packaged Chrome/Edge evidence.
+- 2026-09-14: implemented WORK-020 locally. Added the pure `ActiveDocumentContext` classifier, transient Chrome adapter, exact MV3 permission contract (`sidePanel`, `storage`, `activeTab` only), and 19 new browser/manifest tests. `npm run check` passed 10 files and 83 tests, TypeScript, and the Vite production package; `git diff --check` passed with only existing LF-to-CRLF notices.
+- 2026-09-14: an initial packaged run verified loading, manifest, RTL, and zero console/network activity but could not invoke the action because the CDP command was attached to the wrong target and omitted the extension ID. Chromium's protocol definition resolved the harness issue; no product evidence relies on that incomplete run.
+- 2026-09-14: review found that automatic Side Panel action handling did not grant `activeTab`. Replaced it with an explicit `chrome.action.onClicked` handler that opens the Side Panel for the invoked tab, added a service-worker contract test, and recorded DEC-012.
+- 2026-09-14: final WORK-020 packaged matrix passed in Chrome for Testing 153.0.8010.12 and Edge 152.0.4191.66 using isolated profiles and Chromium's guarded CDP action command. Both browsers withheld title/URL before invocation, returned exact `dummy.pdf` metadata from the W3C HTTPS fixture after invocation, revoked it after cross-origin navigation, passed local-file enabled and disabled permission states, safely handled restricted pages, opened the Side Panel, preserved RTL and one main landmark, and produced zero extension console errors and zero extension-originated HTTP(S) requests. Edge exposed raw local metadata while file access was disabled, but the adapter's authoritative permission check returned the required blocked state. Temporary local fixtures and profiles were removed.
 
 ## Codex app handoff
 

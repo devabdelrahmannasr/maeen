@@ -7,6 +7,8 @@
 - [WORK-018 Implementation Plan — SPEC-010](https://app.notion.com/p/3da805b7d82b812587f8cf7eabfec239)
 - [Next Ready Action — WORK-019](https://app.notion.com/p/3d9805b7d82b81f2badbcdf36d8cf8be)
 - [WORK-019 Implementation Plan — SPEC-011](https://app.notion.com/p/3da805b7d82b8141971afe8822260ff9)
+- [WORK-020 Work Item — Done](https://app.notion.com/p/3d9805b7d82b81cab371e7a9e81f0cc1)
+- [WORK-020 Implementation Plan — SPEC-012](https://app.notion.com/p/3db805b7d82b81c3a14bc0df9278fedf)
 - [Miro Master Board](https://miro.com/app/board/uXjVHnuKCW4=/)
 - [Figma — مرافق القراءة Arabic RTL Product UI](https://www.figma.com/design/AwmNEUtZBnWzs5jjNgu0VW)
 

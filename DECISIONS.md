@@ -13,6 +13,7 @@
 | DEC-009 | Use Preact + TypeScript + Vite for the Manifest V3 Side Panel, with Vitest and browser-level checks. | Accepted |
 | DEC-010 | Arabic is the interface language; users may read books/PDFs in any language, and the product is content-language neutral. | Accepted |
 | DEC-011 | Defer user interviews and usability studies; continue building under explicitly unvalidated assumptions. | Accepted |
+| DEC-012 | Open the Side Panel from `chrome.action.onClicked` so the explicit toolbar gesture grants transient `activeTab` metadata. | Accepted |
 
 ## Open decisions
 
@@ -30,5 +31,9 @@ The target is an Arabic-interface user who reads, studies, or learns from a book
 ## DEC-011 context and consequences
 
 The owner chose to defer `WORK-014`, `WORK-015`, and `WORK-016` and continue implementation without recruiting users. These items remain incomplete, their research evidence remains `None`, and no product assumption may be described as user-validated. The build sequence resumes at `WORK-018`; the deferred research can be reopened when an MVP is available or when a decision cannot be resolved without external evidence.
+
+## DEC-012 context and consequences
+
+On 2026-09-14, packaged Chrome and Edge checks showed that automatic `openPanelOnActionClick` opened the Side Panel without making the active tab's sensitive `title` and `url` available. The accepted implementation disables that automatic behavior, handles the explicit `chrome.action.onClicked` event, and calls `chrome.sidePanel.open({ tabId })`. This preserves the single user gesture, grants only the invoked tab's temporary `activeTab` access, and adds no broad host permissions or tab-monitoring listeners. Chromium's guarded CDP action command verified the real invocation path in isolated test profiles. See `SPEC-012` and `docs/delivery/WORK-020-ACTIVE-PDF-CONTEXT-PERMISSIONS-PLAN.md`.
 
 Add a dated entry with context, options, decision, consequences, and links whenever an open decision is resolved.
