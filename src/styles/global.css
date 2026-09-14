@@ -391,6 +391,33 @@ strong::selection {
   background: var(--warning-soft);
 }
 
+.migration-banner {
+  margin-top: 16px;
+  padding: 14px;
+  display: grid;
+  gap: 6px;
+  border: 1px solid var(--warning);
+  border-radius: 12px;
+  color: var(--warning);
+  background: var(--warning-soft);
+}
+
+.migration-banner strong,
+.migration-banner span {
+  display: block;
+}
+
+.migration-banner strong {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.migration-banner span {
+  color: #6d5b49;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
 .recovery-banner strong,
 .recovery-banner span {
   display: block;

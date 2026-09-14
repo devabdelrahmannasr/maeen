@@ -1,4 +1,5 @@
 import { openReadingHelperDatabase } from './database';
+import { assertRuntimeWritable } from './runtimeMigration';
 
 export interface EntityWithId { readonly id: string; }
 
@@ -29,6 +30,7 @@ export function createEntityRepository<T extends EntityWithId>(storeName: string
       finally { database.close(); }
     },
     async save(entity) {
+      await assertRuntimeWritable();
       const database = await openReadingHelperDatabase();
       try {
         const transaction = database.transaction(storeName, 'readwrite');

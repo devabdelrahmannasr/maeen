@@ -18,6 +18,7 @@ const cdpRoute = browserName === 'edge' ? 'ms/cdp/execute' : 'goog/cdp/execute';
 const baseUrl = `http://127.0.0.1:${port}`;
 const extensionPath = path.resolve('dist');
 const runCoreFlow = process.argv.includes('--core');
+const runTrueRestart = process.argv.includes('--true-restart');
 const profilePath = await mkdtemp(path.join(tmpdir(), `reading-helper-${browserName}-`));
 await mkdir(path.resolve('output'), { recursive: true });
 
@@ -137,6 +138,16 @@ try {
   }
 
   await request(`/session/${sessionId}/url`, 'POST', { url: sidePanelUrl });
+  await execute(sessionId, `
+    window.__readingHelperVerification = { consoleErrors: [], networkRequests: [] };
+    const verification = window.__readingHelperVerification;
+    const originalConsoleError = console.error.bind(console);
+    console.error = (...args) => { verification.consoleErrors.push(args.map(String).join(' ')); originalConsoleError(...args); };
+    const originalFetch = window.fetch?.bind(window);
+    if (originalFetch) window.fetch = (...args) => { verification.networkRequests.push(String(args[0])); return originalFetch(...args); };
+    const originalOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function (...args) { verification.networkRequests.push(String(args[1])); return originalOpen.apply(this, args); };
+  `);
   await executeAsync(sessionId, `
     const done = arguments[arguments.length - 1];
     chrome.storage.local.clear().then(() => done(true));
@@ -251,6 +262,20 @@ try {
       restart = await execute(sessionId, 'return { heading: document.querySelector("h1")?.textContent?.trim(), recovery: document.querySelector(".recovery-banner")?.textContent?.trim() };');
       assertEqual(restart.heading, 'مكتبتي', 'Restarted library heading');
       if (!restart.recovery?.includes('جلسة متوقفة بأمان')) throw new Error('Recovery banner was not restored after browser restart.');
+    } else if (runTrueRestart) {
+      await request(`/session/${sessionId}/${cdpRoute}`, 'POST', {
+        cmd: 'Target.createTarget',
+        params: { url: 'about:blank' },
+      });
+      await request(`/session/${sessionId}`, 'DELETE');
+      sessionId = null;
+      const restarted = await request('/session', 'POST', sessionCapabilities);
+      sessionId = restarted.sessionId;
+      await request(`/session/${sessionId}/url`, 'POST', { url: `${sidePanelUrl}#/library` });
+      await new Promise((resolve) => setTimeout(resolve, 700));
+      restart = await execute(sessionId, 'return { heading: document.querySelector("h1")?.textContent?.trim(), recovery: document.querySelector(".recovery-banner")?.textContent?.trim() };');
+      assertEqual(restart.heading, 'مكتبتي', 'Restarted library heading');
+      if (!restart.recovery?.includes('جلسة متوقفة بأمان')) throw new Error('Recovery banner was not restored after a true Chrome restart.');
     } else {
       await execute(sessionId, 'location.hash = "#/library";');
       await new Promise((resolve) => setTimeout(resolve, 250));
@@ -259,9 +284,24 @@ try {
       restart = await execute(sessionId, 'return { heading: document.querySelector("h1")?.textContent?.trim(), recovery: document.querySelector(".recovery-banner")?.textContent?.trim(), limitation: "ChromeDriver cannot create a second session after closing this extension target" };');
       assertEqual(restart.heading, 'مكتبتي', 'Reloaded library heading');
     }
-    coreFlow = { goals, preview, focus, paused, summary, restart };
+    await executeAsync(sessionId, `
+      const done = arguments[arguments.length - 1];
+      const request = indexedDB.open('reading-helper-local', 2);
+      request.onupgradeneeded = () => {};
+      request.onsuccess = () => { request.result.close(); done(true); };
+      request.onerror = () => done(false);
+    `);
+    await request(`/session/${sessionId}/refresh`, 'POST', {});
+    await new Promise((resolve) => setTimeout(resolve, 700));
+    const migration = await execute(sessionId, 'return { heading: document.querySelector("h1")?.textContent?.trim(), banner: document.querySelector(".migration-banner")?.textContent?.trim(), exportAction: [...document.querySelectorAll("button")].some((button) => button.textContent.includes("صدّر نسخة احتياطية")) };');
+    if (!migration.banner?.includes('وضع القراءة فقط')) throw new Error('Migration read-only banner was not shown for a future database version.');
+    assertEqual(migration.exportAction, true, 'Migration export action');
+    coreFlow = { goals, preview, focus, paused, summary, restart, migration };
   }
 
+  const observability = await execute(sessionId, 'return window.__readingHelperVerification ?? { consoleErrors: [], networkRequests: [] };');
+  assertEqual(observability.consoleErrors.length, 0, 'Extension console errors');
+  assertEqual(observability.networkRequests.length, 0, 'Extension network requests');
   const result = {
     browserName,
     browserVersion: session.capabilities.browserVersion,
@@ -275,6 +315,7 @@ try {
     persistedState,
     reloadedHeading,
     sidePanelOptions,
+    observability,
     ...(coreFlow ? { coreFlow } : {}),
   };
   await writeFile(path.resolve(`output/${browserName}-res004-evidence.json`), `${JSON.stringify(result, null, 2)}\n`);

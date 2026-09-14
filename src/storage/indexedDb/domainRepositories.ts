@@ -4,6 +4,7 @@ import type { ReadingPlan } from '../../domain/planning/readingPlan';
 import type { ReadingPlanRepository } from '../../domain/planning/readingPlanRepository';
 import { createEntityRepository, type EntityRepository } from './repository';
 import { openReadingHelperDatabase } from './database';
+import { assertRuntimeWritable } from './runtimeMigration';
 import type { ProtocolSnapshot } from '../../domain/protocols/protocolSnapshot';
 import type { Session } from '../../domain/sessions/session';
 import type { SessionStep, LearningArtifact } from '../../domain/sessions/sessionRecords';
@@ -35,6 +36,7 @@ export function createReadingPlanRepository(): ReadingPlanRepository {
 /** Commits the plan and its immutable snapshot in one IndexedDB transaction. */
 export async function saveReadingPlanAndSnapshot(plan: ReadingPlan, snapshot: ProtocolSnapshot): Promise<void> {
   if (!plan.id || !plan.bookId || !snapshot.id || !snapshot.protocolId) throw new Error('Invalid plan or protocol snapshot.');
+  await assertRuntimeWritable();
   const database = await openReadingHelperDatabase();
   try {
     const transaction = database.transaction(['readingPlans', 'protocolSnapshots'], 'readwrite');
@@ -56,6 +58,7 @@ export const createLearningArtifactRepository = () => createEntityRepository<Lea
 
 export async function saveSessionBundle(session: Session, step: SessionStep, artifact?: LearningArtifact): Promise<void> {
   if (!session.id || !session.planId || !step.id || step.sessionId !== session.id) throw new Error('Invalid session bundle.');
+  await assertRuntimeWritable();
   const database = await openReadingHelperDatabase();
   try {
     const stores = artifact ? ['sessions', 'sessionSteps', 'learningArtifacts'] : ['sessions', 'sessionSteps'];

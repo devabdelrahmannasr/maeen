@@ -8,6 +8,8 @@ import { DEFAULT_USER_SETTINGS } from '../settings/userSettings';
 import { getUserSettings } from '../settings/userSettingsStorage';
 import { AppRouter } from './AppRouter';
 import { AppShell } from './AppShell';
+import { inspectRuntimeMigrationState } from '../storage/indexedDb/runtimeMigration';
+import type { MigrationState } from '../storage/indexedDb/migrations';
 
 const recoveryMessages: Record<RouteRecoveryReason, string> = {
   'invalid-hash': 'تعذر فتح الوجهة المطلوبة. أعدناك إلى آخر شاشة آمنة.',
@@ -21,6 +23,7 @@ const settingsReadFailureMessage = 'تعذر استعادة تفضيلاتك. ا
 export function App() {
   const [route, setRoute] = useState<AppRoute | null>(null);
   const [routeStatusMessage, setRouteStatusMessage] = useState<string | null>(null);
+  const [migrationState, setMigrationState] = useState<MigrationState | null>(null);
   const onboardingCompleteRef = useRef(false);
 
   function synchronizeHash(nextRoute: AppRoute) {
@@ -56,6 +59,8 @@ export function App() {
       let userSettings = { ...DEFAULT_USER_SETTINGS };
       let settingsReadFailed = false;
 
+      const runtimeMigrationState = await inspectRuntimeMigrationState();
+
       try {
         onboardingComplete = await getOnboardingComplete();
       } catch {
@@ -84,6 +89,7 @@ export function App() {
         return;
       }
 
+      setMigrationState(runtimeMigrationState);
       applyTheme(userSettings.theme);
 
       const resolution = resolveInitialRoute({
@@ -136,7 +142,7 @@ export function App() {
   }
 
   return (
-    <AppShell isLoading={route === null} statusMessage={routeStatusMessage}>
+    <AppShell isLoading={route === null} statusMessage={routeStatusMessage} migrationState={migrationState}>
       {route ? <AppRouter route={route} onCompleteOnboarding={completeOnboarding} /> : null}
     </AppShell>
   );

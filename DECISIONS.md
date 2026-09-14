@@ -14,11 +14,16 @@
 | DEC-010 | Arabic is the interface language; users may read books/PDFs in any language, and the product is content-language neutral. | Accepted |
 | DEC-011 | Defer user interviews and usability studies; continue building under explicitly unvalidated assumptions. | Accepted |
 | DEC-012 | Open the Side Panel from `chrome.action.onClicked` so the explicit toolbar gesture grants transient `activeTab` metadata. | Accepted |
+| DEC-013 | Freeze the SPEC-014 core contracts: primary goal selects the protocol; secondary goals are preserved as rationale-only customization; reverse planning uses UTC calendar dates with inclusive days and ceiling daily targets; protocol step templates use the versioned catalog defaults; book fingerprints use normalized title, normalized author, total pages, and fingerprint version with warning-only collision handling. | Accepted |
 
 ## Open decisions
 
 - Open-source license selection.
 - Browser-level end-to-end runner choice after the extension prototype is exercised in both Chrome and Edge.
+
+## DEC-013 context and consequences
+
+On 2026-09-14, the implementation slice required explicit contracts before the coordinated core tasks could leave Inbox. The selected policy keeps the primary goal deterministic and prevents secondary goals from silently changing the protocol; secondary goals remain in the immutable snapshot and rationale. Reverse planning uses `YYYY-MM-DD` calendar values in UTC, counts both today and the deadline, computes pages-per-minute from remaining pages and available minutes, and rounds daily targets up. Protocol step labels and default durations are the versioned `PROTOCOL_STEP_CATALOG` values. Book fingerprints use version 1 canonical metadata (`title`, `author`, `totalPages`) after normalization; a hash match warns and requires exact-metadata confirmation rather than rejecting the book. These choices match the existing pure modules, preserve deterministic snapshots, and remain revisable only through a new versioned decision.
 
 ## DEC-009 context and consequences
 
