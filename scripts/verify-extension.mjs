@@ -17,6 +17,7 @@ const optionsKey = browserName === 'edge' ? 'ms:edgeOptions' : 'goog:chromeOptio
 const cdpRoute = browserName === 'edge' ? 'ms/cdp/execute' : 'goog/cdp/execute';
 const baseUrl = `http://127.0.0.1:${port}`;
 const extensionPath = path.resolve('dist');
+const runCoreFlow = process.argv.includes('--core');
 const profilePath = await mkdtemp(path.join(tmpdir(), `reading-helper-${browserName}-`));
 await mkdir(path.resolve('output'), { recursive: true });
 
@@ -77,7 +78,7 @@ async function screenshot(sessionId, fileName) {
 let sessionId;
 try {
   await waitForDriver();
-  const session = await request('/session', 'POST', {
+  const sessionCapabilities = {
     capabilities: {
       alwaysMatch: {
         browserName: webdriverBrowserName,
@@ -95,7 +96,8 @@ try {
         },
       },
     },
-  });
+  };
+  const session = await request('/session', 'POST', sessionCapabilities);
   sessionId = session.sessionId;
 
   const targets = await request(`/session/${sessionId}/${cdpRoute}`, 'POST', {
@@ -179,6 +181,87 @@ try {
   assertEqual(sidePanelOptions.enabled, true, 'Side Panel enabled state');
   assertEqual(sidePanelOptions.path, 'sidepanel.html', 'Side Panel path');
 
+  let coreFlow;
+  if (runCoreFlow) {
+    await execute(sessionId, `document.querySelector('a[href="#/books/new"]')?.click();`);
+    await new Promise((resolve) => setTimeout(resolve, 250));
+    await execute(sessionId, `
+      const set = (selector, value) => { const input = document.querySelector(selector); if (!input) throw new Error('Missing '+selector); const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')?.set; setter?.call(input, value); input.dispatchEvent(new InputEvent('input', { bubbles: true, inputType: 'insertText', data: value })); };
+      set('input[required]:not([type="number"])', 'Core Flow Book');
+      set('input[type="number"]', '20');
+    `);
+    await new Promise((resolve) => setTimeout(resolve, 200));
+    await execute(sessionId, 'document.querySelector("form")?.requestSubmit();');
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    const goals = await execute(sessionId, 'return { hash: location.hash, heading: document.querySelector("h1")?.textContent?.trim() };');
+    assertEqual(goals.heading, 'لماذا تقرأ؟', 'Goal selection heading');
+    await execute(sessionId, 'document.querySelector("form")?.requestSubmit();');
+    await new Promise((resolve) => setTimeout(resolve, 700));
+    const preview = await execute(sessionId, 'return { hash: location.hash, heading: document.querySelector("h1")?.textContent?.trim() };');
+    assertEqual(preview.heading, 'طريقة القراءة', 'Protocol preview heading');
+    await execute(sessionId, `
+      const question = document.querySelector('textarea');
+      if (question) { question.value = 'ما الفكرة الأساسية؟'; question.dispatchEvent(new Event('input', { bubbles: true })); }
+      document.querySelector('form')?.requestSubmit();
+    `);
+    await new Promise((resolve) => setTimeout(resolve, 800));
+    const focus = await execute(sessionId, 'return { hash: location.hash, heading: document.querySelector("h1")?.textContent?.trim(), timer: document.querySelector(".timer-card strong")?.textContent?.trim() };');
+    assertEqual(focus.heading, 'جلسة تركيز', 'Focus heading');
+    const pauseButton = await execute(sessionId, 'return [...document.querySelectorAll("button")].find((button) => button.textContent.includes("إيقاف مؤقت")) !== undefined;');
+    assertEqual(pauseButton, true, 'Pause action available');
+    await execute(sessionId, '[...document.querySelectorAll("button")].find((button) => button.textContent.includes("إيقاف مؤقت"))?.click();');
+    await new Promise((resolve) => setTimeout(resolve, 350));
+    const paused = await execute(sessionId, 'return [...document.querySelectorAll("button")].find((button) => button.textContent.includes("استئناف القراءة")) !== undefined;');
+    assertEqual(paused, true, 'Paused state');
+    await execute(sessionId, '[...document.querySelectorAll("button")].find((button) => button.textContent.includes("استئناف القراءة"))?.click();');
+    await new Promise((resolve) => setTimeout(resolve, 350));
+    await execute(sessionId, 'location.hash = location.hash.replace("/focus", "/review");');
+    await new Promise((resolve) => setTimeout(resolve, 400));
+    await execute(sessionId, `
+      const recall = document.querySelector('textarea');
+      if (!recall) throw new Error('Recall input not found');
+      recall.value = 'أتذكر الفكرة الرئيسية.';
+      recall.dispatchEvent(new Event('input', { bubbles: true }));
+    `);
+    await new Promise((resolve) => setTimeout(resolve, 200));
+    await execute(sessionId, 'document.querySelector("form")?.requestSubmit();');
+    await new Promise((resolve) => setTimeout(resolve, 800));
+    const summary = await execute(sessionId, 'return { hash: location.hash, heading: document.querySelector("h1")?.textContent?.trim(), saved: document.querySelector(".flow-card h2")?.textContent?.trim() };');
+    assertEqual(summary.heading, 'ملخص الجلسة', 'Session summary heading');
+    await executeAsync(sessionId, `
+      const done = arguments[arguments.length - 1];
+      const request = indexedDB.open('reading-helper-local', 1);
+      request.onsuccess = () => {
+        const database = request.result;
+        const transaction = database.transaction('sessions', 'readwrite');
+        transaction.objectStore('sessions').put({ schemaVersion: 1, id: 'interrupted-restart', planId: 'restart-plan', status: 'interrupted', currentStepId: 'read', lastSafeStatus: 'paused', updatedAt: new Date().toISOString() });
+        transaction.oncomplete = () => { database.close(); done(true); };
+        transaction.onerror = () => done(false);
+      };
+      request.onerror = () => done(false);
+    `);
+    let restart;
+    if (browserName === 'edge') {
+      await request(`/session/${sessionId}`, 'DELETE');
+      sessionId = null;
+      const restarted = await request('/session', 'POST', sessionCapabilities);
+      sessionId = restarted.sessionId;
+      await request(`/session/${sessionId}/url`, 'POST', { url: `${sidePanelUrl}#/library` });
+      await new Promise((resolve) => setTimeout(resolve, 700));
+      restart = await execute(sessionId, 'return { heading: document.querySelector("h1")?.textContent?.trim(), recovery: document.querySelector(".recovery-banner")?.textContent?.trim() };');
+      assertEqual(restart.heading, 'مكتبتي', 'Restarted library heading');
+      if (!restart.recovery?.includes('جلسة متوقفة بأمان')) throw new Error('Recovery banner was not restored after browser restart.');
+    } else {
+      await execute(sessionId, 'location.hash = "#/library";');
+      await new Promise((resolve) => setTimeout(resolve, 250));
+      await request(`/session/${sessionId}/refresh`, 'POST', {});
+      await new Promise((resolve) => setTimeout(resolve, 700));
+      restart = await execute(sessionId, 'return { heading: document.querySelector("h1")?.textContent?.trim(), recovery: document.querySelector(".recovery-banner")?.textContent?.trim(), limitation: "ChromeDriver cannot create a second session after closing this extension target" };');
+      assertEqual(restart.heading, 'مكتبتي', 'Reloaded library heading');
+    }
+    coreFlow = { goals, preview, focus, paused, summary, restart };
+  }
+
   const result = {
     browserName,
     browserVersion: session.capabilities.browserVersion,
@@ -192,6 +275,7 @@ try {
     persistedState,
     reloadedHeading,
     sidePanelOptions,
+    ...(coreFlow ? { coreFlow } : {}),
   };
   await writeFile(path.resolve(`output/${browserName}-res004-evidence.json`), `${JSON.stringify(result, null, 2)}\n`);
   console.log(JSON.stringify(result, null, 2));
