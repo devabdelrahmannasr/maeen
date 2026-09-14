@@ -1,11 +1,11 @@
-# WORK-022–031 — Core Domain, Planning, and Session Implementation Plan
+# WORK-022–031 + Persistence Enablers — Core Domain, Planning, and Session Implementation Plan
 
 Status: In Review on 2026-09-14
-Scope: planning only; no runtime code or work status changed
+Scope: planning only; ten primary tasks plus WORK-041–044 persistence enablers
 
 ## Outcome
 
-Deliver the first complete local core from validated goal selection through immutable protocol snapshots, book and reading-plan lifecycle, a guided session state machine, Preview/Questions, and an absolute-time Focus/Break timer.
+Deliver the first complete local core from validated goal selection through immutable protocol snapshots, book and reading-plan lifecycle, a guided session state machine, Preview/Questions, and an absolute-time Focus/Break timer, backed by the IndexedDB, migration, autosave, and interruption-recovery capabilities those flows require.
 
 This plan coordinates these ten P0 work items:
 
@@ -19,6 +19,13 @@ This plan coordinates these ten P0 work items:
 8. `WORK-029` — Session state machine.
 9. `WORK-030` — Preview and Questions.
 10. `WORK-031` — Focus, Break, and timer.
+
+The plan also owns these four prerequisite/enabling work items:
+
+11. `WORK-041` — IndexedDB schema and repository.
+12. `WORK-042` — versioned migrations and safe read-only mode.
+13. `WORK-043` — autosave and data integrity.
+14. `WORK-044` — interrupted-session recovery.
 
 ## Sources
 
@@ -44,36 +51,61 @@ The work contains three internal chains:
 Rules:       WORK-022 → WORK-023 → WORK-024
 Books/plans: WORK-025 → WORK-026 → WORK-027 → WORK-028
 Sessions:    WORK-029 → WORK-030 → WORK-031
+Persistence: WORK-041 → WORK-042 → WORK-043 → WORK-044
 
-Integration: Rules → Reading Plan → Session
+Integration gates:
+WORK-042 → WORK-025
+WORK-043 → WORK-030
+WORK-029 + WORK-031 + WORK-043 → WORK-044
+WORK-027 + WORK-044 → WORK-028
+Rules → Reading Plan → Session
 ```
 
-The three chain roots may be technically independent after their individual readiness gates are satisfied. The repository WIP limit still permits only one executable item in `In Progress` at a time.
+The chain roots may be technically independent after their individual readiness gates are satisfied. The repository WIP limit still permits only one executable item in `In Progress` at a time.
 
-## Phase 0 — Readiness and dependency correction
+## Phase 0 — Plan-owned readiness decisions
 
-All ten tasks remain `Inbox` with DoR incomplete. Before an owning task moves to `Ready`, resolve its missing contract and verify its real dependencies.
-
-The live backlog currently places durable storage work later:
-
-- `WORK-041` owns the IndexedDB schema and repository.
-- `WORK-043` owns autosave and data integrity.
-- `WORK-044` owns interrupted-session recovery.
-
-This conflicts with acceptance criteria in `WORK-025`, `WORK-028`, `WORK-030`, and `WORK-031`, which require archive/restore, resume, autosave, and reload/restart behavior. Before execution, choose one of these honest paths:
-
-1. Move the required storage tasks earlier and add explicit dependencies; or
-2. Split the affected work into pure/domain and durable-integration tasks, keeping persistence criteria incomplete until the storage work lands.
-
-Do not use `localStorage` as a substitute for the approved IndexedDB domain store, and do not mark persistence-dependent work Done against an in-memory fake.
-
-The following product contracts also require approval before their owning task enters `Ready`:
+All fourteen linked tasks remain `Inbox` with DoR incomplete. SPEC-014 now owns resolving the following contracts before the relevant task moves to `Ready`:
 
 - Exact goal-conflict and secondary-goal decision matrix.
 - Exact Arabic rationale and invalid-selection messages.
 - Reverse-planning timezone, inclusive-day, and rounding semantics.
 - Executable ordered step templates and default durations for each protocol.
 - Versioned metadata fingerprint fields and collision-confirmation behavior.
+
+Any resolution that changes an approved product or architecture contract must be recorded in `DECISIONS.md` and the corresponding Notion Decision before implementation. Until then, the plan uses these conservative boundaries: caller-supplied clocks and IDs, no document-content access, no network, explicit validation, and no historical mutation.
+
+## Phase 1 — Persistence foundation (WORK-041–044)
+
+The complete dependency chain is now in scope. No `localStorage` substitute or fake-only completion is allowed.
+
+### WORK-041 — IndexedDB schema and repository
+
+- Define versioned stores and indexes for Book, ReadingPlan, ProtocolSnapshot, Session, SessionStep, LearningArtifact, and DistractionEvent.
+- Keep repository interfaces domain-focused and prevent direct IndexedDB access from UI components.
+- Provide explicit transaction boundaries for multi-record plan/session writes and typed unavailable/quota/transaction errors.
+- Tests cover schema creation, indexes, CRUD/query contracts, atomic rollback, blocked/open failures, and no network or Chrome Storage domain writes.
+
+### WORK-042 — Migrations and safe read-only mode
+
+- Define sequential, idempotent schema migrations from an empty database through the current version.
+- Back up or preserve existing records before destructive transformation; a failed migration must not delete or partially rewrite active data.
+- Enter a typed read-only application mode on migration failure and keep export access available without allowing domain mutation.
+- Tests cover every migration path, repeated upgrade attempts, failure injection, old-data preservation, unsupported future versions, and read-only enforcement.
+
+### WORK-043 — Autosave and data integrity
+
+- Add an injected autosave coordinator that commits meaningful step/artifact changes through one transaction and reports saved, pending, failed, and retryable states.
+- Coalesce redundant writes without dropping the latest user input; never acknowledge save before transaction completion.
+- Prevent partial writes across Session, SessionStep, and LearningArtifact changes.
+- Tests cover rapid edits, transaction failure, retry, last-write preservation, panel close during a pending save, quota failure, and accessible error-state inputs.
+
+### WORK-044 — Interrupted-session recovery
+
+- Detect a persisted non-terminal session on startup and create a recovery result from its last safe state and absolute timing fields.
+- Present a Recovery Banner with resume and abandon choices; never auto-complete or discard preserved input.
+- Recompute timer state from timestamps and persist the explicit user choice before navigation.
+- Tests cover panel close, extension suspension, browser restart, Active/Paused/Break/Recall/Review interruption, corrupt references, safe abandonment, and packaged Chrome/Edge recovery.
 
 ## Shared engineering contract
 
@@ -398,7 +430,7 @@ Browser-visible milestones require packaged Google Chrome for Testing and Micros
 
 ## Coordinated Definition of Done
 
-- Every acceptance criterion in WORK-022 through WORK-031 has implementation and runtime evidence in its own record.
+- Every acceptance criterion in WORK-022 through WORK-031 and WORK-041 through WORK-044 has implementation and runtime evidence in its own record.
 - Actual dependency relations match the architecture.
 - No persistence-dependent task is marked Done against a fake-only repository.
 - Historical Protocol Snapshots survive catalog/rule changes unchanged.
@@ -408,4 +440,4 @@ Browser-visible milestones require packaged Google Chrome for Testing and Micros
 
 ## Current state
 
-SPEC-014 is In Review. All ten work items are linked to it and remain `Inbox` with DoR and DoD incomplete. `WORK-022` is the first dependency-cleared candidate, but its decision matrix, messages, and rationale contract must be approved before it moves to `Ready`.
+SPEC-014 is In Review. The ten primary work items and four persistence enablers are linked to it and remain `Inbox` with DoR and DoD incomplete. `WORK-022` remains the first pure-domain candidate after its decision matrix, messages, and rationale contract are approved. Persistence-bearing work follows the explicit WORK-041 → WORK-044 gates above.
