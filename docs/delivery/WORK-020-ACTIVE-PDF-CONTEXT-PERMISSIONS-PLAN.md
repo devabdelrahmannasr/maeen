@@ -185,6 +185,7 @@ Record exact browser versions, commands, fixture URLs and paths, permission prom
 
 ## Completion evidence
 
+- Implementation commit: `997b1f8`.
 - `npm run check` passed 11 Vitest files and 84 tests, TypeScript, and the Vite production build.
 - `git diff --check` passed.
 - Chrome for Testing 153.0.8010.12 and Microsoft Edge 152.0.4191.66 loaded the packaged extension in isolated profiles.
