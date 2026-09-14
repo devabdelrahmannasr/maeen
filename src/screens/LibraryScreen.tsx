@@ -1,109 +1,18 @@
-import { ArrowLeft, BookPlus, Play, Settings } from 'lucide-preact';
-
-interface DemoBook {
-  title: string;
-  goal: string;
-  detail?: string;
-  pageRange?: string;
-  progress?: number;
-  coverTone: 'indigo' | 'amber' | 'green';
-}
-
-const demoBooks: DemoBook[] = [
-  {
-    title: 'Clean Architecture',
-    goal: 'فهم عميق',
-    pageRange: '84–102',
-    progress: 44,
-    coverTone: 'indigo',
-  },
-  {
-    title: 'التفكير النقدي',
-    goal: 'قراءة نقدية',
-    detail: '3 جلسات',
-    coverTone: 'amber',
-  },
-  {
-    title: 'التعلّم الفعّال',
-    goal: 'تعلّم مهارة',
-    detail: 'جلسة واحدة',
-    coverTone: 'green',
-  },
-];
+import { useEffect, useState } from 'preact/hooks';
+import { BookPlus, Settings } from 'lucide-preact';
+import { queryLibrary, type LibraryBookRow } from '../domain/books/libraryQuery';
+import { createBookRepository } from '../storage/indexedDb/domainRepositories';
 
 export function LibraryScreen() {
-  return (
-    <div class="screen-root library-screen">
-      <header class="app-bar app-bar--roomy">
-        <div>
-          <h1 class="page-title">مكتبتي</h1>
-          <p class="supporting-text">3 كتب · جلسة واحدة تحتاج استكمالًا</p>
-        </div>
-        <button class="icon-button" type="button" aria-label="فتح الإعدادات">
-          <Settings size={20} />
-        </button>
-      </header>
-
-      <aside class="recovery-banner" aria-label="جلسة محفوظة تحتاج استكمالًا">
-        <div>
-          <strong>جلسة متوقفة بأمان</strong>
-          <span>Clean Architecture · القراءة المركّزة</span>
-        </div>
-        <button type="button" class="text-action">
-          استكمل <ArrowLeft size={16} aria-hidden="true" />
-        </button>
-      </aside>
-
-      <section aria-labelledby="continue-reading-title">
-        <div class="section-heading">
-          <h2 id="continue-reading-title">تابع القراءة</h2>
-          <span class="demo-label">بيانات توضيحية</span>
-        </div>
-        <ol class="book-list">
-          {demoBooks.map((book, index) => (
-            <li class={`book-row book-row--${book.coverTone}`} key={book.title}>
-              <div class="book-cover" aria-hidden="true">
-                <span>{index + 1}</span>
-              </div>
-              <div class="book-row__content">
-                <h3>{book.title}</h3>
-                <p>
-                  {book.goal} · {book.pageRange ? <>ص <bdi dir="ltr">{book.pageRange}</bdi></> : book.detail}
-                </p>
-                {book.progress !== undefined ? (
-                  <>
-                    <div
-                      class="progress-track"
-                      role="progressbar"
-                      aria-label={`التقدم في ${book.title}`}
-                      aria-valuemin={0}
-                      aria-valuemax={100}
-                      aria-valuenow={book.progress}
-                    >
-                      <span style={{ width: `${book.progress}%` }} />
-                    </div>
-                    <div class="book-row__footer">
-                      <span>التقدم <bdi dir="ltr">{book.progress}%</bdi></span>
-                      <button type="button" class="text-action">
-                        <Play size={14} fill="currentColor" aria-hidden="true" /> ابدأ جلسة
-                      </button>
-                    </div>
-                  </>
-                ) : (
-                  <button type="button" class="text-action book-row__link">
-                    عرض التقدم <ArrowLeft size={15} aria-hidden="true" />
-                  </button>
-                )}
-              </div>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      <button class="primary-button primary-button--with-icon" type="button">
-        <BookPlus size={20} aria-hidden="true" />
-        أضف كتابًا
-      </button>
-    </div>
-  );
+  const [rows, setRows] = useState<readonly LibraryBookRow[]>([]);
+  const [status, setStatus] = useState<'loading' | 'ready' | 'failed'>('loading');
+  useEffect(() => { void queryLibrary(createBookRepository()).then((result) => { setRows(result); setStatus('ready'); }).catch(() => setStatus('failed')); }, []);
+  const active = rows.filter((row) => !row.archived);
+  const archived = rows.filter((row) => row.archived);
+  return <div class="screen-root library-screen"><header class="app-bar app-bar--roomy"><div><h1 class="page-title">مكتبتي</h1><p class="supporting-text">مراجعك محفوظة على هذا الجهاز فقط</p></div><button class="icon-button" type="button" aria-label="فتح الإعدادات"><Settings size={20} /></button></header>
+    {status === 'failed' ? <p class="save-error" role="alert">تعذر فتح المكتبة المحلية. بياناتك لم تُحذف؛ أعد المحاولة بعد التحقق من مساحة التخزين.</p> : null}
+    <section aria-labelledby="active-books-title"><div class="section-heading"><h2 id="active-books-title">الكتب النشطة</h2><span class="demo-label">{status === 'loading' ? 'جارٍ التحميل…' : `${active.length} كتب`}</span></div>{status === 'ready' && active.length === 0 ? <p class="supporting-text">لم تضف كتابًا بعد. ابدأ بمرجع واحد.</p> : <ol class="book-list">{active.map((row) => <li class="book-row" key={row.book.id}><div class="book-cover" aria-hidden="true"><span>كتاب</span></div><div class="book-row__content"><h3>{row.book.metadata.title}</h3><p>{row.book.metadata.author ?? 'مؤلف غير محدد'} · <bdi dir="ltr">{row.book.metadata.totalPages}</bdi> صفحة</p><a class="text-action book-row__link" href={`#/books/${encodeURIComponent(row.book.id)}/progress`}>عرض التقدم</a></div></li>)}</ol>}</section>
+    {archived.length > 0 ? <section aria-labelledby="archived-books-title"><div class="section-heading"><h2 id="archived-books-title">الأرشيف</h2><span class="demo-label">{archived.length} كتب</span></div><ol class="book-list">{archived.map((row) => <li class="book-row" key={row.book.id}><div class="book-row__content"><h3>{row.book.metadata.title}</h3><p>مؤرشف</p></div></li>)}</ol></section> : null}
+    <a class="primary-button primary-button--with-icon" href="#/books/new"><BookPlus size={20} aria-hidden="true" /> أضف كتابًا</a>
+  </div>;
 }

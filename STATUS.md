@@ -27,6 +27,7 @@ Verified on 2026-09-14.
 - `SPEC-013` defines the exact versioned pure-data boundary for WORK-021: nine stable goal definitions, six protocol families and their ordered building blocks, independent version constants, contract tests, and explicit separation from later rules/snapshot work.
 - `WORK-021` implements goal catalog version 1 with nine exact Arabic-interface goals and protocol catalog version 1 with six exact protocol families, stable IDs, Arabic labels, English reference names, and ordered building-block IDs as pure readonly data.
 - `SPEC-014` coordinates `WORK-022` through `WORK-031` plus persistence enablers `WORK-041` through `WORK-044`, covering rules/snapshots/time calculations, book and Reading Plan lifecycle, IndexedDB/migrations/autosave/recovery, Library resume, the Session state machine, Preview/Questions, and the absolute-time Focus/Break timer.
+- The first implementation slice for SPEC-014 is now present locally: pure goal/rules, immutable protocol snapshots and executable steps, reverse-planning, book metadata/fingerprints/lifecycle, IndexedDB schema/repositories with atomic plan/session bundle writes, migration/read-only contracts, autosave coalescing/retry, recovery detection, library queries, session transitions, absolute timers, and the guided book/goal/preview/focus routes.
 
 ## Ready
 
@@ -42,8 +43,7 @@ Verified on 2026-09-14.
 
 ## Not started
 
-- Remaining eight MVP screens and their domain behavior.
-- IndexedDB, rules/protocol, session/timer, backup/import/export, and complete automated coverage.
+- Preview/Questions autosave UI, full recovery banner/actions, backup/import/export, and complete cross-browser runtime evidence.
 - Five user-research studies; `WORK-014` through `WORK-016` are explicitly deferred and their evidence remains absent.
 
 ## Known limitation
@@ -91,6 +91,7 @@ Resolve SPEC-014's goal matrix/messages, reverse-planning, protocol-step, and fi
 - 2026-09-14: final review found no blocking WORK-021 defect. Commit `3a0bd06` records the exact version 1 catalogs and 15 focused tests. The acceptance criteria are satisfied: all nine goals and six protocols match the approved order and labels, each catalog has an independent version, and production modules are pure readonly data with no functions or environment dependencies. WORK-021 is Done in Notion with DoD complete; SPEC-013 is Approved.
 - 2026-09-14: refreshed the live queue and created SPEC-014 as one coordinated implementation plan for P0 WORK-022 through WORK-031 in commit `9c590cf`. The plan preserves the three task chains and WIP limit, maps contracts/files/tests for every task, links all ten Notion records, and keeps every item Inbox with DoR incomplete. It records unresolved decisions for the goal matrix/messages, reverse-planning semantics, executable protocol steps, metadata fingerprinting, and the backlog mismatch where WORK-025/028/030/031 need durable behavior owned later by WORK-041/043/044. Planning verification passed 99 tests across 13 files, TypeScript, the Vite production build, and `git diff --check`; no runtime code changed.
 - 2026-09-14: expanded SPEC-014 so the unresolved persistence prerequisites are implementation scope rather than an external blocker. WORK-041, WORK-042, WORK-043, and WORK-044 now form the explicit IndexedDB → migrations/read-only → autosave/integrity → interrupted-recovery chain and are linked to the plan. The target dependency gates are WORK-042 → WORK-025, WORK-043 → WORK-030, WORK-029 + WORK-031 + WORK-043 → WORK-044, and WORK-027 + WORK-044 → WORK-028. All fourteen tasks remain Inbox with DoR incomplete; no runtime code changed.
+- 2026-09-14: implemented the SPEC-014 core slice locally. Added pure rules, snapshots, protocol steps, reading-time calculations, book validation/fingerprints/lifecycle, Reading Plan creation, IndexedDB stores/repositories and atomic multi-record writes, migration/read-only contracts, autosave coalescing with retryable failures, recovery detection, library/resume queries, session transitions, absolute timers, and accessible RTL flow screens. `npm run check` passed 29 files and 131 tests, TypeScript passed, Vite production build passed (47.87 kB raw JS / 16.63 kB gzip), and `git diff --check` passed. Packaged Chrome/Edge runtime verification for these new persistence and session flows remains outstanding because the browser executables are not available in this checkout; no Notion item was marked Done on this code-only evidence.
 
 ## Codex app handoff
 

@@ -38,13 +38,13 @@ export interface RouteDescriptor {
 export const ROUTE_CATALOG: readonly RouteDescriptor[] = [
   { name: 'onboarding', path: '#/onboarding', enabled: true, safelyRestorable: false, requiredParameters: [] },
   { name: 'library', path: '#/library', enabled: true, safelyRestorable: true, requiredParameters: [] },
-  { name: 'new-book', path: '#/books/new', enabled: false, safelyRestorable: false, requiredParameters: [] },
-  { name: 'goal-selection', path: '#/books/:bookId/goals', enabled: false, safelyRestorable: false, requiredParameters: ['bookId'] },
-  { name: 'protocol-preview', path: '#/plans/:planId/protocol', enabled: false, safelyRestorable: false, requiredParameters: ['planId'] },
-  { name: 'focus-session', path: '#/sessions/:sessionId/focus', enabled: false, safelyRestorable: false, requiredParameters: ['sessionId'] },
-  { name: 'recall-review', path: '#/sessions/:sessionId/review', enabled: false, safelyRestorable: false, requiredParameters: ['sessionId'] },
-  { name: 'session-summary', path: '#/sessions/:sessionId/summary', enabled: false, safelyRestorable: false, requiredParameters: ['sessionId'] },
-  { name: 'book-progress', path: '#/books/:bookId/progress', enabled: false, safelyRestorable: false, requiredParameters: ['bookId'] },
+  { name: 'new-book', path: '#/books/new', enabled: true, safelyRestorable: false, requiredParameters: [] },
+  { name: 'goal-selection', path: '#/books/:bookId/goals', enabled: true, safelyRestorable: false, requiredParameters: ['bookId'] },
+  { name: 'protocol-preview', path: '#/plans/:planId/protocol', enabled: true, safelyRestorable: false, requiredParameters: ['planId'] },
+  { name: 'focus-session', path: '#/sessions/:sessionId/focus', enabled: true, safelyRestorable: false, requiredParameters: ['sessionId'] },
+  { name: 'recall-review', path: '#/sessions/:sessionId/review', enabled: true, safelyRestorable: false, requiredParameters: ['sessionId'] },
+  { name: 'session-summary', path: '#/sessions/:sessionId/summary', enabled: true, safelyRestorable: false, requiredParameters: ['sessionId'] },
+  { name: 'book-progress', path: '#/books/:bookId/progress', enabled: true, safelyRestorable: false, requiredParameters: ['bookId'] },
   { name: 'settings-data', path: '#/settings', enabled: false, safelyRestorable: false, requiredParameters: [] },
 ] as const;
 

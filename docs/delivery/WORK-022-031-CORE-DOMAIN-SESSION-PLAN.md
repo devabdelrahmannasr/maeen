@@ -1,7 +1,7 @@
 # WORK-022–031 + Persistence Enablers — Core Domain, Planning, and Session Implementation Plan
 
-Status: In Review on 2026-09-14
-Scope: planning only; ten primary tasks plus WORK-041–044 persistence enablers
+Status: In Review on 2026-09-14; implementation slice recorded 2026-09-14
+Scope: ten primary tasks plus WORK-041–044 persistence enablers; runtime acceptance remains gated on packaged-browser persistence/recovery evidence
 
 ## Outcome
 
@@ -440,4 +440,4 @@ Browser-visible milestones require packaged Google Chrome for Testing and Micros
 
 ## Current state
 
-SPEC-014 is In Review. The ten primary work items and four persistence enablers are linked to it and remain `Inbox` with DoR and DoD incomplete. `WORK-022` remains the first pure-domain candidate after its decision matrix, messages, and rationale contract are approved. Persistence-bearing work follows the explicit WORK-041 → WORK-044 gates above.
+SPEC-014 is In Review. The first local implementation slice is present and verified by automated checks, but the ten primary work items and four persistence enablers remain `Inbox` with DoR and DoD incomplete until packaged Chrome/Edge persistence, restart, migration, and recovery evidence is captured. `WORK-022` remains the first pure-domain candidate after its decision matrix, messages, and rationale contract are approved. Persistence-bearing work follows the explicit WORK-041 → WORK-044 gates above.
