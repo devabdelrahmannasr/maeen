@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">معين — Maeen reading companion</title>
+  <desc id="desc">A calm local-first reading workspace beside a PDF viewer.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="0.55" stop-color="#134e4a"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+    <radialGradient id="glow" cx="70%" cy="25%" r="55%"><stop offset="0" stop-color="#5eead4" stop-opacity=".35"/><stop offset="1" stop-color="#5eead4" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#background)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <circle cx="1320" cy="175" r="8" fill="#fbbf24"/><circle cx="1380" cy="230" r="4" fill="#fbbf24" opacity=".7"/>
+  <g transform="translate(1180 300)"><rect width="250" height="250" rx="64" fill="#f0fdfa"/><path d="M62 70h64c29 0 52 23 52 52v69h-64c-29 0-52-23-52-52V70Z" fill="#0f766e"/><path d="M126 70v121" stroke="#99f6e4" stroke-width="8" stroke-linecap="round"/><path d="M94 104h30M94 135h30" stroke="#f0fdfa" stroke-width="8" stroke-linecap="round"/><path d="m184 38 7 18 18 7-18 7-7 18-7-18-18-7 18-7 7-18Z" fill="#fbbf24"/></g>
+  <text x="1070" y="655" text-anchor="end" direction="rtl" font-family="Cairo, Arial, sans-serif" font-size="100" font-weight="700" fill="#ffffff">معين</text>
+  <text x="1070" y="720" text-anchor="end" font-family="Arial, sans-serif" font-size="32" letter-spacing="8" fill="#99f6e4">MAEEN • READING COMPANION</text>
+  <text x="1070" y="790" text-anchor="end" direction="rtl" font-family="Cairo, Arial, sans-serif" font-size="30" fill="#ccfbf1">اقرأ بهدف واضح، وتذكّر ما يهم.</text>
+  <text x="80" y="820" font-family="Arial, sans-serif" font-size="22" fill="#ccfbf1">Arabic-first • Local-first • Private by design</text>
+</svg>

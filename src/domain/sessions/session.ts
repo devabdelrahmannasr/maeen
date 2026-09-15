@@ -9,6 +9,9 @@ export interface Session {
   readonly status: SessionStatus;
   readonly currentStepId: string;
   readonly lastSafeStatus: Exclude<SessionStatus, 'interrupted' | 'abandoned' | 'completed'>;
+  readonly pageStart?: number;
+  readonly pageEnd?: number;
+  readonly completedPages?: number;
   readonly startedAt?: string;
   readonly targetEndAt?: string;
   readonly pausedAt?: string;

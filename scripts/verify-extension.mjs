@@ -19,8 +19,21 @@ const baseUrl = `http://127.0.0.1:${port}`;
 const extensionPath = path.resolve('dist');
 const runCoreFlow = process.argv.includes('--core');
 const runTrueRestart = process.argv.includes('--true-restart');
+const verifyImport = process.argv.includes('--import');
 const profilePath = await mkdtemp(path.join(tmpdir(), `reading-helper-${browserName}-`));
 await mkdir(path.resolve('output'), { recursive: true });
+const importFixturePath = path.resolve(`output/${browserName}-import-fixture.json`);
+if (verifyImport) {
+  await writeFile(importFixturePath, `${JSON.stringify({
+    exportVersion: 1,
+    schemaVersion: 1,
+    exportedAt: '2026-09-15T00:00:00.000Z',
+    recordCounts: { books: 1 },
+    stores: {
+      books: [{ schemaVersion: 1, id: 'import-fixture-book', metadata: { title: 'كتاب الاستيراد التجريبي', author: 'Maeen', totalPages: 12 }, createdAt: '2026-09-15T00:00:00.000Z', updatedAt: '2026-09-15T00:00:00.000Z' }],
+    },
+  }, null, 2)}\n`);
+}
 
 const driver = spawn(driverBinary, [`--port=${port}`], { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true });
 let driverLog = '';
@@ -69,6 +82,15 @@ async function execute(sessionId, script, args = []) {
 
 async function executeAsync(sessionId, script, args = []) {
   return request(`/session/${sessionId}/execute/async`, 'POST', { script, args });
+}
+
+async function findElement(sessionId, using, value) {
+  const response = await request(`/session/${sessionId}/element`, 'POST', { using, value });
+  return response['element-6066-11e4-a52e-4f735466cecf'];
+}
+
+async function sendFile(sessionId, elementId, filePath) {
+  await request(`/session/${sessionId}/element/${elementId}/value`, 'POST', { text: filePath });
 }
 
 async function screenshot(sessionId, fileName) {
@@ -226,6 +248,15 @@ try {
     assertEqual(paused, true, 'Paused state');
     await execute(sessionId, '[...document.querySelectorAll("button")].find((button) => button.textContent.includes("استئناف القراءة"))?.click();');
     await new Promise((resolve) => setTimeout(resolve, 350));
+    await execute(sessionId, `
+      const inputs = document.querySelectorAll('textarea');
+      if (inputs[0]) { inputs[0].value = 'ملاحظة محلية'; inputs[0].dispatchEvent(new Event('input', { bubbles: true })); inputs[0].dispatchEvent(new Event('blur', { bubbles: true })); }
+      if (inputs[1]) { inputs[1].value = 'سؤال للعودة'; inputs[1].dispatchEvent(new Event('input', { bubbles: true })); inputs[1].dispatchEvent(new Event('blur', { bubbles: true })); }
+      [...document.querySelectorAll('button')].find((button) => button.textContent.includes('سجّل تشتتًا'))?.click();
+    `);
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    const distraction = await execute(sessionId, 'return document.querySelector(".distraction-card")?.textContent?.trim();');
+    if (!distraction?.includes('1')) throw new Error('Distraction event was not recorded.');
     await execute(sessionId, 'location.hash = location.hash.replace("/focus", "/review");');
     await new Promise((resolve) => setTimeout(resolve, 400));
     await execute(sessionId, `
@@ -239,6 +270,65 @@ try {
     await new Promise((resolve) => setTimeout(resolve, 800));
     const summary = await execute(sessionId, 'return { hash: location.hash, heading: document.querySelector("h1")?.textContent?.trim(), saved: document.querySelector(".flow-card h2")?.textContent?.trim() };');
     assertEqual(summary.heading, 'ملخص الجلسة', 'Session summary heading');
+    await execute(sessionId, `
+      const fields = document.querySelectorAll('textarea');
+      const values = ['راجعته الآن', 'سأطبقه غدًا', 'فجوة تحتاج دليلًا'];
+      const setter = Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, 'value')?.set;
+      fields.forEach((field, index) => { setter?.call(field, values[index]); field.dispatchEvent(new InputEvent('input', { bubbles: true, inputType: 'insertText', data: values[index] })); });
+    `);
+    await new Promise((resolve) => setTimeout(resolve, 150));
+    await execute(sessionId, `[...document.querySelectorAll('button')].find((button) => button.textContent.includes('إنهاء الجلسة'))?.click();`);
+    await new Promise((resolve) => setTimeout(resolve, 800));
+    const completedSummary = await execute(sessionId, 'return document.querySelector(".flow-card h2")?.textContent?.trim();');
+    assertEqual(completedSummary, 'تم حفظ الجلسة', 'Completed session summary');
+    await execute(sessionId, 'location.hash = "#/library";');
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    await execute(sessionId, '[...document.querySelectorAll("button")].find((button) => button.textContent.includes("تصدير JSON"))?.click();');
+    await execute(sessionId, '[...document.querySelectorAll("button")].find((button) => button.textContent.includes("تصدير Markdown"))?.click();');
+    const exportStatus = await execute(sessionId, 'return document.querySelector(".export-card [role=status]")?.textContent?.trim();');
+    if (!exportStatus?.includes('تم تجهيز')) throw new Error('Export action did not complete.');
+    let importEvidence;
+    if (verifyImport) {
+      const beforeImport = await executeAsync(sessionId, `
+        const done = arguments[arguments.length - 1];
+        const request = indexedDB.open('reading-helper-local');
+        request.onsuccess = () => { const db = request.result; const tx = db.transaction('books', 'readonly'); const read = tx.objectStore('books').getAll(); read.onsuccess = () => { db.close(); done(read.result.length); }; read.onerror = () => done(-1); };
+        request.onerror = () => done(-1);
+      `);
+      const inputId = await findElement(sessionId, 'css selector', 'input.visually-hidden-file-input');
+      await sendFile(sessionId, inputId, importFixturePath);
+      await new Promise((resolve) => setTimeout(resolve, 300));
+      const previewVisible = await execute(sessionId, 'return { visible: Boolean(document.querySelector("[role=dialog]")), files: document.querySelector(".file-action input[type=file]")?.files?.length ?? -1, status: document.querySelector(".export-card [role=status]")?.textContent?.trim() ?? null };');
+      assertEqual(previewVisible.visible, true, 'Import preview visible');
+      await execute(sessionId, '[...document.querySelectorAll("[role=dialog] button")].find((button) => button.textContent.includes("إلغاء"))?.click();');
+      await new Promise((resolve) => setTimeout(resolve, 150));
+      const cancelled = await execute(sessionId, 'return !document.querySelector("[role=dialog]");');
+      assertEqual(cancelled, true, 'Import cancellation');
+      const afterCancel = await executeAsync(sessionId, `
+        const done = arguments[arguments.length - 1];
+        const request = indexedDB.open('reading-helper-local');
+        request.onsuccess = () => { const db = request.result; const tx = db.transaction('books', 'readonly'); const read = tx.objectStore('books').getAll(); read.onsuccess = () => { db.close(); done(read.result.length); }; read.onerror = () => done(-1); };
+        request.onerror = () => done(-1);
+      `);
+      assertEqual(afterCancel, beforeImport, 'Import cancellation preserves database');
+      const inputIdForCommit = await findElement(sessionId, 'css selector', 'input.visually-hidden-file-input');
+      await sendFile(sessionId, inputIdForCommit, importFixturePath);
+      await new Promise((resolve) => setTimeout(resolve, 300));
+      await execute(sessionId, '[...document.querySelectorAll("[role=dialog] button")].find((button) => button.textContent.includes("تأكيد الاستيراد"))?.click();');
+      await new Promise((resolve) => setTimeout(resolve, 900));
+      const committed = await execute(sessionId, 'return { heading: document.querySelector("h1")?.textContent?.trim(), titles: [...document.querySelectorAll(".book-row h3")].map((node) => node.textContent?.trim()) };');
+      assertEqual(committed.heading, 'مكتبتي', 'Imported library heading');
+      if (!committed.titles.includes('كتاب الاستيراد التجريبي')) throw new Error(`Imported book title missing: ${JSON.stringify(committed.titles)}`);
+      importEvidence = { beforeImport, previewVisible, cancelled, afterCancel, committed };
+    }
+    const bookId = goals.hash.split('/')[2];
+    await execute(sessionId, `location.hash = "#/books/${bookId}/progress";`);
+    await new Promise((resolve) => setTimeout(resolve, 600));
+    const progress = await execute(sessionId, 'return { heading: document.querySelector("h1")?.textContent?.trim(), metrics: document.querySelectorAll(".metric-grid p").length, privacy: document.querySelector(".privacy-note")?.textContent?.trim() };');
+    assertEqual(progress.heading, 'تقدم الكتاب', 'Book Progress heading');
+    if (progress.metrics < 4 || !progress.privacy?.includes('محلية فقط')) throw new Error('Book Progress metrics/privacy surface missing.');
+    await execute(sessionId, 'location.hash = "#/library";');
+    await new Promise((resolve) => setTimeout(resolve, 400));
     await executeAsync(sessionId, `
       const done = arguments[arguments.length - 1];
       const request = indexedDB.open('reading-helper-local', 1);
@@ -296,7 +386,9 @@ try {
     const migration = await execute(sessionId, 'return { heading: document.querySelector("h1")?.textContent?.trim(), banner: document.querySelector(".migration-banner")?.textContent?.trim(), exportAction: [...document.querySelectorAll("button")].some((button) => button.textContent.includes("صدّر نسخة احتياطية")) };');
     if (!migration.banner?.includes('وضع القراءة فقط')) throw new Error('Migration read-only banner was not shown for a future database version.');
     assertEqual(migration.exportAction, true, 'Migration export action');
-    coreFlow = { goals, preview, focus, paused, summary, restart, migration };
+    await execute(sessionId, '[...document.querySelectorAll("button")].find((button) => button.textContent.includes("صدّر نسخة احتياطية"))?.click();');
+    await new Promise((resolve) => setTimeout(resolve, 250));
+    coreFlow = { goals, preview, focus, paused, summary, restart, migration, ...(importEvidence ? { importEvidence } : {}) };
   }
 
   const observability = await execute(sessionId, 'return window.__readingHelperVerification ?? { consoleErrors: [], networkRequests: [] };');

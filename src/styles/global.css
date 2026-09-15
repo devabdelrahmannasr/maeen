@@ -663,6 +663,92 @@ strong::selection {
   line-height: 1.8;
 }
 
+.capture-card {
+  display: grid;
+  gap: 12px;
+}
+
+.capture-card h2,
+.export-card h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.capture-card label {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.capture-card textarea {
+  min-height: 70px;
+}
+
+.metric-grid {
+  margin: 14px 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.metric-grid p {
+  margin: 0;
+  padding: 10px;
+  display: grid;
+  gap: 2px;
+  border-radius: 10px;
+  background: var(--action-soft);
+}
+
+.metric-grid strong {
+  color: var(--action);
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.metric-grid span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.export-card {
+  margin-top: 20px;
+}
+
+.file-action {
+  cursor: pointer;
+}
+
+.file-action input[type='file'],
+.visually-hidden-file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.import-preview {
+  border: 1px solid var(--rule);
+}
+
+.import-preview ul {
+  margin: 10px 0;
+  padding-inline-start: 22px;
+}
+
+.distraction-card {
+  display: grid;
+  gap: 6px;
+}
+
+.distraction-card h2 {
+  margin: 0;
+  font-size: 15px;
+}
+
 .timer-card {
   min-height: 190px;
   display: grid;

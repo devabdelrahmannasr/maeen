@@ -1,6 +1,6 @@
 # Figma Handoff
 
-Figma file: **مرافق القراءة — Arabic RTL Product UI**.
+Figma file: **معين — Maeen Arabic RTL Product UI**.
 
 ## Pages
 
@@ -20,4 +20,3 @@ Figma file: **مرافق القراءة — Arabic RTL Product UI**.
 - `design/figma/figma-state.json`
 
 The recorded checks passed for five SVG files, RTL coverage, light/dark coverage, recovery/error coverage, and browser visual review. Native variable collections, component sets, and Code Connect remain pending due to Figma Starter MCP quota. Re-run native library work only when quota/capability is available.
-

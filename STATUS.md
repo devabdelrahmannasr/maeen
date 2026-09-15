@@ -1,6 +1,6 @@
 # Current Status
 
-Verified on 2026-09-14.
+Verified on 2026-09-15.
 
 ## Done
 
@@ -27,6 +27,13 @@ Verified on 2026-09-14.
 - `SPEC-013` defines the exact versioned pure-data boundary for WORK-021: nine stable goal definitions, six protocol families and their ordered building blocks, independent version constants, contract tests, and explicit separation from later rules/snapshot work.
 - `WORK-021` implements goal catalog version 1 with nine exact Arabic-interface goals and protocol catalog version 1 with six exact protocol families, stable IDs, Arabic labels, English reference names, and ordered building-block IDs as pure readonly data.
 - `SPEC-014` coordinates `WORK-022` through `WORK-031` plus persistence enablers `WORK-041` through `WORK-044`, covering rules/snapshots/time calculations, book and Reading Plan lifecycle, IndexedDB/migrations/autosave/recovery, Library resume, the Session state machine, Preview/Questions, and the absolute-time Focus/Break timer.
+- `SPEC-015` is Approved and its coordinated plan `docs/delivery/WORK-032-040-045-ARTIFACTS-METRICS-EXPORT-PLAN.md` is complete. `WORK-032`–`WORK-036`, `WORK-037`–`WORK-040`, and `WORK-045` are implemented, tested, browser-verified, and marked Done in Notion with DoR/DoD complete.
+- `SPEC-016` and `docs/delivery/WORK-046-056-IMPORT-QUALITY-RELEASE-PLAN.md` are complete. `WORK-046`–`WORK-056` implement validated import preview, atomic backup/rollback with a local recovery journal, round-trip safeguards, Arabic-first responsive/accessibility states, and automated plus packaged browser regression. All eleven tasks are Done in Notion with DoR/DoD complete.
+- Final SPEC-016 verification on 2026-09-15: `npm run check` passed 39 Vitest files / 155 tests, TypeScript, and Vite production build; `git diff --check` passed. Chrome for Testing 152.0.7977.82 + ChromeDriver 152.0.7977.82 and Microsoft Edge 153.0.4234.32 + EdgeDriver 153.0.4234.32 passed core journeys, import preview/cancel/commit, restart/recovery, migration readonly/export, RTL, and zero extension console errors/network requests. Toolbar action invocation remains blocked by the WebDriver DevTools allowlist; direct registered Side Panel verification was used.
+- `SPEC-017` / `WORK-057–060` implementation is complete locally: MIT license, README, contribution/security/privacy contracts, deterministic SVG icons and synthetic Arabic RTL store screenshots, changelog/store metadata, pinned Node/npm release verification, CI, and draft package evidence.
+- Final WORK-057–060 verification on 2026-09-15: `npm run check` passed 39 Vitest files / 155 tests, `npm run release:verify` passed with Node v24.19.0/npm 11.17.0, manifest/icon/docs contracts, reproducible `dist/` and ZIP comparison, and package `output/release/maeen-0.1.0.zip` (SHA-256 `e225b5e9b18a324288026f901a84bb8d8742380ebc689145526742c45a3169af`, recorded in `output/release/artifact-manifest.json`). `git diff --check` passed.
+- Alpha package refresh on 2026-09-16: branding assets `public/branding/maeen-logo.svg` and `docs/release/maeen-cover.svg`, expanded Arabic README, and Marketplace preview references were added. `npm run check` and `npm run release:verify` passed again; refreshed `maeen-0.1.0.zip` SHA-256 is `8fbb7afe9a96d8698c821aec263be65699b6c5f3ab8b4653bcfb906df1e6828f`.
+- Chrome for Testing 152.0.7977.82 + ChromeDriver 152.0.7977.82 and Microsoft Edge 153.0.4234.32 + EdgeDriver 153.0.4234.32 passed onboarding, core flow, restart/recovery, migration read-only/export, import preview/cancel/commit, RTL, and zero extension console/network errors. Toolbar action remains blocked by the WebDriver DevTools allowlist; direct registered Side Panel verification was used. Store submission remains draft by choice; canonical repository/support/privacy URLs are now configured.
 - The first implementation slice for SPEC-014 is now present locally: pure goal/rules, immutable protocol snapshots and executable steps, reverse-planning, book metadata/fingerprints/lifecycle, IndexedDB schema/repositories with atomic plan/session bundle writes, migration/read-only contracts, autosave coalescing/retry, recovery detection, library queries, session transitions, absolute timers, and the guided book/goal/preview/focus routes.
 - The persistence/session slice now includes real `fake-indexeddb` integration tests, explicit migration write gates, persisted recovery resume/abandon choices, session-step and learning-artifact bundle writes, question autosave during Protocol Preview, recall/review artifact persistence, timer pause/resume/break commands, and active/archived Library actions.
 
@@ -44,18 +51,21 @@ Verified on 2026-09-14.
 
 ## Not started
 
-- Backup/import remains outside this slice; complete per-task cross-browser evidence and final acceptance mapping remain.
+- No implementation work is not started for the current SPEC-016 slice; import/quality/release tasks are complete.
+- No implementation work is not started for the current SPEC-017 slice; WORK-057–060 are complete locally and awaiting Notion evidence/status closure.
 - Five user-research studies; `WORK-014` through `WORK-016` are explicitly deferred and their evidence remains absent.
 
 ## Known limitation
 
 Native Figma variables, component sets, and Code Connect remain pending due to the exhausted Figma Starter MCP quota. The visual design itself is preserved and reviewed.
 
+The local Figma screen exports were renamed to **معين — Maeen**. Updating the corresponding remote Figma text nodes was attempted on 2026-09-15 but was blocked by the Figma Starter MCP call limit; retry after the quota resets or the plan is upgraded.
+
 Edge 152.0.4191.66 continued exposing raw local-file `activeTab` metadata after its file-access setting was disabled. The adapter does not trust that metadata: `isAllowedFileSchemeAccess() === false` is authoritative and produces `metadata-unavailable:file-access-not-granted`.
 
 ## Exact next action
 
-Continue with the next dependency-cleared work item after the completed SPEC-014 slice; keep the one-item WIP limit and refresh Notion before selecting it.
+WORK-057–060 and SPEC-017 are closed in Notion; keep REL-002 in Ready and do not publish the draft store package during the internal-alpha release.
 
 ## Verification log
 
@@ -98,7 +108,10 @@ Continue with the next dependency-cleared work item after the completed SPEC-014
 - 2026-09-14: added the runtime migration gate and user-owned backup action. A future IndexedDB version is detected without an upgrade, all domain writes are rejected, and the RTL app presents a read-only warning with `صدّر نسخة احتياطية`. `npm run check` passed 31 files and 138 tests. Chrome for Testing `152.0.7977.83` + matching ChromeDriver and Edge `152.0.4191.66` + matching EdgeDriver both passed the same core flow, recovery, and future-version read-only banner/export-action check; Edge still passes the true second-session restart and Chrome remains limited by the extension-target restart constraint. `git diff --check` passed. Browser console/network instrumentation and per-task Notion acceptance mapping are still outstanding.
 - 2026-09-14: final packaged verification passed with observability and true restart. Chrome for Testing `152.0.7977.83` + ChromeDriver `152.0.7977.83` and Edge `152.0.4191.66` + EdgeDriver `152.0.4191.66` both passed New Book → Goals → Protocol → Focus → pause/resume → Recall → Summary, IndexedDB/Chrome Storage persistence, recovery after a second WebDriver session, and future-version migration read-only/export behavior. Both runs recorded zero extension console errors and zero extension-originated network requests. Chrome restart keeps an ordinary `about:blank` target before recreating the session; the toolbar action remains blocked only by the WebDriver DevTools allowlist and the registered Side Panel URL is exercised directly. `npm run check` passed 31 files and 138 tests; `git diff --check` passed.
 - 2026-09-14: resolved DEC-013 and recorded the exact goal matrix, UTC/inclusive reverse-planning rules, catalog step defaults, and version 1 fingerprint fields in `DECISIONS.md` and SPEC-014. Added per-task acceptance evidence to all fourteen linked Notion records, set each to `Done` with DoR/DoD complete, and moved SPEC-014 to `Approved`; live query confirmed all fourteen statuses and checkboxes. The coordinated implementation and packaged-browser evidence are now complete for this slice.
+- 2026-09-15: implemented SPEC-015 in full. Added typed learning artifacts, recall/review/application/gap summary flow, in-session note/question autosave, distraction events, deterministic local learning metrics, Book Progress and safe resume recommendation, explicit JSON/Markdown export, privacy contract/documentation, and atomic artifact/session writes. `npm run check` passed 37 Vitest files / 146 tests, TypeScript, and Vite production build; `git diff --check` passed. Packaged Chrome for Testing `152.0.7977.82` + matching ChromeDriver and Microsoft Edge `153.0.4234.32` + matching EdgeDriver passed the core flow, autosave, distraction, completed-session persistence, export, Book Progress, true restart/recovery, migration read-only/export behavior, RTL/layout checks, and zero extension console errors/network requests. The toolbar action remains limited by WebDriver's DevTools allowlist; direct registered Side Panel verification covered the product contract. SPEC-015 and all ten linked Work Items are Done/Approved in Notion with DoR/DoD complete.
+- 2026-09-15: reran the Edge matrix with the exact downloaded Microsoft Edge WebDriver `153.0.4234.32` (matching the installed browser), including the migration export button click; the full run passed with zero extension console errors and zero extension-originated network requests. Chrome was rerun with matching ChromeDriver `152.0.7977.82` in the same final harness.
+- 2026-09-15: completed SPEC-016 WORK-046–056. Added import validation/preview with bounded fields, timestamp/reference/count checks, atomic backup/rollback and local phase journal, accessible keyboard-friendly import dialog, and WebDriver import E2E coverage. Final `npm run check` passed 39 Vitest files / 155 tests plus TypeScript/Vite; Chrome 152.0.7977.82 and Edge 153.0.4234.32 matching-driver matrices passed import cancel/commit, restart/recovery, migration readonly/export, RTL, and zero extension console/network activity. All eleven Notion tasks are Done with DoR/DoD complete; SPEC-016 is Approved.
 
 ## Codex app handoff
 
-The current task was renamed **Reading Helper Open Source**. The local Codex integration available during workspace creation could list saved projects and create tasks inside an existing saved project, but it did not expose a command to register a new folder or move the calling task itself. Register `C:\Users\PC\Documents\Reading Helper Open Source` through **Add project** in the Codex sidebar, then continue this named task from that project if the app offers the move action. No separate duplicate task was created.
+The current task is branded **Maeen**. The local Codex integration available during workspace creation could list saved projects and create tasks inside an existing saved project, but it did not expose a command to register a new folder or move the calling task itself. The repository folder remains `C:\Users\PC\Documents\Reading Helper Open Source`; no separate duplicate task was created.

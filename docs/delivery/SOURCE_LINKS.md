@@ -12,7 +12,10 @@
 - [WORK-021 Work Item — Done](https://app.notion.com/p/3d9805b7d82b8195b9e3fd2782a063d8)
 - [WORK-021 Implementation Spec — SPEC-013](https://app.notion.com/p/3db805b7d82b81a1b402dc19c6f68084)
 - [WORK-022–031 + Persistence Enablers Implementation Plan — SPEC-014](https://app.notion.com/p/3db805b7d82b8119b7baec0abddd02ec)
+- [WORK-032–036, WORK-037–040 & WORK-045 Implementation Plan — SPEC-015](https://app.notion.com/p/3dc805b7d82b81cca4e1d74e936d49da)
+- [WORK-046–056 Import, Quality & Release Readiness Plan — SPEC-016](https://app.notion.com/p/3dc805b7d82b8140b9dac5e0f7542bd3)
+- [WORK-057–060 Open-Source and Internal Alpha Release Readiness — SPEC-017](https://app.notion.com/p/3dc805b7d82b81e18990ea7b6bab5ba6)
 - [Miro Master Board](https://miro.com/app/board/uXjVHnuKCW4=/)
-- [Figma — مرافق القراءة Arabic RTL Product UI](https://www.figma.com/design/AwmNEUtZBnWzs5jjNgu0VW)
+- [Figma — معين Maeen Arabic RTL Product UI](https://www.figma.com/design/AwmNEUtZBnWzs5jjNgu0VW)
 
 Notion is authoritative for product text, accepted decisions, work status, and releases. Figma is authoritative for visual UI. Miro is the flow and system-map reference. Refresh live sources before making status-sensitive claims.

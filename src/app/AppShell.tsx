@@ -14,7 +14,7 @@ export function AppShell({ children, isLoading = false, statusMessage = null, mi
     <main
       class={`app-shell${isLoading ? ' app-shell--centered' : ''}`}
       aria-busy={isLoading || undefined}
-      aria-label={isLoading ? 'جارٍ تحميل مرافق القراءة' : undefined}
+      aria-label={isLoading ? 'جارٍ تحميل معين' : undefined}
     >
       {isLoading ? (
         <>

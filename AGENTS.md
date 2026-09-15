@@ -1,6 +1,6 @@
 # Agent Operating Guide
 
-This repository is the complete working home for **مرافق القراءة — Reading Helper Open Source**.
+This repository is the complete working home for **معين — Maeen**.
 
 ## Start here
 

@@ -1,13 +1,19 @@
 {
   "manifest_version": 3,
-  "name": "مرافق القراءة",
-  "short_name": "مرافق القراءة",
-  "description": "جلسات قراءة عربية موجهة تعمل محليًا بجانب قارئ PDF.",
+  "name": "معين — Maeen",
+  "short_name": "معين",
+  "description": "جلسات قراءة عربية موجهة تعمل محليًا بجانب قارئ PDF مع معين.",
   "version": "0.1.0",
   "minimum_chrome_version": "114",
   "permissions": ["sidePanel", "storage", "activeTab"],
   "action": {
-    "default_title": "افتح مرافق القراءة"
+    "default_title": "افتح معين"
+  },
+  "icons": {
+    "16": "icons/icon16.svg",
+    "32": "icons/icon32.svg",
+    "48": "icons/icon48.svg",
+    "128": "icons/icon128.svg"
   },
   "background": {
     "service_worker": "service-worker.js",

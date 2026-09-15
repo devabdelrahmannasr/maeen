@@ -6,7 +6,7 @@ import './styles/global.css';
 const appRoot = document.querySelector<HTMLDivElement>('#app');
 
 if (!appRoot) {
-  throw new Error('تعذر العثور على جذر واجهة مرافق القراءة.');
+  throw new Error('تعذر العثور على جذر واجهة معين.');
 }
 
 render(<App />, appRoot);

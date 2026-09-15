@@ -1,0 +1,26 @@
+{
+  "version": "0.1.0",
+  "sourceRevision": "2026-09-16",
+  "brandAssets": [
+    { "path": "public/branding/maeen-logo.svg", "purpose": "extension wordmark" },
+    { "path": "docs/release/maeen-cover.svg", "purpose": "README and release cover" }
+  ],
+  "icons": [
+    { "path": "public/icons/icon16.svg", "width": 16, "height": 16 },
+    { "path": "public/icons/icon32.svg", "width": 32, "height": 32 },
+    { "path": "public/icons/icon48.svg", "width": 48, "height": 48 },
+    { "path": "public/icons/icon128.svg", "width": 128, "height": 128 }
+  ],
+  "screenshots": [
+    { "path": "docs/release/store-assets/onboarding-320.svg", "width": 320, "height": 640, "theme": "light" },
+    { "path": "docs/release/store-assets/library-420.svg", "width": 420, "height": 840, "theme": "light" },
+    { "path": "docs/release/store-assets/focus-600-dark.svg", "width": 600, "height": 900, "theme": "dark" },
+    { "path": "docs/release/store-assets/recovery-420.svg", "width": 420, "height": 840, "theme": "light" },
+    { "path": "docs/release/store-assets/new-book-320.svg", "width": 320, "height": 640, "theme": "light" },
+    { "path": "docs/release/store-assets/protocol-420.svg", "width": 420, "height": 840, "theme": "light" },
+    { "path": "docs/release/store-assets/summary-420.svg", "width": 420, "height": 840, "theme": "light" },
+    { "path": "docs/release/store-assets/progress-600.svg", "width": 600, "height": 900, "theme": "light" },
+    { "path": "docs/release/store-assets/settings-import-320.svg", "width": 320, "height": 640, "theme": "light" }
+  ],
+  "privacyReview": "Synthetic UI only; no private user data; screenshots show no PDF content."
+}

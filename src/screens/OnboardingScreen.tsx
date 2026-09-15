@@ -25,7 +25,7 @@ export function OnboardingScreen({ onStart }: OnboardingScreenProps) {
     <div class="screen-root onboarding-screen">
       <header class="app-bar">
         <div>
-          <p class="brand-name">مرافق القراءة</p>
+          <p class="brand-name">معين</p>
           <p class="brand-subtitle">رفيق محلي بجانب كتابك</p>
         </div>
         <span class="privacy-status">

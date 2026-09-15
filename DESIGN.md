@@ -1,5 +1,5 @@
 ---
-name: Reading Helper Open Source
+name: Maeen
 description: A calm Arabic reading desk inside a precise local browser Side Panel.
 colors:
   scholarly-indigo: "#3154A5"
@@ -71,7 +71,7 @@ components:
     padding: "16px"
 ---
 
-# Design System: Reading Helper Open Source
+# Design System: Maeen
 
 ## Overview
 

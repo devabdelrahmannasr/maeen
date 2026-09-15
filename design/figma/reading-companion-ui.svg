@@ -5,7 +5,7 @@
     </style>
   </defs>
   <rect class="canvas" width="2460" height="1700"/>
-  <text x="2370" y="44" text-anchor="end" class="t h1 ink">مرافق القراءة — UI v1</text>
+  <text x="2370" y="44" text-anchor="end" class="t h1 ink">معين — UI v1</text>
   <text x="2370" y="70" text-anchor="end" class="t body muted">نظام محلي عربي RTL • Side Panel • مصدره الـSpec والـworkflows في Notion</text>
 
   <!-- 01 Onboarding -->
@@ -13,7 +13,7 @@
     <text x="420" y="-18" text-anchor="end" class="screenLabel">01 — البداية والخصوصية</text>
     <rect class="panel" width="420" height="730" rx="16"/>
     <rect class="bar" width="420" height="66" rx="16"/><rect class="bar" y="48" width="420" height="18"/>
-    <text x="388" y="41" text-anchor="end" class="t h2 ink">مرافق القراءة</text><circle cx="31" cy="32" r="5" class="success"/>
+    <text x="388" y="41" text-anchor="end" class="t h2 ink">معين</text><circle cx="31" cy="32" r="5" class="success"/>
     <g transform="translate(30 102)">
       <rect width="360" height="180" rx="14" class="dark"/>
       <path d="M54 44h108v92H54zM198 44h108v92H198" fill="none" stroke="#f6f0e5" stroke-width="2"/>

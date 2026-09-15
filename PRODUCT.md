@@ -1,10 +1,10 @@
-# Product — مرافق القراءة
+# Product — معين
 
 <!-- impeccable:product-schema 1 -->
 
 ## Summary
 
-**مرافق القراءة — Reading Companion** is an Arabic-interface, open-source, local-first browser extension that turns a reader's goal into a guided reading protocol and exposes one useful next action at a time beside an existing PDF viewer. Arabic belongs to the user experience; the book or PDF may be written in any language.
+**معين — Maeen** is an Arabic-interface, open-source, local-first browser extension that turns a reader's goal into a guided reading protocol and exposes one useful next action at a time beside an existing PDF viewer. Arabic belongs to the user experience; the book or PDF may be written in any language.
 
 Product promise: **قل لي لماذا تقرأ، وسأرتب لك كيف تقرأ.**
 
