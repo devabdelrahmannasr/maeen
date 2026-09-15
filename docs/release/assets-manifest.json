@@ -11,7 +11,18 @@
     { "path": "public/icons/icon48.svg", "width": 48, "height": 48 },
     { "path": "public/icons/icon128.svg", "width": 128, "height": 128 }
   ],
-  "screenshots": [],
+  "screenshots": [
+    { "path": "docs/release/store-assets/onboarding-320.png", "width": 421, "height": 764, "theme": "light", "source": "Owner-provided Figma export Group (5)" },
+    { "path": "docs/release/store-assets/library-420.png", "width": 421, "height": 764, "theme": "light", "source": "Owner-provided Figma export Group (6)" },
+    { "path": "docs/release/store-assets/progress-600.png", "width": 421, "height": 764, "theme": "light", "source": "Owner-provided Figma export Group (7)" },
+    { "path": "docs/release/store-assets/summary-420.png", "width": 421, "height": 764, "theme": "light", "source": "Owner-provided Figma export Group (8)" },
+    { "path": "docs/release/store-assets/recall-420.png", "width": 421, "height": 764, "theme": "dark", "source": "Owner-provided Figma export Group (9)" },
+    { "path": "docs/release/store-assets/focus-600-dark.png", "width": 421, "height": 764, "theme": "dark", "source": "Owner-provided Figma export Group (10)" },
+    { "path": "docs/release/store-assets/protocol-420.png", "width": 421, "height": 764, "theme": "light", "source": "Owner-provided Figma export Group (11)" },
+    { "path": "docs/release/store-assets/goal-420.png", "width": 421, "height": 764, "theme": "light", "source": "Owner-provided Figma export Group (12)" },
+    { "path": "docs/release/store-assets/new-book-320.png", "width": 421, "height": 764, "theme": "light", "source": "Owner-provided Figma export Group (13)" },
+    { "path": "docs/release/store-assets/protocol-steps-420.png", "width": 421, "height": 764, "theme": "light", "source": "Owner-provided Figma export Group (15); duplicate of Group (11) as supplied" }
+  ],
   "sourceFile": "https://www.figma.com/design/AwmNEUtZBnWzs5jjNgu0VW/",
-  "privacyReview": "Replacement store screenshots are pending owner-provided PNG assets; no screenshot files are currently included."
+  "privacyReview": "Owner-provided synthetic Figma PNGs only; no private user data or PDF content."
 }
