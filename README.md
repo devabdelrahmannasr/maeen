@@ -115,7 +115,7 @@ Use matching browser and WebDriver versions with an isolated profile. Evidence i
 
 ## Marketplace preview assets
 
-The draft listing package includes ten privacy-safe Arabic RTL screen exports from the [Figma MVP screen board](https://www.figma.com/design/AwmNEUtZBnWzs5jjNgu0VW/), plus a supplemental recovery-state reference. The exports are stored locally in [`docs/release/store-assets/`](docs/release/store-assets/) and contain no private user data or PDF content. Branding sources are [maeen-logo.svg](public/branding/maeen-logo.svg) and [maeen-cover.svg](docs/release/maeen-cover.svg). The package remains unpublished by choice; marketplace publication is outside this internal-alpha release.
+The draft listing package includes ten privacy-safe Arabic RTL PNG screens: nine direct exports from the [Figma MVP screen board](https://www.figma.com/design/AwmNEUtZBnWzs5jjNgu0VW/) plus the approved Settings/import fixture (the corresponding Figma placeholder is blank). The exports are stored locally in [`docs/release/store-assets/`](docs/release/store-assets/), contain no private user data or PDF content, and are the only screen files referenced by the marketplace gallery. Branding sources remain [maeen-logo.svg](public/branding/maeen-logo.svg) and [maeen-cover.svg](docs/release/maeen-cover.svg); SVG is not used for the screen gallery. The package remains unpublished by choice; marketplace publication is outside this internal-alpha release.
 
 ### Figma screen gallery
 

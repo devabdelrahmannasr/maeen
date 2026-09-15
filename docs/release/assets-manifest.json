@@ -12,19 +12,16 @@
     { "path": "public/icons/icon128.svg", "width": 128, "height": 128 }
   ],
   "screenshots": [
-    { "path": "docs/release/store-assets/onboarding-320.png", "sourceSvg": "docs/release/store-assets/onboarding-320.svg", "width": 420, "height": 730, "theme": "light", "source": "Figma 02 — MVP Screens / 01 Onboarding" },
-    { "path": "docs/release/store-assets/library-420.png", "sourceSvg": "docs/release/store-assets/library-420.svg", "width": 420, "height": 730, "theme": "light", "source": "Figma 02 — MVP Screens / 02 Library" },
-    { "path": "docs/release/store-assets/new-book-320.png", "sourceSvg": "docs/release/store-assets/new-book-320.svg", "width": 420, "height": 730, "theme": "light", "source": "Figma 02 — MVP Screens / 03 New Book" },
-    { "path": "docs/release/store-assets/goal-420.png", "sourceSvg": "docs/release/store-assets/goal-420.svg", "width": 420, "height": 730, "theme": "light", "source": "Figma 02 — MVP Screens / 04 Goal" },
-    { "path": "docs/release/store-assets/protocol-420.png", "sourceSvg": "docs/release/store-assets/protocol-420.svg", "width": 420, "height": 730, "theme": "light", "source": "Figma 02 — MVP Screens / 05 Protocol" },
-    { "path": "docs/release/store-assets/focus-600-dark.png", "sourceSvg": "docs/release/store-assets/focus-600-dark.svg", "width": 420, "height": 730, "theme": "light", "source": "Figma 02 — MVP Screens / 06 Focus" },
-    { "path": "docs/release/store-assets/recall-420.png", "sourceSvg": "docs/release/store-assets/recall-420.svg", "width": 420, "height": 730, "theme": "light", "source": "Figma 02 — MVP Screens / 07 Recall" },
-    { "path": "docs/release/store-assets/summary-420.png", "sourceSvg": "docs/release/store-assets/summary-420.svg", "width": 420, "height": 730, "theme": "light", "source": "Figma 02 — MVP Screens / 08 Summary" },
-    { "path": "docs/release/store-assets/progress-600.png", "sourceSvg": "docs/release/store-assets/progress-600.svg", "width": 420, "height": 730, "theme": "light", "source": "Figma 02 — MVP Screens / 09 Progress" },
-    { "path": "docs/release/store-assets/settings-import-320.png", "sourceSvg": "docs/release/store-assets/settings-import-320.svg", "width": 420, "height": 730, "theme": "light", "source": "Figma 02 — MVP Screens / 10 Settings" }
-  ],
-  "supplementalStates": [
-    { "path": "docs/release/store-assets/recovery-420.svg", "width": 420, "height": 840, "theme": "light", "purpose": "recovery-state reference" }
+    { "path": "docs/release/store-assets/onboarding-320.png", "width": 421, "height": 764, "theme": "light", "source": "Figma 02 — MVP Screens / Onboarding (Export Group PNG)" },
+    { "path": "docs/release/store-assets/library-420.png", "width": 421, "height": 764, "theme": "light", "source": "Figma 02 — MVP Screens / Library (Export Group PNG)" },
+    { "path": "docs/release/store-assets/new-book-320.png", "width": 421, "height": 764, "theme": "light", "source": "Figma 02 — MVP Screens / New Book (Export Group PNG)" },
+    { "path": "docs/release/store-assets/goal-420.png", "width": 421, "height": 764, "theme": "light", "source": "Figma 02 — MVP Screens / Goal (Export Group PNG)" },
+    { "path": "docs/release/store-assets/protocol-420.png", "width": 421, "height": 764, "theme": "light", "source": "Figma 02 — MVP Screens / Protocol (Export Group PNG)" },
+    { "path": "docs/release/store-assets/focus-600-dark.png", "width": 421, "height": 764, "theme": "dark", "source": "Figma 02 — MVP Screens / Focus (Export Group PNG)" },
+    { "path": "docs/release/store-assets/recall-420.png", "width": 421, "height": 764, "theme": "dark", "source": "Figma 02 — MVP Screens / Recall (Export Group PNG)" },
+    { "path": "docs/release/store-assets/summary-420.png", "width": 421, "height": 764, "theme": "light", "source": "Figma 02 — MVP Screens / Summary (Export Group PNG)" },
+    { "path": "docs/release/store-assets/progress-600.png", "width": 421, "height": 764, "theme": "light", "source": "Figma 02 — MVP Screens / Progress (Export Group PNG)" },
+    { "path": "docs/release/store-assets/settings-import-320.png", "width": 420, "height": 730, "theme": "light", "source": "Approved settings/import fixture; the Figma 02 Settings placeholder is blank" }
   ],
   "sourceFile": "https://www.figma.com/design/AwmNEUtZBnWzs5jjNgu0VW/",
   "privacyReview": "Synthetic UI only; no private user data; screenshots show no PDF content."
