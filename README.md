@@ -115,24 +115,11 @@ Use matching browser and WebDriver versions with an isolated profile. Evidence i
 
 ## Marketplace preview assets
 
-The draft listing package includes ten privacy-safe Arabic RTL PNG screens: nine direct exports from the [Figma MVP screen board](https://www.figma.com/design/AwmNEUtZBnWzs5jjNgu0VW/) plus the approved Settings/import fixture (the corresponding Figma placeholder is blank). The exports are stored locally in [`docs/release/store-assets/`](docs/release/store-assets/), contain no private user data or PDF content, and are the only screen files referenced by the marketplace gallery. Branding sources remain [maeen-logo.svg](public/branding/maeen-logo.svg) and [maeen-cover.svg](docs/release/maeen-cover.svg); SVG is not used for the screen gallery. The package remains unpublished by choice; marketplace publication is outside this internal-alpha release.
+The marketplace screenshot set is intentionally empty while replacement PNGs are being supplied by the repository owner. Add the approved PNG files under [`docs/release/store-assets/`](docs/release/store-assets/) and register them in [`docs/release/assets-manifest.json`](docs/release/assets-manifest.json) before submitting a store package. Branding sources remain [maeen-logo.svg](public/branding/maeen-logo.svg) and [maeen-cover.svg](docs/release/maeen-cover.svg). The package remains unpublished by choice; marketplace publication is outside this internal-alpha release.
 
 ### Figma screen gallery
 
-These are the ten MVP surfaces used for the marketplace draft. The Arabic copy is product UI content, while this repository's documentation remains English for contributors.
-
-| Screen | Preview |
-| --- | --- |
-| 1. Onboarding and privacy | ![Onboarding and privacy](docs/release/store-assets/onboarding-320.png) |
-| 2. Library | ![Library](docs/release/store-assets/library-420.png) |
-| 3. New book | ![New book](docs/release/store-assets/new-book-320.png) |
-| 4. Goal selection | ![Goal selection](docs/release/store-assets/goal-420.png) |
-| 5. Protocol preview | ![Protocol preview](docs/release/store-assets/protocol-420.png) |
-| 6. Focus session | ![Focus session](docs/release/store-assets/focus-600-dark.png) |
-| 7. Recall and explain | ![Recall and explain](docs/release/store-assets/recall-420.png) |
-| 8. Session summary | ![Session summary](docs/release/store-assets/summary-420.png) |
-| 9. Book progress | ![Book progress](docs/release/store-assets/progress-600.png) |
-| 10. Settings and import | ![Settings and import](docs/release/store-assets/settings-import-320.png) |
+Replacement marketplace screens will be added here after the owner supplies the final PNG set. The Arabic copy is product UI content, while this repository's documentation remains English for contributors.
 
 ## Contributing and security
 

@@ -9,7 +9,7 @@ Submission state: draft/unpublished only. The repository and policy URLs are con
 - **Permission rationale:** `sidePanel` displays the companion panel; `storage` keeps small preferences; `activeTab` reads the active tab title and URL only after explicit invocation. No host permissions are requested.
 - **Privacy disclosure:** Data stays in local IndexedDB and Chrome Storage. No accounts, telemetry, analytics, URL fetching, or remote identifiers; PDF content and response metadata are never inspected.
 - **Supported browsers:** Chrome 114+ and Microsoft Edge with Manifest V3 support.
-- **Screenshot set:** Ten privacy-safe Arabic RTL PNG MVP exports: onboarding, Library, New Book, Goal, Protocol, Focus, Recall, Summary, Progress, and Settings/import. Nine are direct `Export Group` PNGs from the Figma `02 — MVP Screens` board; the Settings/import PNG is the approved local fixture because that Figma placeholder is blank. The exports contain synthetic data only and no PDF content.
+- **Screenshot set:** Pending owner-provided PNG assets. No screenshot files are currently included in the draft package; add and verify the final set before submission.
 - **Support URL:** https://github.com/devabdelrahmannasr/maeen/issues
 - **Privacy URL:** https://github.com/devabdelrahmannasr/maeen/blob/main/docs/architecture/PRIVACY_SECURITY.md
 - **Security reporting:** Use the private advisory channel described in [`SECURITY.md`](https://github.com/devabdelrahmannasr/maeen/blob/main/SECURITY.md).
