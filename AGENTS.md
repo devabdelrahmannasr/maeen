@@ -1,6 +1,6 @@
 # Agent Operating Guide
 
-This repository is the complete working home for **معين — Maeen**.
+This repository is the complete working home for **Maeen — Reading Helper**.
 
 ## Start here
 

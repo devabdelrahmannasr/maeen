@@ -16,6 +16,6 @@
 - [WORK-046–056 Import, Quality & Release Readiness Plan — SPEC-016](https://app.notion.com/p/3dc805b7d82b8140b9dac5e0f7542bd3)
 - [WORK-057–060 Open-Source and Internal Alpha Release Readiness — SPEC-017](https://app.notion.com/p/3dc805b7d82b81e18990ea7b6bab5ba6)
 - [Miro Master Board](https://miro.com/app/board/uXjVHnuKCW4=/)
-- [Figma — معين Maeen Arabic RTL Product UI](https://www.figma.com/design/AwmNEUtZBnWzs5jjNgu0VW)
+- [Figma — Maeen Arabic RTL Product UI](https://www.figma.com/design/AwmNEUtZBnWzs5jjNgu0VW)
 
 Notion is authoritative for product text, accepted decisions, work status, and releases. Figma is authoritative for visual UI. Miro is the flow and system-map reference. Refresh live sources before making status-sensitive claims.

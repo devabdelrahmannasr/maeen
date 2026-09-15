@@ -1,61 +1,61 @@
-# معين — Maeen
+# Maeen — Reading Helper
 
 **Maeen** is an Arabic-first, local-first browser extension that turns *why* you are reading into one focused next action beside the browser's existing PDF viewer.
 
-![معين — Maeen](docs/release/maeen-cover.svg)
+![Maeen — Reading Helper](docs/release/maeen-cover.svg)
 
-## ما هي معين؟
+## What is Maeen?
 
-**معين** إضافة قراءة تساعدك على تحويل نية القراءة إلى جلسة واضحة يمكن إكمالها ومراجعتها. تفتح الإضافة في Side Panel بجانب عارض PDF الموجود في المتصفح، وتبقى خفيفة ومركزة: تختار هدفك، تحصل على بروتوكول قراءة حتمي، تنفذ جلسة تركيز، ثم تسجل الاسترجاع والمراجعة والتطبيق.
+Maeen helps readers turn an intention into a clear reading session that can be completed and reviewed. It opens in the browser Side Panel beside the existing PDF viewer and stays deliberately focused: choose a goal, receive a deterministic reading protocol, run a focus session, then record recall, review, and application notes.
 
-اللغة العربية هي لغة الواجهة واتجاهها البنيوي RTL، وليست شرطًا للكتاب. يمكنك استخدام معين مع كتاب عربي أو إنجليزي أو أي لغة أخرى. الإضافة لا تستبدل عارض PDF ولا تحاول فهم صفحات الكتاب؛ هي مساحة تنظيم وتفكير بجانب العارض.
+Arabic is the interface language and structural direction (RTL), not a requirement for the book. Maeen works with Arabic, English, or any other book language. It does not replace the PDF viewer or try to understand the book's pages; it is a planning and reflection workspace beside the viewer.
 
-## كيف تساعد القارئ؟
+The extension stores reading references, plans, sessions, notes, and progress locally. It never reads, parses, uploads, or transmits PDF content.
 
-1. **تبدأ من السبب:** تحدد لماذا تقرأ بدل فتح جلسة بلا هدف.
-2. **تحصل على مسار عملي:** يحول الهدف إلى خطوات مرتبة ونسخة بروتوكول محفوظة مع الخطة.
-3. **تحافظ على التركيز:** مؤقت الجلسة يستخدم وقتًا مطلقًا ويتعامل مع تعليق المتصفح وإعادة تشغيله بأمان.
-4. **تتذكر بفاعلية:** أسئلة الاسترجاع والمراجعة والتطبيق تحفظ مخرجاتك محليًا بدل الاعتماد على إعادة القراءة فقط.
-5. **ترى تقدمك:** تعرض المقاييس المحلية الجلسات المكتملة والفجوات والتطبيقات دون إرسال بيانات إلى خادم.
-6. **تستعيد عملك:** عند التعطل أو التوقف، تشرح شاشة الاستعادة ما حُفظ وتقدم خيار المتابعة أو الترك.
+## How does it help readers?
 
-## ماذا يحدث عند الاستخدام؟
+1. **Start with a reason:** define why you are reading instead of opening an unstructured session.
+2. **Get a practical path:** turn the goal into ordered steps and save the protocol version with the plan.
+3. **Protect focus:** the session timer uses absolute timestamps and safely handles browser suspension and restarts.
+4. **Remember actively:** recall, review, and application prompts save your outputs locally instead of relying on rereading alone.
+5. **See progress:** local metrics show completed sessions, gaps, and applications without sending data to a server.
+6. **Recover your work:** after an interruption, the recovery screen explains what was preserved and offers a safe resume or abandon choice.
 
-بعد الاستدعاء الصريح من المتصفح، قد تقرأ الإضافة عنوان التبويب النشط ورابطه فقط كمرجع عابر. تقبل HTTPS و`file:` وفق صلاحية المستخدم، وتتعامل مع الصفحات المقيدة أو البيانات الناقصة كحالات واضحة. لا تُحمّل الإضافة الرابط، ولا تقرأ نص PDF أو بايتاته أو ترويساته أو MIME، ولا تضع المرجع في حساب أو خدمة خارجية.
+## What happens when I use it?
 
-كل كتبك وخططك وجلساتك وملاحظاتك في IndexedDB محليًا. تقتصر Chrome Storage على التفضيلات الصغيرة مثل المظهر. التصدير يدوي ومحلي، والاستيراد يمر بالتحقق والمعاينة والنسخ الاحتياطي والهجرة والتراجع قبل تعديل البيانات.
+After explicit browser invocation, the extension may read only the active tab's title and URL as a transient reference. HTTPS and `file:` URLs are accepted according to the user's permission state; restricted pages and missing metadata become explicit states. Maeen never fetches the URL, reads PDF text or bytes, inspects headers or MIME, or sends the reference to an account or external service.
 
-## أسئلة مهمة
+Books, plans, sessions, and notes are stored locally in IndexedDB. Chrome Storage is limited to small preferences such as theme settings. Export is manual and local; import validates, previews, backs up, migrates, and rolls back before changing local data.
 
-### هل تقرأ معين ملف PDF؟
+## Frequently asked questions
 
-لا. لا تستخدم الإضافة محتوى الملف أو النص أو عدد الصفحات أو ترويسات الاستجابة. يمكنك إبقاء PDF مفتوحًا في العارض الأصلي واستخدام معين بجانبه.
+### Does Maeen read PDF files?
 
-### هل تحتاج إلى حساب أو إنترنت؟
+No. The extension does not use PDF bytes, text, page counts, response headers, or MIME information. Keep the PDF open in the browser's native viewer and use Maeen beside it.
 
-لا. الوظائف الأساسية تعمل محليًا دون حساب أو اتصال شبكة أو تحليلات.
+### Does it require an account or internet access?
 
-### هل بياناتي تُرفع إلى السحابة؟
+No. Core features run locally without an account, network connection, analytics, or telemetry.
 
-لا. لا يوجد backend أو cloud sync في نسخة MVP. التصدير لا يحدث إلا عندما تطلبه أنت ويحفظه المتصفح محليًا.
+### Is my data uploaded to the cloud?
 
-### ماذا يحدث إذا أُغلق المتصفح أثناء الجلسة؟
+No. The MVP has no backend or cloud sync. Export happens only when you request it and the browser saves the result locally.
 
-تُحفظ الحالة المرحلية محليًا. عند العودة، تعرض الإضافة استعادة آمنة للجلسة أو تركها دون حذف ملاحظاتك.
+### What happens if the browser closes during a session?
 
-### هل تعمل مع Edge؟
+The in-progress state is saved locally. When you return, Maeen offers a safe session recovery choice without deleting your notes.
 
-نعم، تستهدف معين Chrome وMicrosoft Edge مع Manifest V3. لا تستهدف Firefox أو الهاتف أو Acrobat في هذه النسخة.
+### Does it work with Edge?
 
-### هل يمكنني حذف أو نقل بياناتي؟
+Yes. Maeen targets Chrome and Microsoft Edge with Manifest V3. Firefox, mobile browsers, and Acrobat integrations are outside this version.
 
-نعم. يمكنك تصدير JSON أو Markdown يدويًا، واستيراد نسخة بعد المعاينة والتحقق. لا تُرسل النسخة تلقائيًا لأي جهة.
+### Can I delete or move my data?
 
-The interface is Arabic and structurally RTL; the book or PDF may be written in any language. The extension stores reading references, plans, sessions, notes, and progress locally. It never reads, parses, uploads, or transmits PDF content.
+Yes. You can manually export JSON or Markdown and import a copy after validation and preview. Nothing is sent automatically to another party.
 
 ## MVP boundary
 
-Included: onboarding, local book library, goal selection, deterministic protocol selection, versioned plans, guided sessions, resilient timers, recall/review/apply notes, progress, settings, JSON/Markdown export, guarded import, recovery, and Chrome/Edge Manifest V3 Side Panel support.
+Included: onboarding, local book library, goal selection, deterministic protocol selection, versioned plans, guided sessions, resilient timers, recall/review/application notes, progress, settings, JSON/Markdown export, guarded import, recovery, and Chrome/Edge Manifest V3 Side Panel support.
 
 Excluded: PDF bytes/text/headers/MIME inspection, custom PDF rendering, annotations, backend/accounts/cloud sync, analytics/telemetry, AI/RAG, content-language detection, Firefox/mobile/Acrobat integrations, and social features.
 

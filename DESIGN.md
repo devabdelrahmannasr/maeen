@@ -129,7 +129,7 @@ The system is flat by default. Tonal layers and one-pixel rules separate ordinar
 
 ## Shapes
 
-Fields and primary controls use gently curved 9–10px corners. Status callouts use 12px, book rows 14px, and major visual panels 16px. Full pills are reserved for compact statuses such as “محلي”. Borders are quiet one-pixel rules; thick side accents are not part of this system.
+Fields and primary controls use gently curved 9–10px corners. Status callouts use 12px, book rows 14px, and major visual panels 16px. Full pills are reserved for compact statuses such as “Local”. Borders are quiet one-pixel rules; thick side accents are not part of this system.
 
 ## Components
 

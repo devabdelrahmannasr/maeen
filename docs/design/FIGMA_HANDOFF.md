@@ -1,6 +1,6 @@
 # Figma Handoff
 
-Figma file: **معين — Maeen Arabic RTL Product UI**.
+Figma file: **Maeen Arabic RTL Product UI**.
 
 ## Pages
 

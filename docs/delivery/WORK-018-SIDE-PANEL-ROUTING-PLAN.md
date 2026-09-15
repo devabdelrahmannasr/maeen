@@ -6,7 +6,7 @@ Target: complete within two focused implementation sessions, no later than 2026-
 
 ## Sources
 
-- Notion work item: [WORK-018 — ابنِ Side Panel shell والـrouting](https://app.notion.com/p/3d9805b7d82b813c8fa5dc6ce14e90cf)
+- Notion work item: [WORK-018 — Build the Side Panel shell and routing](https://app.notion.com/p/3d9805b7d82b813c8fa5dc6ce14e90cf)
 - Approved Notion Technical Architecture: [SPEC-006](https://app.notion.com/p/3d9805b7d82b81bf94c7ebea3fa7376d)
 - Approved Notion UX Specification: [SPEC-004](https://app.notion.com/p/3d9805b7d82b81a591cace7948b53503)
 - Local references: `PRODUCT.md`, `DESIGN.md`, `docs/product/INFORMATION_ARCHITECTURE.md`, `docs/product/USER_FLOWS.md`, and `docs/delivery/TEST_STRATEGY.md`
@@ -189,9 +189,9 @@ Record exact browser versions, commands, test counts, console errors, and any au
 
 | WORK-018 acceptance criterion | Implementation evidence |
 |---|---|
-| Routes للشاشات الأساسية | Ten-route typed catalog, unique route tests, and route parser/serializer tests |
-| استعادة آخر route آمن | Versioned navigation setting, deterministic startup resolver, corruption/fallback tests, and Chrome/Edge reopen checks |
-| shell بلا business logic | `AppShell` presentation-only API, pure navigation modules, and no imports from book/rules/session domains |
+| Routes for core screens | Ten-route typed catalog, unique route tests, and route parser/serializer tests |
+| Restore the last safe route | Versioned navigation setting, deterministic startup resolver, corruption/fallback tests, and Chrome/Edge reopen checks |
+| Shell without business logic | `AppShell` presentation-only API, pure navigation modules, and no imports from book/rules/session domains |
 
 ## Risks and mitigations
 

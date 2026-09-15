@@ -6,7 +6,7 @@ Target: one focused implementation session, no later than 2026-09-14
 
 ## Sources
 
-- Notion work item: [WORK-019 — نفّذ Settings Store والـthemes](https://app.notion.com/p/3d9805b7d82b81f2badbcdf36d8cf8be)
+- Notion work item: [WORK-019 — Implement the Settings Store and themes](https://app.notion.com/p/3d9805b7d82b81f2badbcdf36d8cf8be)
 - Notion implementation plan: [SPEC-011](https://app.notion.com/p/3da805b7d82b8141971afe8822260ff9)
 - Approved Product & System Design Spec v1.0: [source](https://app.notion.com/p/3d9805b7d82b8118918af8f6b19ce1a2)
 - Approved Technical Architecture — SPEC-006: [source](https://app.notion.com/p/3d9805b7d82b81bf94c7ebea3fa7376d)
@@ -198,9 +198,9 @@ Record exact browser versions, commands, test counts, console errors, and automa
 
 | WORK-019 acceptance criterion | Implementation evidence |
 |---|---|
-| حفظ اللغة والـtheme والوقت | Versioned typed contract, validated update API, and persistence tests for `ar`, theme, and default duration |
-| الاستعادة بعد restart | Startup integration, storage round-trip tests, and packaged Chrome/Edge close-reopen checks |
-| defaults آمنة للمدخلات الفاسدة | Pure normalizer tests, corrupt-storage tests, safe startup fallback, and Arabic storage-failure status |
+| Persist language, theme, and duration | Versioned typed contract, validated update API, and persistence tests for `ar`, theme, and default duration |
+| Restore after restart | Startup integration, storage round-trip tests, and packaged Chrome/Edge close-reopen checks |
+| Safe defaults for corrupt input | Pure normalizer tests, corrupt-storage tests, safe startup fallback, and storage-failure status |
 
 ## Risks and mitigations
 

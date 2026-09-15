@@ -6,7 +6,7 @@ Target: one focused implementation session, no later than 2026-09-16
 
 ## Sources
 
-- Notion work item: [WORK-021 — عرّف Goal وProtocol catalogs بإصدارات ثابتة](https://app.notion.com/p/3d9805b7d82b8195b9e3fd2782a063d8)
+- Notion work item: [WORK-021 — Define versioned Goal and Protocol catalogs](https://app.notion.com/p/3d9805b7d82b8195b9e3fd2782a063d8)
 - Notion implementation spec: [SPEC-013](https://app.notion.com/p/3db805b7d82b81a1b402dc19c6f68084)
 - [Approved Product & System Design Spec v1.0](https://app.notion.com/p/3d9805b7d82b8118918af8f6b19ce1a2)
 - [Goal & Protocol Engine epic](https://app.notion.com/p/3d9805b7d82b8103a78aed2f188f4075)
@@ -44,28 +44,28 @@ interface ProtocolDefinition {
 
 ## Canonical goals
 
-| Stable ID | Arabic label |
+| Stable ID | English label |
 |---|---|
-| `deep-understanding` | الفهم العميق |
-| `exam-study` | المذاكرة لامتحان |
-| `skill-application` | تعلم مهارة وتطبيقها |
-| `key-ideas` | استخراج أهم الأفكار |
-| `deadline-completion` | إنهاء الكتاب قبل موعد |
-| `efficient-reading` | القراءة بسرعة مع الحفاظ على القيمة |
-| `focus-improvement` | تحسين التركيز |
-| `critical-reading` | القراءة النقدية |
-| `reading-enjoyment` | القراءة للمتعة |
+| `deep-understanding` | Deep understanding |
+| `exam-study` | Exam study |
+| `skill-application` | Skill application |
+| `key-ideas` | Key ideas |
+| `deadline-completion` | Deadline completion |
+| `efficient-reading` | Efficient reading |
+| `focus-improvement` | Focus improvement |
+| `critical-reading` | Critical reading |
+| `reading-enjoyment` | Reading enjoyment |
 
 ## Canonical protocols
 
-| Stable ID | Reference name | Arabic label | Ordered building blocks |
+| Stable ID | Reference name | English label | Ordered building blocks |
 |---|---|---|---|
-| `deep-technical-reading` | Deep Technical Reading | قراءة تقنية عميقة | `p2r`, `active-recall`, `feynman`, `focus-50-10` |
-| `exam-study` | Exam Study | مذاكرة للامتحان | `sq3r`, `blurting`, `review`, `pomodoro` |
-| `practical-application` | Practical Application | تطبيق عملي | `pareto-80-20`, `structured-notes`, `apply`, `timeboxing` |
-| `deadline-reading` | Deadline Reading | قراءة بموعد نهائي | `reverse-planning`, `pages-per-minute`, `timeboxing` |
-| `critical-reading` | Critical Reading | قراءة نقدية | `questions`, `marginal-notes`, `review` |
-| `focus-recovery` | Focus Recovery | استعادة التركيز | `short-reading-blocks`, `pomodoro`, `distraction-tracking` |
+| `deep-technical-reading` | Deep Technical Reading | Deep technical reading | `p2r`, `active-recall`, `feynman`, `focus-50-10` |
+| `exam-study` | Exam Study | Exam study | `sq3r`, `blurting`, `review`, `pomodoro` |
+| `practical-application` | Practical Application | Practical application | `pareto-80-20`, `structured-notes`, `apply`, `timeboxing` |
+| `deadline-reading` | Deadline Reading | Deadline reading | `reverse-planning`, `pages-per-minute`, `timeboxing` |
+| `critical-reading` | Critical Reading | Critical reading | `questions`, `marginal-notes`, `review` |
+| `focus-recovery` | Focus Recovery | Focus recovery | `short-reading-blocks`, `pomodoro`, `distraction-tracking` |
 
 The building-block order mirrors the approved source. These identifiers describe composition only; they are not executable session-step definitions or duration rules.
 
@@ -76,7 +76,7 @@ The building-block order mirrors the approved source. These identifiers describe
 - Exact nine-goal catalog from the approved product specification.
 - Exact six-protocol catalog and building blocks from the approved specification and local protocol summary.
 - An explicit independent version constant for each catalog.
-- Stable TypeScript IDs, Arabic interface labels, English protocol reference names, and stable building-block IDs.
+- Stable TypeScript IDs, English documentation labels, English protocol reference names, and stable building-block IDs.
 - Pure domain modules with no framework or environment dependency.
 - Contract tests for exact contents, canonical order, uniqueness, versions, readonly typing, and deterministic JSON serialization.
 
@@ -101,8 +101,8 @@ The building-block order mirrors the approved source. These identifiers describe
 ## Tests and verification
 
 - Assert `GOAL_CATALOG_VERSION === 1` and `PROTOCOL_CATALOG_VERSION === 1`.
-- Assert the exact ordered goal IDs and exact Arabic labels.
-- Assert the exact ordered protocol IDs, reference names, Arabic labels, and building-block IDs.
+- Assert the exact ordered goal IDs and exact interface labels.
+- Assert the exact ordered protocol IDs, reference names, interface labels, and building-block IDs.
 - Assert nine unique goals and six unique protocols with no blank identifiers or labels.
 - Assert protocol-local building-block IDs are non-empty and unique.
 - Assert deterministic JSON serialization without functions or environment-dependent fields.
@@ -135,7 +135,7 @@ No packaged browser matrix is needed for the catalogs themselves because they ar
 - **WORK-022 logic leaks into catalogs:** prohibit priorities, conflict tables, scores, and selection functions.
 - **Building blocks are confused with executable steps:** keep them descriptive; session step definitions belong to snapshot/session work.
 - **Future updates rewrite history:** catalog updates apply to new plans; historical Protocol Snapshots remain unchanged.
-- **Arabic labels drift:** exact tests lock the approved taxonomy while stable IDs remain language-independent.
+- **Display labels drift:** exact tests lock the approved taxonomy while stable IDs remain language-independent.
 
 ## Definition of ready
 

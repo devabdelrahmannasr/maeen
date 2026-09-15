@@ -1,12 +1,12 @@
-# Product — معين
+# Product — Maeen
 
 <!-- impeccable:product-schema 1 -->
 
 ## Summary
 
-**معين — Maeen** is an Arabic-interface, open-source, local-first browser extension that turns a reader's goal into a guided reading protocol and exposes one useful next action at a time beside an existing PDF viewer. Arabic belongs to the user experience; the book or PDF may be written in any language.
+**Maeen — Reading Helper** is an Arabic-interface, open-source, local-first browser extension that turns a reader's goal into a guided reading protocol and exposes one useful next action at a time beside an existing PDF viewer. Arabic belongs to the user experience; the book or PDF may be written in any language.
 
-Product promise: **قل لي لماذا تقرأ، وسأرتب لك كيف تقرأ.**
+Product promise: **Tell me why you are reading, and I will organize how you read.**
 
 Success is not page count alone. The product helps the reader remember, explain, review, and apply what was read.
 

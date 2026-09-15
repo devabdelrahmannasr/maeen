@@ -6,7 +6,7 @@ Target: one focused implementation session, no later than 2026-09-16
 
 ## Sources
 
-- Notion work item: [WORK-020 — اكتشف PDF context وحالات الصلاحيات](https://app.notion.com/p/3d9805b7d82b81cab371e7a9e81f0cc1)
+- Notion work item: [WORK-020 — Detect PDF context and permission states](https://app.notion.com/p/3d9805b7d82b81cab371e7a9e81f0cc1)
 - Notion implementation plan: [SPEC-012](https://app.notion.com/p/3db805b7d82b81c3a14bc0df9278fedf)
 - Approved Product & System Design Spec v1.0: [source](https://app.notion.com/p/3d9805b7d82b8118918af8f6b19ce1a2)
 - Approved Technical Architecture — SPEC-006: [source](https://app.notion.com/p/3d9805b7d82b81bf94c7ebea3fa7376d)

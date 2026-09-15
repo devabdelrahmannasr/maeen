@@ -2,9 +2,9 @@
 
 Submission state: draft/unpublished only. The repository and policy URLs are configured; final marketplace publication remains outside this release.
 
-- **Name:** معين — Maeen
-- **Short description:** جلسات قراءة عربية محلية بجانب قارئ PDF، بدون قراءة محتوى الملف.
-- **Long description:** معين يساعدك على تنظيم جلسة قراءة، بناء بروتوكول، تسجيل التركيز، ومراجعة التقدم محليًا. الواجهة عربية RTL، بينما لغة الكتاب يحددها القارئ. يعمل بجانب عارض PDF ولا يقرأ أو يرفع محتوى PDF.
+- **Name:** Maeen — Reading Helper
+- **Short description:** Local reading sessions beside a PDF viewer, without reading PDF content.
+- **Long description:** Maeen helps readers organize a session, build a protocol, record focus, and review progress locally. The interface is Arabic RTL, while the reader chooses the book language. It works beside a PDF viewer and never reads or uploads PDF content.
 - **Category:** Productivity
 - **Permission rationale:** `sidePanel` displays the companion panel; `storage` keeps small preferences; `activeTab` reads the active tab title and URL only after explicit invocation. No host permissions are requested.
 - **Privacy disclosure:** Data stays in local IndexedDB and Chrome Storage. No accounts, telemetry, analytics, URL fetching, or remote identifiers; PDF content and response metadata are never inspected.
