@@ -115,7 +115,24 @@ Use matching browser and WebDriver versions with an isolated profile. Evidence i
 
 ## Marketplace preview assets
 
-The draft listing package includes synthetic, privacy-safe Arabic RTL screenshots for onboarding, Library, New Book, Protocol, Focus, Summary, Progress, Settings/import, and recovery at 320, 420, and 600 px widths. Branding sources are [maeen-logo.svg](public/branding/maeen-logo.svg) and [maeen-cover.svg](docs/release/maeen-cover.svg). The package remains unpublished by choice; marketplace publication is outside this internal-alpha release.
+The draft listing package includes ten privacy-safe Arabic RTL screen exports from the [Figma MVP screen board](https://www.figma.com/design/AwmNEUtZBnWzs5jjNgu0VW/), plus a supplemental recovery-state reference. The exports are stored locally in [`docs/release/store-assets/`](docs/release/store-assets/) and contain no private user data or PDF content. Branding sources are [maeen-logo.svg](public/branding/maeen-logo.svg) and [maeen-cover.svg](docs/release/maeen-cover.svg). The package remains unpublished by choice; marketplace publication is outside this internal-alpha release.
+
+### Figma screen gallery
+
+These are the ten MVP surfaces used for the marketplace draft. The Arabic copy is product UI content, while this repository's documentation remains English for contributors.
+
+| Screen | Preview |
+| --- | --- |
+| 1. Onboarding and privacy | ![Onboarding and privacy](docs/release/store-assets/onboarding-320.png) |
+| 2. Library | ![Library](docs/release/store-assets/library-420.png) |
+| 3. New book | ![New book](docs/release/store-assets/new-book-320.png) |
+| 4. Goal selection | ![Goal selection](docs/release/store-assets/goal-420.png) |
+| 5. Protocol preview | ![Protocol preview](docs/release/store-assets/protocol-420.png) |
+| 6. Focus session | ![Focus session](docs/release/store-assets/focus-600-dark.png) |
+| 7. Recall and explain | ![Recall and explain](docs/release/store-assets/recall-420.png) |
+| 8. Session summary | ![Session summary](docs/release/store-assets/summary-420.png) |
+| 9. Book progress | ![Book progress](docs/release/store-assets/progress-600.png) |
+| 10. Settings and import | ![Settings and import](docs/release/store-assets/settings-import-320.png) |
 
 ## Contributing and security
 

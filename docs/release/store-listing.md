@@ -9,7 +9,7 @@ Submission state: draft/unpublished only. The repository and policy URLs are con
 - **Permission rationale:** `sidePanel` displays the companion panel; `storage` keeps small preferences; `activeTab` reads the active tab title and URL only after explicit invocation. No host permissions are requested.
 - **Privacy disclosure:** Data stays in local IndexedDB and Chrome Storage. No accounts, telemetry, analytics, URL fetching, or remote identifiers; PDF content and response metadata are never inspected.
 - **Supported browsers:** Chrome 114+ and Microsoft Edge with Manifest V3 support.
-- **Screenshot set:** Arabic RTL onboarding, Library, New Book, Protocol, Focus, Summary, Progress, Settings/import, and recovery states at documented 320/420/600px widths (synthetic data only).
+- **Screenshot set:** Ten privacy-safe Arabic RTL MVP exports from the Figma `02 — MVP Screens` board: onboarding, Library, New Book, Goal, Protocol, Focus, Recall, Summary, Progress, and Settings/import. A separate recovery-state reference is included for review. The exports contain synthetic data only and no PDF content.
 - **Support URL:** https://github.com/devabdelrahmannasr/maeen/issues
 - **Privacy URL:** https://github.com/devabdelrahmannasr/maeen/blob/main/docs/architecture/PRIVACY_SECURITY.md
 - **Security reporting:** Use the private advisory channel described in [`SECURITY.md`](https://github.com/devabdelrahmannasr/maeen/blob/main/SECURITY.md).

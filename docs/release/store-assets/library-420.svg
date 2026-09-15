@@ -1,1 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="840" viewBox="0 0 420 840" direction="rtl"><rect width="420" height="840" fill="#f8fafc"/><text x="385" y="70" text-anchor="end" font-family="Arial" font-size="26" fill="#0f172a">مكتبتي</text><rect x="24" y="100" width="372" height="92" rx="16" fill="#ffffff" stroke="#cbd5e1"/><text x="370" y="140" text-anchor="end" font-family="Arial" font-size="20" fill="#0f172a">كتاب تجريبي</text><text x="370" y="170" text-anchor="end" font-family="Arial" font-size="14" fill="#64748b">جلسة محلية • قيد التقدم</text><rect x="24" y="216" width="372" height="92" rx="16" fill="#ffffff" stroke="#cbd5e1"/><text x="370" y="256" text-anchor="end" font-family="Arial" font-size="20" fill="#0f172a">مراجعة أسبوعية</text><text x="370" y="286" text-anchor="end" font-family="Arial" font-size="14" fill="#64748b">بيانات تجريبية فقط</text><rect x="24" y="748" width="372" height="56" rx="14" fill="#0f766e"/><text x="210" y="784" text-anchor="middle" font-family="Arial" font-size="18" fill="#ffffff">كتاب جديد</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="730" viewBox="0 0 420 730">
+<defs>
+    <style>
+      .canvas{fill:#e9e2d5}.panel{fill:#fffdf8;stroke:#d8cebd;stroke-width:1}.bar{fill:#f6f0e5}.ink{fill:#18212b}.muted{fill:#66707a}.accent{fill:#3154a5}.accentSoft{fill:#e8edfa}.success{fill:#1f7257}.successSoft{fill:#e4f2ec}.warn{fill:#9b5a1d}.warnSoft{fill:#fff0d8}.danger{fill:#ad3b42}.dangerSoft{fill:#fae9ea}.rule{stroke:#d8cebd;stroke-width:1}.focus{fill:none;stroke:#3154a5;stroke-width:3}.card{fill:#fffdf8;stroke:#d8cebd;stroke-width:1}.dark{fill:#18212b}.white{fill:#fffdf8}.t{font-family:'Cairo',sans-serif;direction:rtl;unicode-bidi:plaintext}.h1{font-size:25px;font-weight:700}.h2{font-size:19px;font-weight:700}.body{font-size:14px;font-weight:500}.small{font-size:12px;font-weight:500}.tiny{font-size:10px;font-weight:600;letter-spacing:.3px}.num{font-family:'Cairo',sans-serif;font-variant-numeric:tabular-nums}.button{fill:#3154a5}.buttonText{fill:#fffdf8;font-family:'Cairo',sans-serif;font-size:14px;font-weight:700;direction:rtl}.outline{fill:#fffdf8;stroke:#3154a5;stroke-width:1.5}.field{fill:#fffdf8;stroke:#bdb3a3;stroke-width:1.2}.screenLabel{font-family:'Cairo',sans-serif;font-size:15px;font-weight:700;fill:#39424c;direction:rtl}.chip{fill:#eef1f4}.dot{fill:#3154a5}.coverA{fill:#3154a5}.coverB{fill:#b56924}.coverC{fill:#4b7a69}
+    </style>
+  </defs>
+<g transform="translate(0 0)">
+    <text x="420" y="-18" text-anchor="end" class="screenLabel">02 — مكتبة الكتب</text>
+    <rect class="panel" width="420" height="730" rx="16"/>
+    <rect class="bar" width="420" height="78" rx="16"/><rect class="bar" y="58" width="420" height="20"/>
+    <text x="390" y="36" text-anchor="end" class="t h2 ink">مكتبتي</text><text x="390" y="60" text-anchor="end" class="t small muted">3 كتب • جلسة واحدة تحتاج استكمالًا</text>
+    <rect x="30" y="98" width="360" height="56" rx="10" class="warnSoft"/>
+    <text x="368" y="122" text-anchor="end" class="t body warn">جلسة متوقفة بأمان</text><text x="368" y="143" text-anchor="end" class="t small muted">Clean Architecture • خطوة القراءة المركزة</text>
+    <text x="30" y="134" class="t small accent">استكمل</text>
+    <text x="390" y="192" text-anchor="end" class="t h2 ink">تابع القراءة</text>
+    <g transform="translate(30 214)">
+      <rect width="360" height="142" rx="14" class="card"/><rect x="272" y="18" width="68" height="90" rx="6" class="coverA"/>
+      <text x="255" y="40" text-anchor="end" class="t body ink">Clean Architecture</text><text x="255" y="63" text-anchor="end" class="t small muted">فهم عميق • ص 84–102</text>
+      <rect x="30" y="91" width="220" height="5" rx="2.5" fill="#e2ded6"/><rect x="153" y="91" width="97" height="5" rx="2.5" class="accent"/>
+      <text x="250" y="121" text-anchor="end" class="t small muted">التقدم 44%</text><text x="30" y="121" class="t small accent">ابدأ جلسة</text>
+    </g>
+    <g transform="translate(30 374)">
+      <rect width="360" height="112" rx="14" class="card"/><rect x="288" y="16" width="52" height="72" rx="5" class="coverB"/>
+      <text x="272" y="37" text-anchor="end" class="t body ink">التفكير النقدي</text><text x="272" y="61" text-anchor="end" class="t small muted">قراءة نقدية • 3 جلسات</text><text x="30" y="82" class="t small accent">عرض التقدم</text>
+    </g>
+    <g transform="translate(30 504)">
+      <rect width="360" height="112" rx="14" class="card"/><rect x="288" y="16" width="52" height="72" rx="5" class="coverC"/>
+      <text x="272" y="37" text-anchor="end" class="t body ink">التعلم الفعّال</text><text x="272" y="61" text-anchor="end" class="t small muted">تعلم مهارة • جلسة واحدة</text><text x="30" y="82" class="t small accent">عرض التقدم</text>
+    </g>
+    <rect x="30" y="650" width="360" height="48" rx="10" class="button"/><text x="210" y="680" text-anchor="middle" class="buttonText">أضف كتابًا</text>
+  </g>
+</svg>

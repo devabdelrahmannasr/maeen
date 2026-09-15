@@ -1,1 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="840" viewBox="0 0 420 840" direction="rtl"><rect width="420" height="840" fill="#f8fafc"/><text x="385" y="72" text-anchor="end" font-family="Arial" font-size="25" fill="#0f172a">طريقة القراءة</text><rect x="24" y="112" width="372" height="210" rx="16" fill="#ecfeff" stroke="#99f6e4"/><text x="370" y="160" text-anchor="end" font-family="Arial" font-size="20" fill="#134e4a">خطة مركزة</text><text x="370" y="204" text-anchor="end" font-family="Arial" font-size="15" fill="#115e59">اقرأ • استرجع • راجع • طبّق</text><text x="370" y="248" text-anchor="end" font-family="Arial" font-size="15" fill="#115e59">خطوات ثابتة قابلة للتتبع</text><rect x="48" y="720" width="324" height="56" rx="14" fill="#0f766e"/><text x="210" y="756" text-anchor="middle" font-family="Arial" font-size="18" fill="#fff">ابدأ الخطة</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="730" viewBox="0 0 420 730">
+<defs>
+    <style>
+      .canvas{fill:#e9e2d5}.panel{fill:#fffdf8;stroke:#d8cebd;stroke-width:1}.bar{fill:#f6f0e5}.ink{fill:#18212b}.muted{fill:#66707a}.accent{fill:#3154a5}.accentSoft{fill:#e8edfa}.success{fill:#1f7257}.successSoft{fill:#e4f2ec}.warn{fill:#9b5a1d}.warnSoft{fill:#fff0d8}.danger{fill:#ad3b42}.dangerSoft{fill:#fae9ea}.rule{stroke:#d8cebd;stroke-width:1}.focus{fill:none;stroke:#3154a5;stroke-width:3}.card{fill:#fffdf8;stroke:#d8cebd;stroke-width:1}.dark{fill:#18212b}.white{fill:#fffdf8}.t{font-family:'Cairo',sans-serif;direction:rtl;unicode-bidi:plaintext}.h1{font-size:25px;font-weight:700}.h2{font-size:19px;font-weight:700}.body{font-size:14px;font-weight:500}.small{font-size:12px;font-weight:500}.tiny{font-size:10px;font-weight:600;letter-spacing:.3px}.num{font-family:'Cairo',sans-serif;font-variant-numeric:tabular-nums}.button{fill:#3154a5}.buttonText{fill:#fffdf8;font-family:'Cairo',sans-serif;font-size:14px;font-weight:700;direction:rtl}.outline{fill:#fffdf8;stroke:#3154a5;stroke-width:1.5}.field{fill:#fffdf8;stroke:#bdb3a3;stroke-width:1.2}.screenLabel{font-family:'Cairo',sans-serif;font-size:15px;font-weight:700;fill:#39424c;direction:rtl}.chip{fill:#eef1f4}.dot{fill:#3154a5}.coverA{fill:#3154a5}.coverB{fill:#b56924}.coverC{fill:#4b7a69}
+    </style>
+  </defs>
+<g transform="translate(0 0)">
+    <text x="420" y="-18" text-anchor="end" class="screenLabel">05 — معاينة البروتوكول</text>
+    <rect class="panel" width="420" height="730" rx="16"/>
+    <rect class="bar" width="420" height="72" rx="16"/><rect class="bar" y="54" width="420" height="18"/>
+    <text x="390" y="34" text-anchor="end" class="t h2 ink">بروتوكولك المقترح</text><text x="390" y="57" text-anchor="end" class="t small muted">Deep Technical Reading • نسخة 1.0</text>
+    <g transform="translate(30 94)">
+      <rect width="360" height="98" rx="14" class="dark"/><text x="330" y="31" text-anchor="end" class="t small" fill="#b7c3e5">لأن هدفك هو الفهم العميق</text><text x="330" y="60" text-anchor="end" class="t h2 white">اقرأ 18 صفحة في 50 دقيقة</text><text x="330" y="82" text-anchor="end" class="t small" fill="#d6dce9">ثم استرجع واشرح وراجع</text>
+    </g>
+    <text x="390" y="230" text-anchor="end" class="t h2 ink">خطوات الجلسة</text>
+    <g transform="translate(48 250)">
+      <line x1="314" y1="15" x2="314" y2="296" stroke="#c9c1b4" stroke-width="2"/>
+      <circle cx="314" cy="18" r="13" class="accent"/><text x="314" y="23" text-anchor="middle" fill="#fff" class="t small">1</text><text x="287" y="17" text-anchor="end" class="t body ink">معاينة وبناء أسئلة</text><text x="287" y="38" text-anchor="end" class="t small muted">5 دقائق</text>
+      <circle cx="314" cy="82" r="13" class="accent"/><text x="314" y="87" text-anchor="middle" fill="#fff" class="t small">2</text><text x="287" y="81" text-anchor="end" class="t body ink">قراءة مركّزة</text><text x="287" y="102" text-anchor="end" class="t small muted">50 دقيقة • ص 84–102</text>
+      <circle cx="314" cy="146" r="13" class="accent"/><text x="314" y="151" text-anchor="middle" fill="#fff" class="t small">3</text><text x="287" y="145" text-anchor="end" class="t body ink">استرجاع من الذاكرة</text><text x="287" y="166" text-anchor="end" class="t small muted">7 دقائق</text>
+      <circle cx="314" cy="210" r="13" class="accent"/><text x="314" y="215" text-anchor="middle" fill="#fff" class="t small">4</text><text x="287" y="209" text-anchor="end" class="t body ink">اشرح الفكرة ببساطة</text><text x="287" y="230" text-anchor="end" class="t small muted">5 دقائق</text>
+      <circle cx="314" cy="274" r="13" class="accent"/><text x="314" y="279" text-anchor="middle" fill="#fff" class="t small">5</text><text x="287" y="273" text-anchor="end" class="t body ink">راجع وسجّل تطبيقًا</text><text x="287" y="294" text-anchor="end" class="t small muted">8 دقائق</text>
+    </g>
+    <rect x="30" y="642" width="360" height="48" rx="10" class="button"/><text x="210" y="672" text-anchor="middle" class="buttonText">ابدأ الجلسة</text>
+  </g>
+</svg>

@@ -18,8 +18,9 @@ const assets = JSON.parse(read('docs/release/assets-manifest.json'));
 for (const asset of assets.brandAssets ?? []) {
   if (!existsSync(path.join(root, asset.path))) throw new Error(`Missing brand asset: ${asset.path}`);
 }
-for (const asset of [...assets.icons, ...assets.screenshots]) {
+for (const asset of [...assets.icons, ...assets.screenshots, ...(assets.supplementalStates ?? [])]) {
   if (!existsSync(path.join(root, asset.path))) throw new Error(`Missing release asset: ${asset.path}`);
+  if (asset.sourceSvg && !existsSync(path.join(root, asset.sourceSvg))) throw new Error(`Missing source SVG: ${asset.sourceSvg}`);
 }
 for (const assetPath of Object.values(manifest.icons ?? {})) {
   if (!existsSync(path.join(root, 'public', assetPath))) throw new Error(`Missing manifest icon: ${assetPath}`);

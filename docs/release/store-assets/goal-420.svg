@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="730" viewBox="0 0 420 730">
+<defs>
+    <style>
+      .canvas{fill:#e9e2d5}.panel{fill:#fffdf8;stroke:#d8cebd;stroke-width:1}.bar{fill:#f6f0e5}.ink{fill:#18212b}.muted{fill:#66707a}.accent{fill:#3154a5}.accentSoft{fill:#e8edfa}.success{fill:#1f7257}.successSoft{fill:#e4f2ec}.warn{fill:#9b5a1d}.warnSoft{fill:#fff0d8}.danger{fill:#ad3b42}.dangerSoft{fill:#fae9ea}.rule{stroke:#d8cebd;stroke-width:1}.focus{fill:none;stroke:#3154a5;stroke-width:3}.card{fill:#fffdf8;stroke:#d8cebd;stroke-width:1}.dark{fill:#18212b}.white{fill:#fffdf8}.t{font-family:'Cairo',sans-serif;direction:rtl;unicode-bidi:plaintext}.h1{font-size:25px;font-weight:700}.h2{font-size:19px;font-weight:700}.body{font-size:14px;font-weight:500}.small{font-size:12px;font-weight:500}.tiny{font-size:10px;font-weight:600;letter-spacing:.3px}.num{font-family:'Cairo',sans-serif;font-variant-numeric:tabular-nums}.button{fill:#3154a5}.buttonText{fill:#fffdf8;font-family:'Cairo',sans-serif;font-size:14px;font-weight:700;direction:rtl}.outline{fill:#fffdf8;stroke:#3154a5;stroke-width:1.5}.field{fill:#fffdf8;stroke:#bdb3a3;stroke-width:1.2}.screenLabel{font-family:'Cairo',sans-serif;font-size:15px;font-weight:700;fill:#39424c;direction:rtl}.chip{fill:#eef1f4}.dot{fill:#3154a5}.coverA{fill:#3154a5}.coverB{fill:#b56924}.coverC{fill:#4b7a69}
+    </style>
+  </defs>
+<g transform="translate(0 0)">
+    <text x="420" y="-18" text-anchor="end" class="screenLabel">04 — اختيار الهدف</text>
+    <rect class="panel" width="420" height="730" rx="16"/>
+    <rect class="bar" width="420" height="76" rx="16"/><rect class="bar" y="56" width="420" height="20"/>
+    <text x="390" y="34" text-anchor="end" class="t h2 ink">لماذا تقرأ هذا الكتاب؟</text><text x="390" y="58" text-anchor="end" class="t small muted">اختر هدفًا رئيسيًا واحدًا</text>
+    <g transform="translate(30 98)">
+      <rect width="360" height="64" rx="11" class="accentSoft"/><rect x="0" y="0" width="360" height="64" rx="11" class="focus"/><circle cx="329" cy="32" r="10" class="accent"/><circle cx="329" cy="32" r="4" class="white"/><text x="305" y="28" text-anchor="end" class="t body ink">الفهم العميق</text><text x="305" y="48" text-anchor="end" class="t small muted">افهم البنية واشرحها بكلماتك</text>
+      <rect y="76" width="360" height="58" rx="11" class="card"/><circle cx="329" cy="105" r="10" fill="#fff" stroke="#a8a095"/><text x="305" y="110" text-anchor="end" class="t body ink">المذاكرة لامتحان</text>
+      <rect y="146" width="360" height="58" rx="11" class="card"/><circle cx="329" cy="175" r="10" fill="#fff" stroke="#a8a095"/><text x="305" y="180" text-anchor="end" class="t body ink">تعلم مهارة وتطبيقها</text>
+      <rect y="216" width="360" height="58" rx="11" class="card"/><circle cx="329" cy="245" r="10" fill="#fff" stroke="#a8a095"/><text x="305" y="250" text-anchor="end" class="t body ink">استخراج أهم الأفكار</text>
+      <rect y="286" width="360" height="58" rx="11" class="card"/><circle cx="329" cy="315" r="10" fill="#fff" stroke="#a8a095"/><text x="305" y="320" text-anchor="end" class="t body ink">تحسين التركيز</text>
+    </g>
+    <text x="390" y="480" text-anchor="end" class="t h2 ink">أهداف ثانوية <tspan class="muted">(حتى هدفين)</tspan></text>
+    <g transform="translate(30 500)"><rect width="158" height="36" rx="18" class="chip"/><text x="79" y="24" text-anchor="middle" class="t small ink">إنهاء قبل موعد</text><rect x="170" width="130" height="36" rx="18" class="accentSoft"/><text x="235" y="24" text-anchor="middle" class="t small accent">تحسين التركيز ✓</text></g>
+    <rect x="30" y="642" width="360" height="48" rx="10" class="button"/><text x="210" y="672" text-anchor="middle" class="buttonText">أنشئ بروتوكول القراءة</text>
+  </g>
+</svg>
