@@ -1,6 +1,6 @@
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, rmSync, statSync, utimesSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
@@ -42,6 +42,17 @@ function distManifest() {
   }));
 }
 
+const reproducibleTimestamp = new Date('2000-01-01T00:00:00.000Z');
+
+function normalizeTreeTimestamps(directory) {
+  utimesSync(directory, reproducibleTimestamp, reproducibleTimestamp);
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    const absolute = path.join(directory, entry.name);
+    if (entry.isDirectory()) normalizeTreeTimestamps(absolute);
+    else utimesSync(absolute, reproducibleTimestamp, reproducibleTimestamp);
+  }
+}
+
 if (process.version !== 'v24.19.0') throw new Error(`Node 24.19.0 required; found ${process.version}`);
 const npmVersion = runNpm(['--version'], 'utf8').trim();
 if (npmVersion !== '11.17.0') throw new Error(`npm 11.17.0 required; found ${npmVersion}`);
@@ -66,11 +77,13 @@ const first = distManifest();
 const archivePath = path.join(outputRoot, `${packageJson.name}-${packageJson.version}.zip`);
 const archiveName = path.basename(archivePath);
 function packageDist(targetPath) {
+  normalizeTreeTimestamps(distRoot);
   if (process.platform === 'win32') {
-    const command = `$ErrorActionPreference='Stop'; Get-ChildItem -LiteralPath '${distRoot}' -Recurse -File | ForEach-Object { $_.LastWriteTimeUtc = [datetime]::Parse('2000-01-01T00:00:00Z') }; Compress-Archive -Path '${path.join(distRoot, '*')}' -DestinationPath '${targetPath}' -Force`;
+    const command = `$ErrorActionPreference='Stop'; Compress-Archive -Path '${path.join(distRoot, '*')}' -DestinationPath '${targetPath}' -Force`;
     run('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', command]);
   } else {
-    run('zip', ['-q', '-X', '-r', targetPath, '.'], { cwd: distRoot });
+    const relativeFiles = filesUnder(distRoot);
+    run('zip', ['-q', '-X', targetPath, ...relativeFiles], { cwd: distRoot });
   }
 }
 packageDist(archivePath);
